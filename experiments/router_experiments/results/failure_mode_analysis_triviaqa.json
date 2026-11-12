@@ -1,0 +1,615 @@
+{
+  "dataset": "triviaqa",
+  "seed": 42,
+  "epochs": 150,
+  "summary": {
+    "rl_wins": 36,
+    "gbt_wins": 64,
+    "ties": 131,
+    "n_test": 231
+  },
+  "rl_wins_examples": [
+    {
+      "qid": "890",
+      "question": "\"The novel, \"\"Birdsong\"\", by Sebastian Faulks, is mainly set during which war?\"",
+      "scores": {
+        "bm25": 0.3333,
+        "dense": 0.125,
+        "hybrid": 1.0
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.125,
+      "rl_action": "hybrid",
+      "rl_reward": 1.0,
+      "margin": 0.875
+    },
+    {
+      "qid": "1609",
+      "question": "\u2018Quicksilver\u2019 is another name for which metallic element?",
+      "scores": {
+        "bm25": 1.0,
+        "dense": 0.2,
+        "hybrid": 1.0
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.2,
+      "rl_action": "hybrid",
+      "rl_reward": 1.0,
+      "margin": 0.8
+    },
+    {
+      "qid": "258",
+      "question": "Prince Calef is the male-lead in which Puccini opera?",
+      "scores": {
+        "bm25": 1.0,
+        "dense": 0.25,
+        "hybrid": 1.0
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.25,
+      "rl_action": "hybrid",
+      "rl_reward": 1.0,
+      "margin": 0.75
+    },
+    {
+      "qid": "847",
+      "question": "What colour is the wax covering Gouda cheese",
+      "scores": {
+        "bm25": 1.0,
+        "dense": 0.3333,
+        "hybrid": 1.0
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.3333,
+      "rl_action": "hybrid",
+      "rl_reward": 1.0,
+      "margin": 0.6667
+    },
+    {
+      "qid": "1254",
+      "question": "What is the biggest Italian automaker?",
+      "scores": {
+        "bm25": 0.5,
+        "dense": 0.0233,
+        "hybrid": 0.5
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0233,
+      "rl_action": "hybrid",
+      "rl_reward": 0.5,
+      "margin": 0.4767
+    },
+    {
+      "qid": "1106",
+      "question": "NASA celebrated another anniversary today. In what year was it founded?",
+      "scores": {
+        "bm25": 0.0435,
+        "dense": 0.1,
+        "hybrid": 0.3333
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.1,
+      "rl_action": "hybrid",
+      "rl_reward": 0.3333,
+      "margin": 0.2333
+    },
+    {
+      "qid": "520",
+      "question": "Which statesman was known as the Iron Chancellor?",
+      "scores": {
+        "bm25": 1.0,
+        "dense": 0.0185,
+        "hybrid": 0.25
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0185,
+      "rl_action": "hybrid",
+      "rl_reward": 0.25,
+      "margin": 0.2315
+    },
+    {
+      "qid": "1162",
+      "question": "What is the name of both a tire company and a restaurant guide?",
+      "scores": {
+        "bm25": 0.25,
+        "dense": 0.0833,
+        "hybrid": 0.3333
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0833,
+      "rl_action": "bm25",
+      "rl_reward": 0.25,
+      "margin": 0.1667
+    },
+    {
+      "qid": "664",
+      "question": "Rapunzel, Mother Gothel and Paulo are all characters in which 2010 animated film?",
+      "scores": {
+        "bm25": 0.2,
+        "dense": 0.0417,
+        "hybrid": 0.1667
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0417,
+      "rl_action": "hybrid",
+      "rl_reward": 0.1667,
+      "margin": 0.125
+    },
+    {
+      "qid": "747",
+      "question": "Which King did Guy Fawkes attempt to kill with his gunpowder plot?",
+      "scores": {
+        "bm25": 0.5,
+        "dense": 0.0294,
+        "hybrid": 0.1429
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0294,
+      "rl_action": "hybrid",
+      "rl_reward": 0.1429,
+      "margin": 0.1134
+    },
+    {
+      "qid": "990",
+      "question": "In what year did Edward Vlll abdicate?",
+      "scores": {
+        "bm25": 0.0333,
+        "dense": 0.0625,
+        "hybrid": 0.1667
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0625,
+      "rl_action": "hybrid",
+      "rl_reward": 0.1667,
+      "margin": 0.1042
+    },
+    {
+      "qid": "1208",
+      "question": "Which American Ivy League University is situated in Ithaca, New York State?",
+      "scores": {
+        "bm25": 0.125,
+        "dense": 0.04,
+        "hybrid": 0.1
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.04,
+      "rl_action": "bm25",
+      "rl_reward": 0.125,
+      "margin": 0.085
+    },
+    {
+      "qid": "675",
+      "question": "Who succeeded Prince Rainier of Monaco?",
+      "scores": {
+        "bm25": 0.0909,
+        "dense": 0.0161,
+        "hybrid": 0.1
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0161,
+      "rl_action": "bm25",
+      "rl_reward": 0.0909,
+      "margin": 0.0748
+    },
+    {
+      "qid": "1012",
+      "question": "Apart from a battle, what did Nelson lose at Tenerife in 1797?",
+      "scores": {
+        "bm25": 0.0213,
+        "dense": 0.0312,
+        "hybrid": 0.0667
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0312,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0667,
+      "margin": 0.0354
+    },
+    {
+      "qid": "1360",
+      "question": "The ports of Puck and Jastarnia are in which European country?",
+      "scores": {
+        "bm25": 0.125,
+        "dense": 0.0909,
+        "hybrid": 0.3333
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0909,
+      "rl_action": "bm25",
+      "rl_reward": 0.125,
+      "margin": 0.0341
+    },
+    {
+      "qid": "1137",
+      "question": "\u2018The Way I Am\u2019 is a 2008 autobiography by which US singer?",
+      "scores": {
+        "bm25": 0.0244,
+        "dense": 0.0233,
+        "hybrid": 0.0476
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0233,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0476,
+      "margin": 0.0244
+    },
+    {
+      "qid": "1864",
+      "question": "What word connects bermuda with a Scottish Racecourse?",
+      "scores": {
+        "bm25": 0.0286,
+        "dense": 0.0189,
+        "hybrid": 0.0278
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0189,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0278,
+      "margin": 0.0089
+    },
+    {
+      "qid": "5",
+      "question": "Thomas Hardy's famous novel is 'Far from the Madding (What?)'?",
+      "scores": {
+        "bm25": 0.0294,
+        "dense": 0.0058,
+        "hybrid": 0.0145
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0058,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0145,
+      "margin": 0.0086
+    },
+    {
+      "qid": "1595",
+      "question": "What is the first name of Nurse Ratched in the 1975 film \u2018One Flew Over the Cuckoo\u2019s Nest\u2019?",
+      "scores": {
+        "bm25": 0.0159,
+        "dense": 0.0833,
+        "hybrid": 0.0909
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0833,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0909,
+      "margin": 0.0076
+    },
+    {
+      "qid": "544",
+      "question": "The port of Plymouth is in which English county?",
+      "scores": {
+        "bm25": 0.0244,
+        "dense": 0.0556,
+        "hybrid": 0.0625
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0556,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0625,
+      "margin": 0.0069
+    }
+  ],
+  "gbt_wins_examples": [
+    {
+      "qid": "1520",
+      "question": "The expression 'Go West' originally (mid-1800s) encouraged people to move from/within?",
+      "scores": {
+        "bm25": 0.0667,
+        "dense": 1.0,
+        "hybrid": 0.125
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 1.0,
+      "rl_action": "hybrid",
+      "rl_reward": 0.125,
+      "margin": -0.875
+    },
+    {
+      "qid": "980",
+      "question": "Which car company produces the Meriva model?",
+      "scores": {
+        "bm25": 0.0294,
+        "dense": 1.0,
+        "hybrid": 0.1429
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 1.0,
+      "rl_action": "hybrid",
+      "rl_reward": 0.1429,
+      "margin": -0.8571
+    },
+    {
+      "qid": "336",
+      "question": "Darwin is the capital of which Australian state ?",
+      "scores": {
+        "bm25": 0.3333,
+        "dense": 1.0,
+        "hybrid": 1.0
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 1.0,
+      "rl_action": "bm25",
+      "rl_reward": 0.3333,
+      "margin": -0.6667
+    },
+    {
+      "qid": "580",
+      "question": "Which wedding anniversary is celebrated with paper",
+      "scores": {
+        "bm25": 0.5,
+        "dense": 1.0,
+        "hybrid": 0.3333
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 1.0,
+      "rl_action": "hybrid",
+      "rl_reward": 0.3333,
+      "margin": -0.6667
+    },
+    {
+      "qid": "80",
+      "question": "What were Scotsmen prohibited from wearing 1746-1782 under the Highland Garb Act, after the rising in Scotland in 1745?",
+      "scores": {
+        "bm25": 0.5,
+        "dense": 1.0,
+        "hybrid": 0.5
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 1.0,
+      "rl_action": "hybrid",
+      "rl_reward": 0.5,
+      "margin": -0.5
+    },
+    {
+      "qid": "1497",
+      "question": "What does the DSM-IV define as: \u00a0\u00a0\u00a0\u00a0A. Over a period of at least 6 months, recurrent, intense sexually arousing fantasies, sexual urges, or behaviors involving the act of observing an unsuspecting person who is naked, in the process of disrobing, or engaging in sexual activity. B. The person has acted on these urges, or the sexual urges or fantasies cause marked distress or interpersonal difficulty.",
+      "scores": {
+        "bm25": 0.25,
+        "dense": 1.0,
+        "hybrid": 0.5
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 1.0,
+      "rl_action": "hybrid",
+      "rl_reward": 0.5,
+      "margin": -0.5
+    },
+    {
+      "qid": "1473",
+      "question": "Shirley Temple served as US Ambassador to which African country from 1974 \u2013 1976?",
+      "scores": {
+        "bm25": 0.0286,
+        "dense": 0.5,
+        "hybrid": 0.0294
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.5,
+      "rl_action": "bm25",
+      "rl_reward": 0.0286,
+      "margin": -0.4714
+    },
+    {
+      "qid": "57",
+      "question": "Which Italian liqueur is a key ingredient of the well known cocktail, Harvey Wallbanger?",
+      "scores": {
+        "bm25": 0.0035,
+        "dense": 0.5,
+        "hybrid": 0.0556
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.5,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0556,
+      "margin": -0.4444
+    },
+    {
+      "qid": "1844",
+      "question": "In what country is the religion of Shinto commonly practiced?",
+      "scores": {
+        "bm25": 0.0625,
+        "dense": 0.5,
+        "hybrid": 0.1667
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.5,
+      "rl_action": "bm25",
+      "rl_reward": 0.0625,
+      "margin": -0.4375
+    },
+    {
+      "qid": "745",
+      "question": "What sport is the concern of the PGA?",
+      "scores": {
+        "bm25": 0.0667,
+        "dense": 0.3333,
+        "hybrid": 0.1667
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.3333,
+      "rl_action": "bm25",
+      "rl_reward": 0.0667,
+      "margin": -0.2667
+    },
+    {
+      "qid": "1694",
+      "question": "8\u00c2\u00a0 Fort Ville-Marie was the original name of which Canadian city?",
+      "scores": {
+        "bm25": 0.5,
+        "dense": 0.5,
+        "hybrid": 0.25
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.5,
+      "rl_action": "hybrid",
+      "rl_reward": 0.25,
+      "margin": -0.25
+    },
+    {
+      "qid": "518",
+      "question": "The state of Oaxaca, hit by a devastating mudslide in October 2010, is in which country?",
+      "scores": {
+        "bm25": 0.0263,
+        "dense": 0.25,
+        "hybrid": 0.0526
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.25,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0526,
+      "margin": -0.1974
+    },
+    {
+      "qid": "1070",
+      "question": "Pete Sampras won the Men's Singles at Wimbledon every year from 1993 to 2000 except one. Who won in 1996?",
+      "scores": {
+        "bm25": 0.04,
+        "dense": 0.2,
+        "hybrid": 0.125
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.2,
+      "rl_action": "bm25",
+      "rl_reward": 0.04,
+      "margin": -0.16
+    },
+    {
+      "qid": "738",
+      "question": "On July 24, 1911, future US. Senator (R, Connecticut) Hiram Bingham III \u201cdiscovered\u201d what Peruvian city?",
+      "scores": {
+        "bm25": 0.002,
+        "dense": 0.1667,
+        "hybrid": 0.0156
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.1667,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0156,
+      "margin": -0.151
+    },
+    {
+      "qid": "1653",
+      "question": "In which sea are the Cayman Islands?",
+      "scores": {
+        "bm25": 0.0588,
+        "dense": 0.2,
+        "hybrid": 1.0
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.2,
+      "rl_action": "bm25",
+      "rl_reward": 0.0588,
+      "margin": -0.1412
+    },
+    {
+      "qid": "645",
+      "question": "In which U S state is Arches National Park located just outside the city of Moab?",
+      "scores": {
+        "bm25": 0.0263,
+        "dense": 0.1667,
+        "hybrid": 0.0769
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.1667,
+      "rl_action": "bm25",
+      "rl_reward": 0.0263,
+      "margin": -0.1404
+    },
+    {
+      "qid": "1",
+      "question": "What was the nationality of composer Frederic Chopin?",
+      "scores": {
+        "bm25": 0.0156,
+        "dense": 0.25,
+        "hybrid": 0.1111
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.25,
+      "rl_action": "hybrid",
+      "rl_reward": 0.1111,
+      "margin": -0.1389
+    },
+    {
+      "qid": "502",
+      "question": "Who plays Cruella de Vil in the 1996 live action version of 101 Dalmations?",
+      "scores": {
+        "bm25": 0.0045,
+        "dense": 0.1429,
+        "hybrid": 0.037
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.1429,
+      "rl_action": "bm25",
+      "rl_reward": 0.0045,
+      "margin": -0.1384
+    },
+    {
+      "qid": "344",
+      "question": "\"Who was the American who, in 1871, collected animals and freaks for a travelling circus, menagerie and museum, which by 1872 was billing itself as \"\"The Greatest Show on Earth\"\"?\"",
+      "scores": {
+        "bm25": 0.0123,
+        "dense": 0.1429,
+        "hybrid": 0.0714
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.1429,
+      "rl_action": "bm25",
+      "rl_reward": 0.0123,
+      "margin": -0.1305
+    },
+    {
+      "qid": "337",
+      "question": "What is the name of the agreement under which passport controls have been abolished in 22 EU and 4 non-EU states?",
+      "scores": {
+        "bm25": 0.0114,
+        "dense": 0.1429,
+        "hybrid": 0.0233
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.1429,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0233,
+      "margin": -0.1196
+    }
+  ]
+}

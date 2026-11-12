@@ -1,0 +1,570 @@
+{
+  "dataset": "nq",
+  "seed": 42,
+  "epochs": 150,
+  "summary": {
+    "rl_wins": 17,
+    "gbt_wins": 28,
+    "ties": 129,
+    "n_test": 174
+  },
+  "rl_wins_examples": [
+    {
+      "qid": "418",
+      "question": "is jaffa cakes a biscuit or a cake",
+      "scores": {
+        "bm25": 1.0,
+        "dense": 0.5,
+        "hybrid": 1.0
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.5,
+      "rl_action": "hybrid",
+      "rl_reward": 1.0,
+      "margin": 0.5
+    },
+    {
+      "qid": "1847",
+      "question": "when was the last time giants won superbowl",
+      "scores": {
+        "bm25": 0.25,
+        "dense": 0.5,
+        "hybrid": 0.3333
+      },
+      "oracle": "dense",
+      "gbt_action": "bm25",
+      "gbt_reward": 0.25,
+      "rl_action": "hybrid",
+      "rl_reward": 0.3333,
+      "margin": 0.0833
+    },
+    {
+      "qid": "1355",
+      "question": "latest season on keeping up with the kardashians",
+      "scores": {
+        "bm25": 0.1111,
+        "dense": 0.0278,
+        "hybrid": 0.0667
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0278,
+      "rl_action": "bm25",
+      "rl_reward": 0.1111,
+      "margin": 0.0833
+    },
+    {
+      "qid": "1267",
+      "question": "when did the subway open in new york",
+      "scores": {
+        "bm25": 0.0526,
+        "dense": 0.0588,
+        "hybrid": 0.1
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0588,
+      "rl_action": "hybrid",
+      "rl_reward": 0.1,
+      "margin": 0.0412
+    },
+    {
+      "qid": "954",
+      "question": "where is hallmark channel home and family filmed",
+      "scores": {
+        "bm25": 0.0769,
+        "dense": 0.0833,
+        "hybrid": 0.1111
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0833,
+      "rl_action": "hybrid",
+      "rl_reward": 0.1111,
+      "margin": 0.0278
+    },
+    {
+      "qid": "1289",
+      "question": "who founded mission nuestra senora de la soledad",
+      "scores": {
+        "bm25": 0.0417,
+        "dense": 0.0182,
+        "hybrid": 0.037
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0182,
+      "rl_action": "hybrid",
+      "rl_reward": 0.037,
+      "margin": 0.0189
+    },
+    {
+      "qid": "1846",
+      "question": "when's the last time scotland won the calcutta cup",
+      "scores": {
+        "bm25": 0.0227,
+        "dense": 0.0357,
+        "hybrid": 0.05
+      },
+      "oracle": "hybrid",
+      "gbt_action": "bm25",
+      "gbt_reward": 0.0227,
+      "rl_action": "dense",
+      "rl_reward": 0.0357,
+      "margin": 0.013
+    },
+    {
+      "qid": "834",
+      "question": "who won the mens curling in the olympics 2018",
+      "scores": {
+        "bm25": 0.0312,
+        "dense": 0.05,
+        "hybrid": 0.0625
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.05,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0625,
+      "margin": 0.0125
+    },
+    {
+      "qid": "1252",
+      "question": "when was zero first used in mathematical operations",
+      "scores": {
+        "bm25": 0.0115,
+        "dense": 0.0048,
+        "hybrid": 0.0071
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0048,
+      "rl_action": "bm25",
+      "rl_reward": 0.0115,
+      "margin": 0.0067
+    },
+    {
+      "qid": "915",
+      "question": "when did ford change the f150 body style",
+      "scores": {
+        "bm25": 0.0082,
+        "dense": 0.0026,
+        "hybrid": 0.0045
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0026,
+      "rl_action": "bm25",
+      "rl_reward": 0.0082,
+      "margin": 0.0056
+    },
+    {
+      "qid": "1730",
+      "question": "when did the first ninja turtles come out",
+      "scores": {
+        "bm25": 0.0159,
+        "dense": 0.0145,
+        "hybrid": 0.02
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0145,
+      "rl_action": "hybrid",
+      "rl_reward": 0.02,
+      "margin": 0.0055
+    },
+    {
+      "qid": "342",
+      "question": "when was the last time stock market crashed",
+      "scores": {
+        "bm25": 0.0068,
+        "dense": 0.0022,
+        "hybrid": 0.0037
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0022,
+      "rl_action": "bm25",
+      "rl_reward": 0.0068,
+      "margin": 0.0047
+    },
+    {
+      "qid": "353",
+      "question": "when did the new day win the tag team titles",
+      "scores": {
+        "bm25": 0.0278,
+        "dense": 0.0256,
+        "hybrid": 0.0333
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0256,
+      "rl_action": "bm25",
+      "rl_reward": 0.0278,
+      "margin": 0.0021
+    },
+    {
+      "qid": "460",
+      "question": "when did computer become widespread in homes and schools",
+      "scores": {
+        "bm25": 0.027,
+        "dense": 0.0256,
+        "hybrid": 0.0333
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0256,
+      "rl_action": "bm25",
+      "rl_reward": 0.027,
+      "margin": 0.0014
+    },
+    {
+      "qid": "1709",
+      "question": "where was the first high level language operating system created",
+      "scores": {
+        "bm25": 0.0078,
+        "dense": 0.0071,
+        "hybrid": 0.0067
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0071,
+      "rl_action": "bm25",
+      "rl_reward": 0.0078,
+      "margin": 0.0007
+    },
+    {
+      "qid": "1437",
+      "question": "most passing yards by nfl qb in a game",
+      "scores": {
+        "bm25": 0.004,
+        "dense": 0.0033,
+        "hybrid": 0.0036
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0033,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0036,
+      "margin": 0.0003
+    },
+    {
+      "qid": "1523",
+      "question": "through what process has the colorado river created the grand canyon in the usa",
+      "scores": {
+        "bm25": 0.0024,
+        "dense": 0.0022,
+        "hybrid": 0.0021
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0022,
+      "rl_action": "bm25",
+      "rl_reward": 0.0024,
+      "margin": 0.0002
+    }
+  ],
+  "gbt_wins_examples": [
+    {
+      "qid": "1292",
+      "question": "epidemiologists attempt to explain the link between health and variables such as",
+      "scores": {
+        "bm25": 0.0122,
+        "dense": 1.0,
+        "hybrid": 0.0769
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 1.0,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0769,
+      "margin": -0.9231
+    },
+    {
+      "qid": "1057",
+      "question": "who won the world cup in cricket 2017",
+      "scores": {
+        "bm25": 0.0204,
+        "dense": 1.0,
+        "hybrid": 0.0909
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 1.0,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0909,
+      "margin": -0.9091
+    },
+    {
+      "qid": "1762",
+      "question": "which was the first village of karnataka which declared independence",
+      "scores": {
+        "bm25": 0.1429,
+        "dense": 0.5,
+        "hybrid": 1.0
+      },
+      "oracle": "hybrid",
+      "gbt_action": "dense",
+      "gbt_reward": 0.5,
+      "rl_action": "bm25",
+      "rl_reward": 0.1429,
+      "margin": -0.3571
+    },
+    {
+      "qid": "539",
+      "question": "what order do the captain america movies go in",
+      "scores": {
+        "bm25": 0.0189,
+        "dense": 0.25,
+        "hybrid": 0.1
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.25,
+      "rl_action": "bm25",
+      "rl_reward": 0.0189,
+      "margin": -0.2311
+    },
+    {
+      "qid": "1719",
+      "question": "genre of diary of a wimpy kid the getaway",
+      "scores": {
+        "bm25": 0.0032,
+        "dense": 0.25,
+        "hybrid": 0.0294
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.25,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0294,
+      "margin": -0.2206
+    },
+    {
+      "qid": "761",
+      "question": "what is a whistle blower suit under the false claims act",
+      "scores": {
+        "bm25": 0.0026,
+        "dense": 0.125,
+        "hybrid": 0.0222
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.125,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0222,
+      "margin": -0.1028
+    },
+    {
+      "qid": "1356",
+      "question": "in what state was the united states center of population gravity located during the period 1790",
+      "scores": {
+        "bm25": 0.0063,
+        "dense": 0.0909,
+        "hybrid": 0.0357
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0909,
+      "rl_action": "bm25",
+      "rl_reward": 0.0063,
+      "margin": -0.0847
+    },
+    {
+      "qid": "670",
+      "question": "what type of car is a g wagon",
+      "scores": {
+        "bm25": 0.0027,
+        "dense": 0.1111,
+        "hybrid": 0.0286
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.1111,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0286,
+      "margin": -0.0825
+    },
+    {
+      "qid": "1736",
+      "question": "created propaganda to support the war effort & encourage the sale of war bonds",
+      "scores": {
+        "bm25": 0.125,
+        "dense": 0.2,
+        "hybrid": 0.1111
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.2,
+      "rl_action": "bm25",
+      "rl_reward": 0.125,
+      "margin": -0.075
+    },
+    {
+      "qid": "262",
+      "question": "when was the first commercial cell phone released",
+      "scores": {
+        "bm25": 0.0263,
+        "dense": 0.1,
+        "hybrid": 0.0435
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.1,
+      "rl_action": "bm25",
+      "rl_reward": 0.0263,
+      "margin": -0.0737
+    },
+    {
+      "qid": "890",
+      "question": "when was how deep is your love released",
+      "scores": {
+        "bm25": 0.0625,
+        "dense": 0.2,
+        "hybrid": 0.1667
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.2,
+      "rl_action": "hybrid",
+      "rl_reward": 0.1667,
+      "margin": -0.0333
+    },
+    {
+      "qid": "1126",
+      "question": "who was the buccaneers qb when they won the superbowl",
+      "scores": {
+        "bm25": 0.0028,
+        "dense": 0.0476,
+        "hybrid": 0.0175
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0476,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0175,
+      "margin": -0.0301
+    },
+    {
+      "qid": "139",
+      "question": "when did they start vaccinating for whooping cough",
+      "scores": {
+        "bm25": 0.0027,
+        "dense": 0.0323,
+        "hybrid": 0.0125
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0323,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0125,
+      "margin": -0.0198
+    },
+    {
+      "qid": "285",
+      "question": "disagreements involving slavery and states' rights were two of the main causes of",
+      "scores": {
+        "bm25": 0.0093,
+        "dense": 0.0256,
+        "hybrid": 0.0227
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0256,
+      "rl_action": "bm25",
+      "rl_reward": 0.0093,
+      "margin": -0.0163
+    },
+    {
+      "qid": "964",
+      "question": "when was the abacus invented in ancient china",
+      "scores": {
+        "bm25": 0.003,
+        "dense": 0.0172,
+        "hybrid": 0.0084
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0172,
+      "rl_action": "bm25",
+      "rl_reward": 0.003,
+      "margin": -0.0142
+    },
+    {
+      "qid": "684",
+      "question": "when did to kill a mockingbird become popular",
+      "scores": {
+        "bm25": 0.0041,
+        "dense": 0.0118,
+        "hybrid": 0.0055
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0118,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0055,
+      "margin": -0.0062
+    },
+    {
+      "qid": "1478",
+      "question": "what states were most affected by the dust bowl",
+      "scores": {
+        "bm25": 0.0114,
+        "dense": 0.0217,
+        "hybrid": 0.0159
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0217,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0159,
+      "margin": -0.0059
+    },
+    {
+      "qid": "99",
+      "question": "who sings the song i'll never forget you",
+      "scores": {
+        "bm25": 0.0021,
+        "dense": 0.0112,
+        "hybrid": 0.0058
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0112,
+      "rl_action": "hybrid",
+      "rl_reward": 0.0058,
+      "margin": -0.0054
+    },
+    {
+      "qid": "901",
+      "question": "which body part(s) occupy the greatest portion of the primary motor cortex",
+      "scores": {
+        "bm25": 0.0139,
+        "dense": 0.0137,
+        "hybrid": 0.009
+      },
+      "oracle": "bm25",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0137,
+      "rl_action": "hybrid",
+      "rl_reward": 0.009,
+      "margin": -0.0047
+    },
+    {
+      "qid": "1688",
+      "question": "when did the term sustainability start to be used",
+      "scores": {
+        "bm25": 0.0074,
+        "dense": 0.0147,
+        "hybrid": 0.01
+      },
+      "oracle": "dense",
+      "gbt_action": "dense",
+      "gbt_reward": 0.0147,
+      "rl_action": "hybrid",
+      "rl_reward": 0.01,
+      "margin": -0.0047
+    }
+  ]
+}

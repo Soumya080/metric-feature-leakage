@@ -1,0 +1,205 @@
+{
+  "tag": "400 queries/dataset pilot, MRR@20, all gold types",
+  "per_dataset": {
+    "nq": {
+      "corpus": {
+        "n": 398,
+        "per_retriever": {
+          "bm25": 0.06759179372390549,
+          "dense": 0.14483644771432402,
+          "hybrid": 0.09593089111666911
+        },
+        "best_fixed_name": "dense",
+        "best_fixed": 0.14483644771432402,
+        "oracle": 0.180505690641898,
+        "headroom": 0.03566924292757398,
+        "headroom_rel": 0.24627256115759022,
+        "all_zero_rate": 0.5979899497487438,
+        "learnable_rate": 0.35175879396984927,
+        "n_learnable": 140
+      },
+      "honest": {
+        "n_informative": 140,
+        "class_counts": {
+          "bm25": 18,
+          "dense": 95,
+          "hybrid": 27
+        },
+        "majority": 0.6785714285714286,
+        "gbt": 0.5671428571428572,
+        "gbt_std": 0.07445036697597363,
+        "logreg": 0.6485714285714286,
+        "logreg_std": 0.04810702354423641,
+        "gbt_lift": -0.11142857142857143,
+        "gbt_retrieval_only": 0.5642857142857143,
+        "gbt_cross_only": 0.6185714285714287
+      },
+      "leaky": {
+        "n_informative": 140,
+        "class_counts": {
+          "bm25": 18,
+          "dense": 95,
+          "hybrid": 27
+        },
+        "majority": 0.6785714285714286,
+        "gbt": 0.8314285714285714,
+        "gbt_std": 0.05935022307954568,
+        "logreg": 0.7557142857142857,
+        "logreg_std": 0.051189922477625466,
+        "gbt_lift": 0.1528571428571428,
+        "gbt_retrieval_only": 0.8514285714285714,
+        "gbt_cross_only": 0.6185714285714287
+      }
+    },
+    "triviaqa": {
+      "corpus": {
+        "n": 397,
+        "per_retriever": {
+          "bm25": 0.07372042355402462,
+          "dense": 0.15990842052402843,
+          "hybrid": 0.10419441242038752
+        },
+        "best_fixed_name": "dense",
+        "best_fixed": 0.15990842052402843,
+        "oracle": 0.18934520029009658,
+        "headroom": 0.02943677976606815,
+        "headroom_rel": 0.18408523872352844,
+        "all_zero_rate": 0.6196473551637279,
+        "learnable_rate": 0.3123425692695214,
+        "n_learnable": 124
+      },
+      "honest": {
+        "n_informative": 124,
+        "class_counts": {
+          "bm25": 18,
+          "dense": 87,
+          "hybrid": 19
+        },
+        "majority": 0.7016129032258065,
+        "gbt": 0.6177333333333334,
+        "gbt_std": 0.06873601675977449,
+        "logreg": 0.6499333333333334,
+        "logreg_std": 0.059582771559123254,
+        "gbt_lift": -0.08387956989247314,
+        "gbt_retrieval_only": 0.6176666666666667,
+        "gbt_cross_only": 0.6772000000000001
+      },
+      "leaky": {
+        "n_informative": 124,
+        "class_counts": {
+          "bm25": 18,
+          "dense": 87,
+          "hybrid": 19
+        },
+        "majority": 0.7016129032258065,
+        "gbt": 0.8468666666666667,
+        "gbt_std": 0.05673587930049202,
+        "logreg": 0.7806000000000001,
+        "logreg_std": 0.04748070953321758,
+        "gbt_lift": 0.14525376344086016,
+        "gbt_retrieval_only": 0.8663333333333331,
+        "gbt_cross_only": 0.6772000000000001
+      }
+    },
+    "hotpotqa": {
+      "corpus": {
+        "n": 400,
+        "per_retriever": {
+          "bm25": 0.1429548874328287,
+          "dense": 0.19653137384416422,
+          "hybrid": 0.16743449645684566
+        },
+        "best_fixed_name": "dense",
+        "best_fixed": 0.19653137384416422,
+        "oracle": 0.24068387784815803,
+        "headroom": 0.044152504003993814,
+        "headroom_rel": 0.224658807092061,
+        "all_zero_rate": 0.54,
+        "learnable_rate": 0.3275,
+        "n_learnable": 131
+      },
+      "honest": {
+        "n_informative": 131,
+        "class_counts": {
+          "bm25": 24,
+          "dense": 83,
+          "hybrid": 24
+        },
+        "majority": 0.6335877862595419,
+        "gbt": 0.523931623931624,
+        "gbt_std": 0.10437698226772969,
+        "logreg": 0.6307122507122507,
+        "logreg_std": 0.057448614790689106,
+        "gbt_lift": -0.10965616232791797,
+        "gbt_retrieval_only": 0.484102564102564,
+        "gbt_cross_only": 0.5648433048433048
+      },
+      "leaky": {
+        "n_informative": 131,
+        "class_counts": {
+          "bm25": 24,
+          "dense": 83,
+          "hybrid": 24
+        },
+        "majority": 0.6335877862595419,
+        "gbt": 0.8256980056980058,
+        "gbt_std": 0.04914324286544207,
+        "logreg": 0.7328205128205129,
+        "logreg_std": 0.053987032879739966,
+        "gbt_lift": 0.19211021943846385,
+        "gbt_retrieval_only": 0.8472934472934474,
+        "gbt_cross_only": 0.5648433048433048
+      }
+    }
+  },
+  "pooled": {
+    "corpus": {
+      "n": 1195,
+      "per_retriever": {
+        "bm25": 0.09485397240685664,
+        "dense": 0.16714736290879148,
+        "hybrid": 0.1226104393121894
+      },
+      "best_fixed_name": "dense",
+      "best_fixed": 0.16714736290879148,
+      "oracle": 0.20358565734720246,
+      "headroom": 0.036438294438410984,
+      "headroom_rel": 0.2180010130240256,
+      "all_zero_rate": 0.5857740585774058,
+      "learnable_rate": 0.3305439330543933,
+      "n_learnable": 395
+    },
+    "honest": {
+      "n_informative": 395,
+      "class_counts": {
+        "bm25": 60,
+        "dense": 265,
+        "hybrid": 70
+      },
+      "majority": 0.6708860759493671,
+      "gbt": 0.6086075949367088,
+      "gbt_std": 0.03542856847500943,
+      "logreg": 0.6637974683544303,
+      "logreg_std": 0.01930701363537987,
+      "gbt_lift": -0.062278481012658315,
+      "gbt_retrieval_only": 0.5863291139240506,
+      "gbt_cross_only": 0.6607594936708862
+    },
+    "leaky": {
+      "n_informative": 395,
+      "class_counts": {
+        "bm25": 60,
+        "dense": 265,
+        "hybrid": 70
+      },
+      "majority": 0.6708860759493671,
+      "gbt": 0.878987341772152,
+      "gbt_std": 0.031433211534518994,
+      "logreg": 0.8000000000000002,
+      "logreg_std": 0.02726665725131395,
+      "gbt_lift": 0.20810126582278488,
+      "gbt_retrieval_only": 0.8865822784810127,
+      "gbt_cross_only": 0.6607594936708862
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "nq": {
+    "random (current)": {
+      "strategy": "random",
+      "hard_fraction": 0.0,
+      "prep_stats": {
+        "real_gold": 49,
+        "constructed": 49,
+        "skipped": 2,
+        "hard_negatives": 0,
+        "total_negatives": 48902,
+        "duplicates": 0
+      },
+      "all": {
+        "n": 98,
+        "per_retriever": {
+          "bm25": 0.04880952380952381,
+          "dense": 0.20561224489795918,
+          "hybrid": 0.15663265306122448
+        },
+        "best_fixed": 0.20561224489795918,
+        "best_fixed_name": "dense",
+        "oracle": 0.23758503401360545,
+        "headroom": 0.03197278911564627,
+        "headroom_pct": 15.550041356492978
+      },
+      "real_wikipedia": {
+        "n": 49,
+        "per_retriever": {
+          "bm25": 0.04659863945578231,
+          "dense": 0.2098639455782313,
+          "hybrid": 0.16394557823129252
+        },
+        "best_fixed": 0.2098639455782313,
+        "best_fixed_name": "dense",
+        "oracle": 0.2534013605442177,
+        "headroom": 0.0435374149659864,
+        "headroom_pct": 20.74554294975689
+      }
+    },
+    "mixed-25%": {
+      "strategy": "mixed",
+      "hard_fraction": 0.25,
+      "prep_stats": {
+        "real_gold": 49,
+        "constructed": 49,
+        "skipped": 2,
+        "hard_negatives": 11854,
+        "total_negatives": 48902,
+        "duplicates": 0
+      },
+      "all": {
+        "n": 98,
+        "per_retriever": {
+          "bm25": 0.06802721088435375,
+          "dense": 0.14608843537414967,
+          "hybrid": 0.08027210884353742
+        },
+        "best_fixed": 0.14608843537414967,
+        "best_fixed_name": "dense",
+        "oracle": 0.17551020408163265,
+        "headroom": 0.029421768707482976,
+        "headroom_pct": 20.139697322467974
+      },
+      "real_wikipedia": {
+        "n": 49,
+        "per_retriever": {
+          "bm25": 0.09523809523809523,
+          "dense": 0.1391156462585034,
+          "hybrid": 0.11564625850340136
+        },
+        "best_fixed": 0.1391156462585034,
+        "best_fixed_name": "dense",
+        "oracle": 0.18775510204081633,
+        "headroom": 0.048639455782312935,
+        "headroom_pct": 34.963325183374096
+      }
+    },
+    "mixed-50%": {
+      "strategy": "mixed",
+      "hard_fraction": 0.5,
+      "prep_stats": {
+        "real_gold": 49,
+        "constructed": 49,
+        "skipped": 2,
+        "hard_negatives": 23324,
+        "total_negatives": 48902,
+        "duplicates": 0
+      },
+      "all": {
+        "n": 98,
+        "per_retriever": {
+          "bm25": 0.06836734693877551,
+          "dense": 0.14982993197278913,
+          "hybrid": 0.10136054421768707
+        },
+        "best_fixed": 0.14982993197278913,
+        "best_fixed_name": "dense",
+        "oracle": 0.19200680272108844,
+        "headroom": 0.04217687074829932,
+        "headroom_pct": 28.149829738933025
+      },
+      "real_wikipedia": {
+        "n": 49,
+        "per_retriever": {
+          "bm25": 0.09591836734693877,
+          "dense": 0.16122448979591836,
+          "hybrid": 0.15374149659863945
+        },
+        "best_fixed": 0.16122448979591836,
+        "best_fixed_name": "dense",
+        "oracle": 0.2217687074829932,
+        "headroom": 0.06054421768707485,
+        "headroom_pct": 37.552742616033775
+      }
+    },
+    "hard-100%": {
+      "strategy": "hard",
+      "hard_fraction": 1.0,
+      "prep_stats": {
+        "real_gold": 49,
+        "constructed": 49,
+        "skipped": 2,
+        "hard_negatives": 44527,
+        "total_negatives": 48902,
+        "duplicates": 0
+      },
+      "all": {
+        "n": 98,
+        "per_retriever": {
+          "bm25": 0.061054421768707484,
+          "dense": 0.1380952380952381,
+          "hybrid": 0.08741496598639456
+        },
+        "best_fixed": 0.1380952380952381,
+        "best_fixed_name": "dense",
+        "oracle": 0.17244897959183672,
+        "headroom": 0.03435374149659862,
+        "headroom_pct": 24.876847290640374
+      },
+      "real_wikipedia": {
+        "n": 49,
+        "per_retriever": {
+          "bm25": 0.08129251700680272,
+          "dense": 0.16054421768707483,
+          "hybrid": 0.1054421768707483
+        },
+        "best_fixed": 0.16054421768707483,
+        "best_fixed_name": "dense",
+        "oracle": 0.2054421768707483,
+        "headroom": 0.04489795918367348,
+        "headroom_pct": 27.966101694915263
+      }
+    }
+  }
+}

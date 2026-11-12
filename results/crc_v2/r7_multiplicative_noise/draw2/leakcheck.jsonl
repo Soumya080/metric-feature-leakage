@@ -1,0 +1,1 @@
+{"arm": "mrr20_mult_s015", "family": "mrr20", "scale": 0.15, "draw": 2, "nonzero_exact_rate": {"bm25": 0.0, "dense": 0.0}, "leaked_verdict": false, "n_verdicts": 0, "n_suspicions": 7, "n_outside_22_25": 0, "exact_match_22_bm25": 0.0, "exact_match_23_dense": 0.0, "abs_spearman_22_bm25": 0.8161989877896338, "abs_spearman_23_dense": 0.8843698509947056}

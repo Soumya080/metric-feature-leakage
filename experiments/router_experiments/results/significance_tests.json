@@ -1,0 +1,9 @@
+{
+  "rl_mean_mrr": 0.2312,
+  "dense_mean_mrr": 0.1982,
+  "bm25_mean_mrr": 0.0853,
+  "rl_vs_dense_delta": 0.033,
+  "rl_vs_dense_pvalue": 0.0,
+  "rl_vs_bm25_delta": 0.1458,
+  "rl_vs_bm25_pvalue": 0.0
+}

@@ -1,0 +1,11 @@
+# The three *_prepared.json files are ~577MB each (~1.7GB total), which exceeds GitHub's
+# free Git-LFS quota. They do not need to travel with the repo: 01_prepare_data.py is
+# deterministic (RANDOM_SEED 42/43/44, and cache/wiki_passage_pool.json is tracked), so a
+# lab machine regenerates them bit-identically in ~20-45 min. Transfer them directly
+# (rsync/scp) only if you want to skip that step.
+experiments/baseline_v2/data/*.json filter=lfs diff=lfs merge=lfs -text
+
+# Force LF endings on shell scripts regardless of the checkout platform's core.autocrlf —
+# a CRLF shebang line (#!/bin/bash\r) fails to parse on Linux, which is exactly where
+# these scripts are meant to run (GPU cluster / lab machine).
+*.sh text eol=lf

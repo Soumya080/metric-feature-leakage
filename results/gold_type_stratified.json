@@ -1,0 +1,218 @@
+{
+  "nq": {
+    "mode": "A (from saved per-query scores)",
+    "counts": {
+      "all": 174,
+      "real_wikipedia": 174,
+      "constructed": 0
+    },
+    "by_method": {
+      "bm25": {
+        "all": 0.10293996698079254,
+        "real_wikipedia": 0.10293996698079254,
+        "constructed": null
+      },
+      "dense": {
+        "all": 0.16553222302554108,
+        "real_wikipedia": 0.16553222302554108,
+        "constructed": null
+      },
+      "hybrid": {
+        "all": 0.14637922500893,
+        "real_wikipedia": 0.14637922500893,
+        "constructed": null
+      },
+      "oracle": {
+        "all": 0.2001398577066311,
+        "real_wikipedia": 0.2001398577066311,
+        "constructed": null
+      },
+      "score_gap": {
+        "all": 0.16566719341913216,
+        "real_wikipedia": 0.16566719341913216,
+        "constructed": null
+      },
+      "logistic_regression": {
+        "all": 0.16390075736712792,
+        "real_wikipedia": 0.16390075736712792,
+        "constructed": null
+      },
+      "random_forest": {
+        "all": 0.16402080341067315,
+        "real_wikipedia": 0.16402080341067315,
+        "constructed": null
+      },
+      "ridge": {
+        "all": 0.15940558565907348,
+        "real_wikipedia": 0.15940558565907348,
+        "constructed": null
+      },
+      "gradient_boosting": {
+        "all": 0.1642080329491379,
+        "real_wikipedia": 0.1642080329491379,
+        "constructed": null
+      },
+      "rl_route": {
+        "all": 0.15116202774834006,
+        "real_wikipedia": 0.15116202774834006,
+        "constructed": null
+      }
+    },
+    "significance_real_wikipedia_only": {
+      "n": 174,
+      "rl_vs_gbt": {
+        "delta": -0.013046005200797869,
+        "p_value": 0.9136
+      },
+      "rl_vs_best_fixed": {
+        "method": "dense",
+        "delta": -0.014370195277201021,
+        "p_value": 0.9303
+      }
+    }
+  },
+  "triviaqa": {
+    "mode": "A (from saved per-query scores)",
+    "counts": {
+      "all": 231,
+      "real_wikipedia": 231,
+      "constructed": 0
+    },
+    "by_method": {
+      "bm25": {
+        "all": 0.15010753155183798,
+        "real_wikipedia": 0.15010753155183798,
+        "constructed": null
+      },
+      "dense": {
+        "all": 0.20002428837670316,
+        "real_wikipedia": 0.20002428837670316,
+        "constructed": null
+      },
+      "hybrid": {
+        "all": 0.19071483032694772,
+        "real_wikipedia": 0.19071483032694772,
+        "constructed": null
+      },
+      "oracle": {
+        "all": 0.26935462920887326,
+        "real_wikipedia": 0.26935462920887326,
+        "constructed": null
+      },
+      "score_gap": {
+        "all": 0.19677753512994992,
+        "real_wikipedia": 0.19677753512994992,
+        "constructed": null
+      },
+      "logistic_regression": {
+        "all": 0.19901551633027342,
+        "real_wikipedia": 0.19901551633027342,
+        "constructed": null
+      },
+      "random_forest": {
+        "all": 0.19677753512994992,
+        "real_wikipedia": 0.19677753512994992,
+        "constructed": null
+      },
+      "ridge": {
+        "all": 0.19812162893331323,
+        "real_wikipedia": 0.19812162893331323,
+        "constructed": null
+      },
+      "gradient_boosting": {
+        "all": 0.20002428837670316,
+        "real_wikipedia": 0.20002428837670316,
+        "constructed": null
+      },
+      "rl_route": {
+        "all": 0.18812806083346426,
+        "real_wikipedia": 0.18812806083346426,
+        "constructed": null
+      }
+    },
+    "significance_real_wikipedia_only": {
+      "n": 231,
+      "rl_vs_gbt": {
+        "delta": -0.01189622754323888,
+        "p_value": 0.8781
+      },
+      "rl_vs_best_fixed": {
+        "method": "dense",
+        "delta": -0.01189622754323888,
+        "p_value": 0.8781
+      }
+    }
+  },
+  "hotpotqa": {
+    "mode": "A (from saved per-query scores)",
+    "counts": {
+      "all": 138,
+      "real_wikipedia": 138,
+      "constructed": 0
+    },
+    "by_method": {
+      "bm25": {
+        "all": 0.04676440933705333,
+        "real_wikipedia": 0.04676440933705333,
+        "constructed": null
+      },
+      "dense": {
+        "all": 0.07529434821546678,
+        "real_wikipedia": 0.07529434821546678,
+        "constructed": null
+      },
+      "hybrid": {
+        "all": 0.057242532068429594,
+        "real_wikipedia": 0.057242532068429594,
+        "constructed": null
+      },
+      "oracle": {
+        "all": 0.10956066197193373,
+        "real_wikipedia": 0.10956066197193373,
+        "constructed": null
+      },
+      "score_gap": {
+        "all": 0.07529434821546678,
+        "real_wikipedia": 0.07529434821546678,
+        "constructed": null
+      },
+      "logistic_regression": {
+        "all": 0.06345478347043532,
+        "real_wikipedia": 0.06345478347043532,
+        "constructed": null
+      },
+      "random_forest": {
+        "all": 0.07527653837998514,
+        "real_wikipedia": 0.07527653837998514,
+        "constructed": null
+      },
+      "ridge": {
+        "all": 0.07499962014682951,
+        "real_wikipedia": 0.07499962014682951,
+        "constructed": null
+      },
+      "gradient_boosting": {
+        "all": 0.07529434821546678,
+        "real_wikipedia": 0.07529434821546678,
+        "constructed": null
+      },
+      "rl_route": {
+        "all": 0.06825281938190465,
+        "real_wikipedia": 0.06825281938190465,
+        "constructed": null
+      }
+    },
+    "significance_real_wikipedia_only": {
+      "n": 138,
+      "rl_vs_gbt": {
+        "delta": -0.007041528833562137,
+        "p_value": 0.8353
+      },
+      "rl_vs_best_fixed": {
+        "method": "dense",
+        "delta": -0.007041528833562137,
+        "p_value": 0.8353
+      }
+    }
+  }
+}

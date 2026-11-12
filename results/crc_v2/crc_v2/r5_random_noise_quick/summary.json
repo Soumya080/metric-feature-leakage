@@ -1,0 +1,515 @@
+{
+  "r1_regression_check": {},
+  "arms": {
+    "honest_minimal": {
+      "family": null,
+      "scale": 0.0,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.598740157480315,
+        "min": 0.598740157480315,
+        "max": 0.598740157480315,
+        "draw_means": [
+          0.598740157480315
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 0.0,
+        "retention": null
+      },
+      "logreg": {
+        "mean": 0.6056692913385827,
+        "min": 0.6056692913385827,
+        "max": 0.6056692913385827,
+        "draw_means": [
+          0.6056692913385827
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 0.0,
+        "retention": null
+      }
+    },
+    "mrr20_exact": {
+      "family": "mrr20",
+      "scale": 0.0,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.7314015748031495,
+        "min": 0.7314015748031495,
+        "max": 0.7314015748031495,
+        "draw_means": [
+          0.7314015748031495
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 13.266141732283455,
+        "retention": 1.0
+      },
+      "logreg": {
+        "mean": 0.7059527559055117,
+        "min": 0.7059527559055117,
+        "max": 0.7059527559055117,
+        "draw_means": [
+          0.7059527559055117
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 10.028346456692894,
+        "retention": 1.0
+      }
+    },
+    "mrr20_rand_s002": {
+      "family": "mrr20",
+      "scale": 0.02,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.7273700787401575,
+        "min": 0.7273700787401575,
+        "max": 0.7273700787401575,
+        "draw_means": [
+          0.7273700787401575
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 12.862992125984253,
+        "retention": 0.9696106362773037
+      },
+      "logreg": {
+        "mean": 0.7005984251968503,
+        "min": 0.7005984251968503,
+        "max": 0.7005984251968503,
+        "draw_means": [
+          0.7005984251968503
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 9.492913385826762,
+        "retention": 0.946608040201006
+      }
+    },
+    "mrr20_rand_s005": {
+      "family": "mrr20",
+      "scale": 0.05,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.7108031496062991,
+        "min": 0.7108031496062991,
+        "max": 0.7108031496062991,
+        "draw_means": [
+          0.7108031496062991
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 11.206299212598413,
+        "retention": 0.8447293447293446
+      },
+      "logreg": {
+        "mean": 0.6754015748031498,
+        "min": 0.6754015748031498,
+        "max": 0.6754015748031498,
+        "draw_means": [
+          0.6754015748031498
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 6.973228346456706,
+        "retention": 0.6953517587939725
+      }
+    },
+    "mrr20_rand_s010": {
+      "family": "mrr20",
+      "scale": 0.1,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.6842204724409449,
+        "min": 0.6842204724409449,
+        "max": 0.6842204724409449,
+        "draw_means": [
+          0.6842204724409449
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 8.548031496062992,
+        "retention": 0.6443494776828115
+      },
+      "logreg": {
+        "mean": 0.6474960629921259,
+        "min": 0.6474960629921259,
+        "max": 0.6474960629921259,
+        "draw_means": [
+          0.6474960629921259
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 4.18267716535432,
+        "retention": 0.4170854271356782
+      }
+    },
+    "mrr20_rand_s015": {
+      "family": "mrr20",
+      "scale": 0.15,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.6700472440944881,
+        "min": 0.6700472440944881,
+        "max": 0.6700472440944881,
+        "draw_means": [
+          0.6700472440944881
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 7.130708661417318,
+        "retention": 0.5375118708452042
+      },
+      "logreg": {
+        "mean": 0.6343307086614174,
+        "min": 0.6343307086614174,
+        "max": 0.6343307086614174,
+        "draw_means": [
+          0.6343307086614174
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 2.866141732283467,
+        "retention": 0.2858040201005033
+      }
+    },
+    "mrr20_rand_s025": {
+      "family": "mrr20",
+      "scale": 0.25,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.6573858267716536,
+        "min": 0.6573858267716536,
+        "max": 0.6573858267716536,
+        "draw_means": [
+          0.6573858267716536
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 5.864566929133863,
+        "retention": 0.44207027540360944
+      },
+      "logreg": {
+        "mean": 0.6211653543307086,
+        "min": 0.6211653543307086,
+        "max": 0.6211653543307086,
+        "draw_means": [
+          0.6211653543307086
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 1.5496062992125914,
+        "retention": 0.15452261306532625
+      }
+    },
+    "mrr20_rand_s050": {
+      "family": "mrr20",
+      "scale": 0.5,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.6328818897637796,
+        "min": 0.6328818897637796,
+        "max": 0.6328818897637796,
+        "draw_means": [
+          0.6328818897637796
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 3.414173228346462,
+        "retention": 0.2573599240265913
+      },
+      "logreg": {
+        "mean": 0.6096377952755906,
+        "min": 0.6096377952755906,
+        "max": 0.6096377952755906,
+        "draw_means": [
+          0.6096377952755906
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 0.39685039370078723,
+        "retention": 0.0395728643216081
+      }
+    },
+    "mrr20_rand_s100": {
+      "family": "mrr20",
+      "scale": 1.0,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.6144251968503938,
+        "min": 0.6144251968503938,
+        "max": 0.6144251968503938,
+        "draw_means": [
+          0.6144251968503938
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 1.5685039370078813,
+        "retention": 0.11823361823361887
+      },
+      "logreg": {
+        "mean": 0.6037795275590551,
+        "min": 0.6037795275590551,
+        "max": 0.6037795275590551,
+        "draw_means": [
+          0.6037795275590551
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": -0.18897637795276534,
+        "retention": -0.018844221105528615
+      }
+    },
+    "rankreward_exact": {
+      "family": "rankreward",
+      "scale": 0.0,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.9100472440944882,
+        "min": 0.9100472440944882,
+        "max": 0.9100472440944882,
+        "draw_means": [
+          0.9100472440944882
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 31.130708661417327,
+        "retention": 1.0
+      },
+      "logreg": {
+        "mean": 0.724787401574803,
+        "min": 0.724787401574803,
+        "max": 0.724787401574803,
+        "draw_means": [
+          0.724787401574803
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 11.911811023622032,
+        "retention": 1.0
+      }
+    },
+    "rankreward_rand_s002": {
+      "family": "rankreward",
+      "scale": 0.02,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.7617637795275591,
+        "min": 0.7617637795275591,
+        "max": 0.7617637795275591,
+        "draw_means": [
+          0.7617637795275591
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 16.302362204724417,
+        "retention": 0.5236746256576287
+      },
+      "logreg": {
+        "mean": 0.7189291338582677,
+        "min": 0.7189291338582677,
+        "max": 0.7189291338582677,
+        "draw_means": [
+          0.7189291338582677
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 11.325984251968501,
+        "retention": 0.9508196721311486
+      }
+    },
+    "rankreward_rand_s005": {
+      "family": "rankreward",
+      "scale": 0.05,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.7155905511811024,
+        "min": 0.7155905511811024,
+        "max": 0.7155905511811024,
+        "draw_means": [
+          0.7155905511811024
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 11.685039370078742,
+        "retention": 0.37535410764872523
+      },
+      "logreg": {
+        "mean": 0.68548031496063,
+        "min": 0.68548031496063,
+        "max": 0.68548031496063,
+        "draw_means": [
+          0.68548031496063
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 7.981102362204728,
+        "retention": 0.6700158646218943
+      }
+    },
+    "rankreward_rand_s010": {
+      "family": "rankreward",
+      "scale": 0.1,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.6846614173228346,
+        "min": 0.6846614173228346,
+        "max": 0.6846614173228346,
+        "draw_means": [
+          0.6846614173228346
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 8.592125984251965,
+        "retention": 0.27600161877782253
+      },
+      "logreg": {
+        "mean": 0.6514645669291339,
+        "min": 0.6514645669291339,
+        "max": 0.6514645669291339,
+        "draw_means": [
+          0.6514645669291339
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 4.579527559055119,
+        "retention": 0.3844526705446859
+      }
+    },
+    "rankreward_rand_s015": {
+      "family": "rankreward",
+      "scale": 0.15,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.6717480314960629,
+        "min": 0.6717480314960629,
+        "max": 0.6717480314960629,
+        "draw_means": [
+          0.6717480314960629
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 7.300787401574793,
+        "retention": 0.23452043707001177
+      },
+      "logreg": {
+        "mean": 0.6354645669291339,
+        "min": 0.6354645669291339,
+        "max": 0.6354645669291339,
+        "draw_means": [
+          0.6354645669291339
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 2.9795275590551173,
+        "retention": 0.2501322051824434
+      }
+    },
+    "rankreward_rand_s025": {
+      "family": "rankreward",
+      "scale": 0.25,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.6578897637795277,
+        "min": 0.6578897637795277,
+        "max": 0.6578897637795277,
+        "draw_means": [
+          0.6578897637795277
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 5.914960629921273,
+        "retention": 0.19000404694455725
+      },
+      "logreg": {
+        "mean": 0.6212283464566929,
+        "min": 0.6212283464566929,
+        "max": 0.6212283464566929,
+        "draw_means": [
+          0.6212283464566929
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 1.5559055118110177,
+        "retention": 0.13061872025383361
+      }
+    },
+    "rankreward_rand_s050": {
+      "family": "rankreward",
+      "scale": 0.5,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.6297322834645669,
+        "min": 0.6297322834645669,
+        "max": 0.6297322834645669,
+        "draw_means": [
+          0.6297322834645669
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 3.099212598425194,
+        "retention": 0.09955483609874534
+      },
+      "logreg": {
+        "mean": 0.6098267716535433,
+        "min": 0.6098267716535433,
+        "max": 0.6098267716535433,
+        "draw_means": [
+          0.6098267716535433
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 0.4157480314960549,
+        "retention": 0.034902168164991434
+      }
+    },
+    "rankreward_rand_s100": {
+      "family": "rankreward",
+      "scale": 1.0,
+      "n_rows": 1,
+      "draws": [
+        0
+      ],
+      "gbt": {
+        "mean": 0.6144251968503938,
+        "min": 0.6144251968503938,
+        "max": 0.6144251968503938,
+        "draw_means": [
+          0.6144251968503938
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 1.5685039370078813,
+        "retention": 0.050384459732901885
+      },
+      "logreg": {
+        "mean": 0.6030236220472441,
+        "min": 0.6030236220472441,
+        "max": 0.6030236220472441,
+        "draw_means": [
+          0.6030236220472441
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": -0.26456692913385815,
+        "retention": -0.022210470650449517
+      }
+    }
+  }
+}

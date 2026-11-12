@@ -1,0 +1,51 @@
+{
+  "nq": {
+    "n_queries": 1989,
+    "real_gold": 1157,
+    "constructed_gold": 832,
+    "constructed_share": 0.41830065359477125,
+    "total_negatives": 992511,
+    "hard_negatives": 478371,
+    "hard_negative_share": 0.4819805523565986,
+    "answer_bearing_distractors": 9125,
+    "answer_bearing_share": 0.009193852763344688,
+    "mean_answer_bearing_per_query": 4.587732528908999,
+    "queries_with_contaminated_negatives": 682,
+    "contaminated_query_share": 0.342885872297637
+  },
+  "triviaqa": {
+    "n_queries": 1894,
+    "real_gold": 1539,
+    "constructed_gold": 355,
+    "constructed_share": 0.18743400211193242,
+    "total_negatives": 945106,
+    "hard_negatives": 449685,
+    "hard_negative_share": 0.4758037722752792,
+    "answer_bearing_distractors": 11970,
+    "answer_bearing_share": 0.012665246014732739,
+    "mean_answer_bearing_per_query": 6.3199577613516364,
+    "queries_with_contaminated_negatives": 873,
+    "contaminated_query_share": 0.46092925026399156
+  },
+  "hotpotqa": {
+    "n_queries": 1995,
+    "real_gold": 916,
+    "constructed_gold": 1079,
+    "constructed_share": 0.5408521303258146,
+    "total_negatives": 995505,
+    "hard_negatives": 483816,
+    "hard_negative_share": 0.48600057257371887,
+    "answer_bearing_distractors": 24343,
+    "answer_bearing_share": 0.024452915856776208,
+    "mean_answer_bearing_per_query": 12.202005012531329,
+    "queries_with_contaminated_negatives": 539,
+    "contaminated_query_share": 0.27017543859649124
+  },
+  "_config": {
+    "wiki_pool_size": 100000,
+    "num_distractors": 499,
+    "negative_strategy": "mixed",
+    "hard_negative_fraction": 0.5,
+    "answer_bearing_test": "normalised substring, matching find_gold_fast's exclusion criterion -- measures exactly what slipped past its 3-match cap"
+  }
+}

@@ -1,0 +1,716 @@
+{
+  "nq": {
+    "n_queries": 1157,
+    "metric": "mrr_at_20",
+    "cost_model": "structural",
+    "unit_costs": [
+      1.0,
+      1.0,
+      2.0
+    ],
+    "static": {
+      "bm25": {
+        "quality": 0.1019544065916129,
+        "cost": 0.5
+      },
+      "dense": {
+        "quality": 0.15982973644719617,
+        "cost": 0.5
+      },
+      "hybrid": {
+        "quality": 0.13779281955352501,
+        "cost": 1.0
+      }
+    },
+    "sweep": [
+      {
+        "lambda": 0.0,
+        "action_share": {
+          "bm25": 0.6568712186689715,
+          "dense": 0.2610198789974071,
+          "hybrid": 0.08210890233362143
+        },
+        "majority_rate": 0.6568712186689715,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.20492699158245528,
+        "best_fixed_reward": 0.15982973644719617,
+        "headroom": 0.04509725513525911,
+        "headroom_rel": 0.2821581023513615,
+        "oracle_quality": 0.20492699158245528,
+        "oracle_cost": 0.5410544511668107
+      },
+      {
+        "lambda": 0.004999999999999999,
+        "action_share": {
+          "bm25": 0.6568712186689715,
+          "dense": 0.2610198789974071,
+          "hybrid": 0.08210890233362143
+        },
+        "majority_rate": 0.6568712186689715,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.20222171932662125,
+        "best_fixed_reward": 0.15732973644719625,
+        "headroom": 0.044891982879425,
+        "headroom_rel": 0.28533692290580975,
+        "oracle_quality": 0.20492699158245528,
+        "oracle_cost": 0.5410544511668107
+      },
+      {
+        "lambda": 0.008620270870085892,
+        "action_share": {
+          "bm25": 0.6568712186689715,
+          "dense": 0.2610198789974071,
+          "hybrid": 0.08210890233362143
+        },
+        "majority_rate": 0.6568712186689715,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.2002629556579317,
+        "best_fixed_reward": 0.1555196010121532,
+        "headroom": 0.0447433546457785,
+        "headroom_rel": 0.2877023497654292,
+        "oracle_quality": 0.20492699158245528,
+        "oracle_cost": 0.5410544511668107
+      },
+      {
+        "lambda": 0.014861813974730293,
+        "action_share": {
+          "bm25": 0.6568712186689715,
+          "dense": 0.2610198789974071,
+          "hybrid": 0.08210890233362143
+        },
+        "majority_rate": 0.6568712186689715,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.19688594097901438,
+        "best_fixed_reward": 0.15239882945983105,
+        "headroom": 0.04448711151918333,
+        "headroom_rel": 0.2919124226666659,
+        "oracle_quality": 0.20492699158245528,
+        "oracle_cost": 0.5410544511668107
+      },
+      {
+        "lambda": 0.025622572416600597,
+        "action_share": {
+          "bm25": 0.6594641313742438,
+          "dense": 0.2636127917026793,
+          "hybrid": 0.07692307692307693
+        },
+        "majority_rate": 0.6594641313742438,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.1910736687569842,
+        "best_fixed_reward": 0.1470184502388959,
+        "headroom": 0.0440552185180883,
+        "headroom_rel": 0.29965775347584805,
+        "oracle_quality": 0.20487043851976913,
+        "oracle_cost": 0.5384615384615384
+      },
+      {
+        "lambda": 0.04417470292389771,
+        "action_share": {
+          "bm25": 0.6629213483146067,
+          "dense": 0.2662057044079516,
+          "hybrid": 0.07087294727744166
+        },
+        "majority_rate": 0.6629213483146067,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.1811175418238075,
+        "best_fixed_reward": 0.13774238498524732,
+        "headroom": 0.043375156838560164,
+        "headroom_rel": 0.3149005793910552,
+        "oracle_quality": 0.20477028898141736,
+        "oracle_cost": 0.5354364736387208
+      },
+      {
+        "lambda": 0.07615958096191475,
+        "action_share": {
+          "bm25": 0.665514261019879,
+          "dense": 0.2696629213483146,
+          "hybrid": 0.06482281763180639
+        },
+        "majority_rate": 0.665514261019879,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.1640482501066997,
+        "best_fixed_reward": 0.12174994596623884,
+        "headroom": 0.042298304140460874,
+        "headroom_rel": 0.3474194900438819,
+        "oracle_quality": 0.20459647990146154,
+        "oracle_cost": 0.5324114088159032
+      },
+      {
+        "lambda": 0.13130324344878838,
+        "action_share": {
+          "bm25": 0.6732929991356957,
+          "dense": 0.2731201382886776,
+          "hybrid": 0.05358686257562662
+        },
+        "majority_rate": 0.6732929991356957,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.13487404363923863,
+        "best_fixed_reward": 0.09417811472280199,
+        "headroom": 0.04069592891643664,
+        "headroom_rel": 0.4321166232326747,
+        "oracle_quality": 0.20404372979484495,
+        "oracle_cost": 0.5267934312878133
+      },
+      {
+        "lambda": 0.22637390492987747,
+        "action_share": {
+          "bm25": 0.6836646499567848,
+          "dense": 0.2791702679343129,
+          "hybrid": 0.037165082108902334
+        },
+        "majority_rate": 0.6836646499567848,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.08527589379832833,
+        "best_fixed_reward": 0.04664278398225748,
+        "headroom": 0.03863310981607085,
+        "headroom_rel": 0.828276241631858,
+        "oracle_quality": 0.2026694486452829,
+        "oracle_cost": 0.5185825410544511
+      },
+      {
+        "lambda": 0.3902808756829234,
+        "action_share": {
+          "bm25": 0.6914433880726015,
+          "dense": 0.28608470181503887,
+          "hybrid": 0.02247191011235955
+        },
+        "majority_rate": 0.6914433880726015,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.0007360750046394039,
+        "best_fixed_reward": -0.03531070139426551,
+        "headroom": 0.03604677639890491,
+        "headroom_rel": 1.020845663653652,
+        "oracle_quality": 0.20026169122456092,
+        "oracle_cost": 0.5112359550561798
+      },
+      {
+        "lambda": 0.6728653727602236,
+        "action_share": {
+          "bm25": 0.6957649092480553,
+          "dense": 0.28867761452031115,
+          "hybrid": 0.015557476231633534
+        },
+        "majority_rate": 0.6957649092480553,
+        "best_fixed_name": "dense",
+        "oracle_reward": -0.143328115600531,
+        "best_fixed_reward": -0.17660294993291561,
+        "headroom": 0.03327483433238462,
+        "headroom_rel": 0.18841607314614167,
+        "oracle_quality": 0.198338614301484,
+        "oracle_cost": 0.5077787381158168
+      },
+      {
+        "lambda": 1.1600563544588895,
+        "action_share": {
+          "bm25": 0.700086430423509,
+          "dense": 0.29472774416594644,
+          "hybrid": 0.005185825410544511
+        },
+        "majority_rate": 0.700086430423509,
+        "best_fixed_name": "dense",
+        "oracle_reward": -0.38975984116522916,
+        "best_fixed_reward": -0.42019844078224866,
+        "headroom": 0.0304385996170195,
+        "headroom_rel": 0.07243863056786808,
+        "oracle_quality": 0.19327626092452388,
+        "oracle_cost": 0.5025929127052723
+      },
+      {
+        "lambda": 2.0,
+        "action_share": {
+          "bm25": 0.7035436473638721,
+          "dense": 0.2964563526361279,
+          "hybrid": 0.0
+        },
+        "majority_rate": 0.7035436473638721,
+        "best_fixed_name": "dense",
+        "oracle_reward": -0.8106929907975368,
+        "best_fixed_reward": -0.8401702635528039,
+        "headroom": 0.029477272755267125,
+        "headroom_rel": 0.035084879855920424,
+        "oracle_quality": 0.18930700920246318,
+        "oracle_cost": 0.5
+      }
+    ],
+    "majority_at_zero": 0.6568712186689715,
+    "min_majority": 0.6568712186689715,
+    "best_lambda": 0.0,
+    "majority_drop": 0.0
+  },
+  "triviaqa": {
+    "n_queries": 1539,
+    "metric": "mrr_at_20",
+    "cost_model": "structural",
+    "unit_costs": [
+      1.0,
+      1.0,
+      2.0
+    ],
+    "static": {
+      "bm25": {
+        "quality": 0.1409181673219175,
+        "cost": 0.5
+      },
+      "dense": {
+        "quality": 0.1967692607651207,
+        "cost": 0.5
+      },
+      "hybrid": {
+        "quality": 0.18249467250457,
+        "cost": 1.0
+      }
+    },
+    "sweep": [
+      {
+        "lambda": 0.0,
+        "action_share": {
+          "bm25": 0.6465237166991553,
+          "dense": 0.25795971410006496,
+          "hybrid": 0.09551656920077972
+        },
+        "majority_rate": 0.6465237166991553,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.2585923056104681,
+        "best_fixed_reward": 0.1967692607651207,
+        "headroom": 0.0618230448453474,
+        "headroom_rel": 0.31419056312430965,
+        "oracle_quality": 0.2585923056104681,
+        "oracle_cost": 0.5477582846003899
+      },
+      {
+        "lambda": 0.004999999999999999,
+        "action_share": {
+          "bm25": 0.6465237166991553,
+          "dense": 0.25795971410006496,
+          "hybrid": 0.09551656920077972
+        },
+        "majority_rate": 0.6465237166991553,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.2558535141874661,
+        "best_fixed_reward": 0.19426926076512077,
+        "headroom": 0.06158425342234533,
+        "headroom_rel": 0.31700462121386835,
+        "oracle_quality": 0.2585923056104681,
+        "oracle_cost": 0.5477582846003899
+      },
+      {
+        "lambda": 0.008620270870085892,
+        "action_share": {
+          "bm25": 0.6471734892787524,
+          "dense": 0.25795971410006496,
+          "hybrid": 0.09486679662118258
+        },
+        "majority_rate": 0.6471734892787524,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.2538713815138757,
+        "best_fixed_reward": 0.19245912533007778,
+        "headroom": 0.06141225618379795,
+        "headroom_rel": 0.3190924622486599,
+        "oracle_quality": 0.2585904056906446,
+        "oracle_cost": 0.5474333983105913
+      },
+      {
+        "lambda": 0.014861813974730293,
+        "action_share": {
+          "bm25": 0.6471734892787524,
+          "dense": 0.2599090318388564,
+          "hybrid": 0.09291747888239116
+        },
+        "majority_rate": 0.6471734892787524,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.25045678986277115,
+        "best_fixed_reward": 0.1893383537777556,
+        "headroom": 0.06111843608501555,
+        "headroom_rel": 0.32280008178773995,
+        "oracle_quality": 0.25857815799321177,
+        "oracle_cost": 0.5464587394411956
+      },
+      {
+        "lambda": 0.025622572416600597,
+        "action_share": {
+          "bm25": 0.6491228070175439,
+          "dense": 0.26120857699805067,
+          "hybrid": 0.08966861598440545
+        },
+        "majority_rate": 0.6491228070175439,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.24458834367897084,
+        "best_fixed_reward": 0.18395797455682042,
+        "headroom": 0.06063036912215042,
+        "headroom_rel": 0.3295881533171756,
+        "oracle_quality": 0.2585484001905495,
+        "oracle_cost": 0.5448343079922028
+      },
+      {
+        "lambda": 0.04417470292389771,
+        "action_share": {
+          "bm25": 0.6491228070175439,
+          "dense": 0.2644574398960364,
+          "hybrid": 0.08641975308641975
+        },
+        "majority_rate": 0.6491228070175439,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.2344993286146822,
+        "best_fixed_reward": 0.17468190930317187,
+        "headroom": 0.05981741931151033,
+        "headroom_rel": 0.3424362577105411,
+        "oracle_quality": 0.2584954635363057,
+        "oracle_cost": 0.5432098765432098
+      },
+      {
+        "lambda": 0.07615958096191475,
+        "action_share": {
+          "bm25": 0.6523716699155295,
+          "dense": 0.2683560753736192,
+          "hybrid": 0.0792722547108512
+        },
+        "majority_rate": 0.6523716699155295,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.2171865996554222,
+        "best_fixed_reward": 0.1586894702841634,
+        "headroom": 0.05849712937125881,
+        "headroom_rel": 0.36862640770372906,
+        "oracle_quality": 0.2582850609867218,
+        "oracle_cost": 0.5396361273554257
+      },
+      {
+        "lambda": 0.13130324344878838,
+        "action_share": {
+          "bm25": 0.6660168940870695,
+          "dense": 0.27030539311241064,
+          "hybrid": 0.06367771280051981
+        },
+        "majority_rate": 0.6660168940870695,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.18764845902462504,
+        "best_fixed_reward": 0.13111763904072654,
+        "headroom": 0.0565308199838985,
+        "headroom_rel": 0.43114580461854884,
+        "oracle_quality": 0.25748062586207354,
+        "oracle_cost": 0.53183885640026
+      },
+      {
+        "lambda": 0.22637390492987747,
+        "action_share": {
+          "bm25": 0.6783625730994152,
+          "dense": 0.27810266406757633,
+          "hybrid": 0.043534762833008445
+        },
+        "majority_rate": 0.6783625730994152,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.1377004830935421,
+        "best_fixed_reward": 0.083582308300182,
+        "headroom": 0.054118174793360105,
+        "headroom_rel": 0.6474836109933358,
+        "oracle_quality": 0.255815002689833,
+        "oracle_cost": 0.5217673814165043
+      },
+      {
+        "lambda": 0.3902808756829234,
+        "action_share": {
+          "bm25": 0.6848602988953866,
+          "dense": 0.28460038986354774,
+          "hybrid": 0.030539311241065625
+        },
+        "majority_rate": 0.6848602988953866,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.05266828698702638,
+        "best_fixed_reward": 0.001628822923659021,
+        "headroom": 0.05103946406336736,
+        "headroom_rel": 31.335182801032335,
+        "oracle_quality": 0.25376817939544627,
+        "oracle_cost": 0.5152696556205328
+      },
+      {
+        "lambda": 0.6728653727602236,
+        "action_share": {
+          "bm25": 0.6874593892137751,
+          "dense": 0.28979857050032487,
+          "hybrid": 0.022742040285899934
+        },
+        "majority_rate": 0.6874593892137751,
+        "best_fixed_name": "dense",
+        "oracle_reward": -0.09240035971802303,
+        "best_fixed_reward": -0.13966342561499107,
+        "headroom": 0.047263065896968035,
+        "headroom_rel": 0.3384068927770518,
+        "oracle_quality": 0.2516834923692388,
+        "oracle_cost": 0.51137102014295
+      },
+      {
+        "lambda": 1.1600563544588895,
+        "action_share": {
+          "bm25": 0.6946068875893437,
+          "dense": 0.29759584145549056,
+          "hybrid": 0.007797270955165692
+        },
+        "majority_rate": 0.6946068875893437,
+        "best_fixed_name": "dense",
+        "oracle_reward": -0.3400612324223775,
+        "best_fixed_reward": -0.38325891646432403,
+        "headroom": 0.043197684041946516,
+        "headroom_rel": 0.11271149133452087,
+        "oracle_quality": 0.24448958166655618,
+        "oracle_cost": 0.5038986354775828
+      },
+      {
+        "lambda": 2.0,
+        "action_share": {
+          "bm25": 0.6985055230669266,
+          "dense": 0.3014944769330734,
+          "hybrid": 0.0
+        },
+        "majority_rate": 0.6985055230669266,
+        "best_fixed_name": "dense",
+        "oracle_reward": -0.7613797493489737,
+        "best_fixed_reward": -0.8032307392348793,
+        "headroom": 0.04185098988590563,
+        "headroom_rel": 0.0521033220488685,
+        "oracle_quality": 0.23862025065102635,
+        "oracle_cost": 0.5
+      }
+    ],
+    "majority_at_zero": 0.6465237166991553,
+    "min_majority": 0.6465237166991553,
+    "best_lambda": 0.0,
+    "majority_drop": 0.0
+  },
+  "hotpotqa": {
+    "n_queries": 916,
+    "metric": "mrr_at_20",
+    "cost_model": "structural",
+    "unit_costs": [
+      1.0,
+      1.0,
+      2.0
+    ],
+    "static": {
+      "bm25": {
+        "quality": 0.0840899694318702,
+        "cost": 0.5
+      },
+      "dense": {
+        "quality": 0.097704417770165,
+        "cost": 0.5
+      },
+      "hybrid": {
+        "quality": 0.09680198237603906,
+        "cost": 1.0
+      }
+    },
+    "sweep": [
+      {
+        "lambda": 0.0,
+        "action_share": {
+          "bm25": 0.730349344978166,
+          "dense": 0.1779475982532751,
+          "hybrid": 0.09170305676855896
+        },
+        "majority_rate": 0.730349344978166,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.16210019285487062,
+        "best_fixed_reward": 0.097704417770165,
+        "headroom": 0.06439577508470562,
+        "headroom_rel": 0.6590876498152523,
+        "oracle_quality": 0.16210019285487062,
+        "oracle_cost": 0.5458515283842795
+      },
+      {
+        "lambda": 0.004999999999999999,
+        "action_share": {
+          "bm25": 0.730349344978166,
+          "dense": 0.1779475982532751,
+          "hybrid": 0.09170305676855896
+        },
+        "majority_rate": 0.730349344978166,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.15937093521294926,
+        "best_fixed_reward": 0.09520441777016501,
+        "headroom": 0.06416651744278425,
+        "headroom_rel": 0.6739867639093176,
+        "oracle_quality": 0.16210019285487062,
+        "oracle_cost": 0.5458515283842795
+      },
+      {
+        "lambda": 0.008620270870085892,
+        "action_share": {
+          "bm25": 0.7314410480349345,
+          "dense": 0.17903930131004367,
+          "hybrid": 0.08951965065502183
+        },
+        "majority_rate": 0.7314410480349345,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.15739565322449095,
+        "best_fixed_reward": 0.09339428233512205,
+        "headroom": 0.0640013708893689,
+        "headroom_rel": 0.685281467870977,
+        "oracle_quality": 0.1620916304779548,
+        "oracle_cost": 0.5447598253275109
+      },
+      {
+        "lambda": 0.014861813974730293,
+        "action_share": {
+          "bm25": 0.732532751091703,
+          "dense": 0.17903930131004367,
+          "hybrid": 0.08842794759825327
+        },
+        "majority_rate": 0.732532751091703,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.1539960423656759,
+        "best_fixed_reward": 0.09027351078279985,
+        "headroom": 0.06372253158287605,
+        "headroom_rel": 0.7058829442913097,
+        "oracle_quality": 0.16208404920672723,
+        "oracle_cost": 0.5442139737991266
+      },
+      {
+        "lambda": 0.025622572416600597,
+        "action_share": {
+          "bm25": 0.7347161572052402,
+          "dense": 0.1812227074235808,
+          "hybrid": 0.08406113537117904
+        },
+        "majority_rate": 0.7347161572052402,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.14815564462586986,
+        "best_fixed_reward": 0.0848931315618647,
+        "headroom": 0.06326251306400515,
+        "headroom_rel": 0.7452017837026481,
+        "oracle_quality": 0.16204386209840502,
+        "oracle_cost": 0.5420305676855895
+      },
+      {
+        "lambda": 0.04417470292389771,
+        "action_share": {
+          "bm25": 0.7368995633187773,
+          "dense": 0.18449781659388648,
+          "hybrid": 0.07860262008733625
+        },
+        "majority_rate": 0.7368995633187773,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.13812847860649072,
+        "best_fixed_reward": 0.07561706630821613,
+        "headroom": 0.06251141229827459,
+        "headroom_rel": 0.8266839134366476,
+        "oracle_quality": 0.16195195376413857,
+        "oracle_cost": 0.5393013100436681
+      },
+      {
+        "lambda": 0.07615958096191475,
+        "action_share": {
+          "bm25": 0.7412663755458515,
+          "dense": 0.18777292576419213,
+          "hybrid": 0.07096069868995633
+        },
+        "majority_rate": 0.7412663755458515,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.12092061257663504,
+        "best_fixed_reward": 0.05962462728920763,
+        "headroom": 0.06129598528742741,
+        "headroom_rel": 1.0280313366172154,
+        "oracle_quality": 0.1617025715960883,
+        "oracle_cost": 0.5354803493449781
+      },
+      {
+        "lambda": 0.13130324344878838,
+        "action_share": {
+          "bm25": 0.7489082969432315,
+          "dense": 0.19759825327510916,
+          "hybrid": 0.05349344978165939
+        },
+        "majority_rate": 0.7489082969432315,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.0916418015787403,
+        "best_fixed_reward": 0.032052796045770805,
+        "headroom": 0.059589005532969495,
+        "headroom_rel": 1.8590891555256985,
+        "oracle_quality": 0.16080535503293286,
+        "oracle_cost": 0.5267467248908297
+      },
+      {
+        "lambda": 0.22637390492987747,
+        "action_share": {
+          "bm25": 0.7565502183406113,
+          "dense": 0.20087336244541484,
+          "hybrid": 0.0425764192139738
+        },
+        "majority_rate": 0.7565502183406113,
+        "best_fixed_name": "dense",
+        "oracle_reward": 0.041944445835001655,
+        "best_fixed_reward": -0.015482534694773727,
+        "headroom": 0.05742698052977538,
+        "headroom_rel": 3.709145928745142,
+        "oracle_quality": 0.15995049343763973,
+        "oracle_cost": 0.5212882096069869
+      },
+      {
+        "lambda": 0.3902808756829234,
+        "action_share": {
+          "bm25": 0.7685589519650655,
+          "dense": 0.20633187772925765,
+          "hybrid": 0.025109170305676855
+        },
+        "majority_rate": 0.7685589519650655,
+        "best_fixed_name": "dense",
+        "oracle_reward": -0.042829971241686714,
+        "best_fixed_reward": -0.0974360200712967,
+        "headroom": 0.05460604882960999,
+        "headroom_rel": 0.5604297957742239,
+        "oracle_quality": 0.15721028108706062,
+        "oracle_cost": 0.5125545851528385
+      },
+      {
+        "lambda": 0.6728653727602236,
+        "action_share": {
+          "bm25": 0.7751091703056768,
+          "dense": 0.2096069868995633,
+          "hybrid": 0.015283842794759825
+        },
+        "majority_rate": 0.7751091703056768,
+        "best_fixed_name": "dense",
+        "oracle_reward": -0.18708454969915184,
+        "best_fixed_reward": -0.23872826860994678,
+        "headroom": 0.051643718910794945,
+        "headroom_rel": 0.21632846085427176,
+        "oracle_quality": 0.15449012097061224,
+        "oracle_cost": 0.50764192139738
+      },
+      {
+        "lambda": 1.1600563544588895,
+        "action_share": {
+          "bm25": 0.7783842794759825,
+          "dense": 0.212882096069869,
+          "hybrid": 0.008733624454148471
+        },
+        "majority_rate": 0.7783842794759825,
+        "best_fixed_name": "dense",
+        "oracle_reward": -0.43387891370188447,
+        "best_fixed_reward": -0.48232375945927985,
+        "headroom": 0.04844484575739538,
+        "headroom_rel": 0.10044051284495209,
+        "oracle_quality": 0.15121501180030658,
+        "oracle_cost": 0.5043668122270742
+      },
+      {
+        "lambda": 2.0,
+        "action_share": {
+          "bm25": 0.7827510917030568,
+          "dense": 0.21724890829694324,
+          "hybrid": 0.0
+        },
+        "majority_rate": 0.7827510917030568,
+        "best_fixed_name": "dense",
+        "oracle_reward": -0.855116865928951,
+        "best_fixed_reward": -0.902295582229835,
+        "headroom": 0.047178716300883994,
+        "headroom_rel": 0.05228742911972555,
+        "oracle_quality": 0.14488313407104894,
+        "oracle_cost": 0.5
+      }
+    ],
+    "majority_at_zero": 0.730349344978166,
+    "min_majority": 0.730349344978166,
+    "best_lambda": 0.0,
+    "majority_drop": 0.0
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "arms": [
+    "bm25",
+    "dense"
+  ],
+  "cv_seed": 0,
+  "test_ratio": 0.15,
+  "per_dataset": {
+    "nq": {
+      "three": {
+        "corpus": {
+          "arms": [
+            "bm25",
+            "dense",
+            "hybrid"
+          ],
+          "n": 1157,
+          "per_arm": {
+            "bm25": 0.1089656826439817,
+            "dense": 0.1677504666264858,
+            "hybrid": 0.1462903389805504
+          },
+          "best_fixed_arm": "dense",
+          "best_fixed": 0.1677504666264858,
+          "oracle": 0.21214529848697605,
+          "headroom": 0.04439483186049026,
+          "tie_rate": 0.11754537597234227,
+          "learnable_rate": 0.8824546240276577
+        },
+        "pred": {
+          "arms": [
+            "bm25",
+            "dense",
+            "hybrid"
+          ],
+          "n_informative": 1021,
+          "class_counts": {
+            "bm25": 260,
+            "dense": 647,
+            "hybrid": 114
+          },
+          "majority": 0.633692458374143,
+          "gbt": 0.6009784791965567,
+          "gbt_std": 0.022884266815966378,
+          "lift": -0.03271397917758634
+        },
+        "mde": {
+          "arms": [
+            "bm25",
+            "dense",
+            "hybrid"
+          ],
+          "n_test": 174,
+          "diff_sd": 0.141396980185985,
+          "mde_absolute": 0.030030966787835303,
+          "headroom": 0.04439483186049024,
+          "min_detectable_capture": 0.6764518645370016,
+          "perfect_oracle_detectable": true
+        }
+      },
+      "two": {
+        "corpus": {
+          "arms": [
+            "bm25",
+            "dense"
+          ],
+          "n": 1157,
+          "per_arm": {
+            "bm25": 0.10896568264398161,
+            "dense": 0.1677504666264858
+          },
+          "best_fixed_arm": "dense",
+          "best_fixed": 0.1677504666264858,
+          "oracle": 0.1967731602346916,
+          "headroom": 0.029022693608205807,
+          "tie_rate": 0.05531547104580814,
+          "learnable_rate": 0.9446845289541919
+        },
+        "pred": {
+          "arms": [
+            "bm25",
+            "dense"
+          ],
+          "n_informative": 1093,
+          "class_counts": {
+            "bm25": 332,
+            "dense": 761
+          },
+          "majority": 0.696248856358646,
+          "gbt": 0.6762942482510158,
+          "gbt_std": 0.018698779906114838,
+          "lift": -0.019954608107630167
+        },
+        "mde": {
+          "arms": [
+            "bm25",
+            "dense"
+          ],
+          "n_test": 174,
+          "diff_sd": 0.11325478194326348,
+          "mde_absolute": 0.024053912542035958,
+          "headroom": 0.02902269360820581,
+          "min_detectable_capture": 0.8287966949847484,
+          "perfect_oracle_detectable": true
+        }
+      }
+    },
+    "triviaqa": {
+      "three": {
+        "corpus": {
+          "arms": [
+            "bm25",
+            "dense",
+            "hybrid"
+          ],
+          "n": 1539,
+          "per_arm": {
+            "bm25": 0.14758189169994418,
+            "dense": 0.20488005957114583,
+            "hybrid": 0.19028656353481196
+          },
+          "best_fixed_arm": "dense",
+          "best_fixed": 0.20488005957114583,
+          "oracle": 0.265935057974994,
+          "headroom": 0.061054998403848176,
+          "tie_rate": 0.1507472384665367,
+          "learnable_rate": 0.8492527615334633
+        },
+        "pred": {
+          "arms": [
+            "bm25",
+            "dense",
+            "hybrid"
+          ],
+          "n_informative": 1307,
+          "class_counts": {
+            "bm25": 315,
+            "dense": 807,
+            "hybrid": 185
+          },
+          "majority": 0.6174445294567712,
+          "gbt": 0.586082887309526,
+          "gbt_std": 0.014428714057528364,
+          "lift": -0.03136164214724524
+        },
+        "mde": {
+          "arms": [
+            "bm25",
+            "dense",
+            "hybrid"
+          ],
+          "n_test": 231,
+          "diff_sd": 0.17632612551513968,
+          "mde_absolute": 0.03250232871213905,
+          "headroom": 0.06105499840384746,
+          "min_detectable_capture": 0.5323450915050859,
+          "perfect_oracle_detectable": true
+        }
+      },
+      "two": {
+        "corpus": {
+          "arms": [
+            "bm25",
+            "dense"
+          ],
+          "n": 1539,
+          "per_arm": {
+            "bm25": 0.1475818916999447,
+            "dense": 0.20488005957114655
+          },
+          "best_fixed_arm": "dense",
+          "best_fixed": 0.20488005957114655,
+          "oracle": 0.24632205306070867,
+          "headroom": 0.04144199348956212,
+          "tie_rate": 0.07862248213125411,
+          "learnable_rate": 0.9213775178687459
+        },
+        "pred": {
+          "arms": [
+            "bm25",
+            "dense"
+          ],
+          "n_informative": 1418,
+          "class_counts": {
+            "bm25": 439,
+            "dense": 979
+          },
+          "majority": 0.6904090267983075,
+          "gbt": 0.661918578609466,
+          "gbt_std": 0.01812433502381785,
+          "lift": -0.0284904481888415
+        },
+        "mde": {
+          "arms": [
+            "bm25",
+            "dense"
+          ],
+          "n_test": 231,
+          "diff_sd": 0.14680896117805417,
+          "mde_absolute": 0.02706140737883495,
+          "headroom": 0.04144199348956215,
+          "min_detectable_capture": 0.6529948272312434,
+          "perfect_oracle_detectable": true
+        }
+      }
+    },
+    "hotpotqa": {
+      "three": {
+        "corpus": {
+          "arms": [
+            "bm25",
+            "dense",
+            "hybrid"
+          ],
+          "n": 916,
+          "per_arm": {
+            "bm25": 0.09194169362787985,
+            "dense": 0.10706962931393504,
+            "hybrid": 0.10601550359463395
+          },
+          "best_fixed_arm": "dense",
+          "best_fixed": 0.10706962931393504,
+          "oracle": 0.17062738077107534,
+          "headroom": 0.0635577514571403,
+          "tie_rate": 0.0753275109170306,
+          "learnable_rate": 0.9246724890829694
+        },
+        "pred": {
+          "arms": [
+            "bm25",
+            "dense",
+            "hybrid"
+          ],
+          "n_informative": 847,
+          "class_counts": {
+            "bm25": 258,
+            "dense": 478,
+            "hybrid": 111
+          },
+          "majority": 0.564344746162928,
+          "gbt": 0.5008214410024364,
+          "gbt_std": 0.030345685463329126,
+          "lift": -0.06352330516049154
+        },
+        "mde": {
+          "arms": [
+            "bm25",
+            "dense",
+            "hybrid"
+          ],
+          "n_test": 137,
+          "diff_sd": 0.18307733688274525,
+          "mde_absolute": 0.04382057846531424,
+          "headroom": 0.06355775145714046,
+          "min_detectable_capture": 0.6894608047118251,
+          "perfect_oracle_detectable": true
+        }
+      },
+      "two": {
+        "corpus": {
+          "arms": [
+            "bm25",
+            "dense"
+          ],
+          "n": 916,
+          "per_arm": {
+            "bm25": 0.09194169362787963,
+            "dense": 0.10706962931393485
+          },
+          "best_fixed_arm": "dense",
+          "best_fixed": 0.10706962931393485,
+          "oracle": 0.1537305321642417,
+          "headroom": 0.04666090285030686,
+          "tie_rate": 0.03602620087336239,
+          "learnable_rate": 0.9639737991266376
+        },
+        "pred": {
+          "arms": [
+            "bm25",
+            "dense"
+          ],
+          "n_informative": 883,
+          "class_counts": {
+            "bm25": 327,
+            "dense": 556
+          },
+          "majority": 0.6296715741789355,
+          "gbt": 0.5798394966615306,
+          "gbt_std": 0.028004309994919478,
+          "lift": -0.04983207751740493
+        },
+        "mde": {
+          "arms": [
+            "bm25",
+            "dense"
+          ],
+          "n_test": 137,
+          "diff_sd": 0.16222258292779443,
+          "mde_absolute": 0.03882887715690463,
+          "headroom": 0.046660902850306836,
+          "min_detectable_capture": 0.8321501468043133,
+          "perfect_oracle_detectable": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "started_at": "2026-10-30 04:48:26",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "argv": [
+    "experiments/crc_v2/r5_random_noise_sweep.py",
+    "--draws",
+    "0",
+    "--cv-seeds",
+    "0",
+    "--out-dir",
+    "results/crc_v2/r5_random_noise_quick"
+  ],
+  "args": {
+    "out_dir": "results/crc_v2/r5_random_noise_quick",
+    "families": [
+      "mrr20",
+      "rankreward"
+    ],
+    "scales": [
+      0.02,
+      0.05,
+      0.1,
+      0.15,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "draws": [
+      0
+    ],
+    "cv_seeds": [
+      0
+    ],
+    "n_jobs": -1,
+    "resume": false,
+    "calibrate": false
+  },
+  "n_rows_pooled": 3612,
+  "plan_size": 17,
+  "n_fits": 17
+}

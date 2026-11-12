@@ -1,0 +1,26 @@
+{
+  "nq": {
+    "n_seeds": 15,
+    "final_epoch_mean": 0.15068579988651226,
+    "final_epoch_sd": 0.0067878889743361185,
+    "restored_mean": 0.16180146491649053,
+    "restored_sd": 0.006093164525724785,
+    "table3_reported": 0.1512
+  },
+  "triviaqa": {
+    "n_seeds": 15,
+    "final_epoch_mean": 0.18783971536448363,
+    "final_epoch_sd": 0.0037263530916464846,
+    "restored_mean": 0.20002154644499537,
+    "restored_sd": 0.0037113022145428445,
+    "table3_reported": 0.1881
+  },
+  "hotpotqa": {
+    "n_seeds": 15,
+    "final_epoch_mean": 0.06942214048059588,
+    "final_epoch_sd": 0.004462028678410987,
+    "restored_mean": 0.07218002720904794,
+    "restored_sd": 0.0036482078094501216,
+    "table3_reported": 0.0683
+  }
+}

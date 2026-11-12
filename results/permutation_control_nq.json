@@ -1,0 +1,29 @@
+{
+  "tag": "100K Wikipedia pool (NQ)",
+  "n_perm": 20,
+  "cv_seed": 0,
+  "n_jobs": 4,
+  "per_dataset": {
+    "nq": {
+      "n_informative": 1013,
+      "feature_dim": 61,
+      "majority": 0.646594274432379,
+      "observed": 0.6128400721845584,
+      "observed_lift": -0.033754202247820664,
+      "n_perm": 20,
+      "perm_null_mean": 0.6075037311612934,
+      "perm_null_std": 0.0056477722677769245,
+      "perm_null_max": 0.6175740135589914,
+      "perm_p": 0.23809523809523808,
+      "perm_k": 4,
+      "signal_above_perm": 0.005336341023264968,
+      "rand_null_mean": 0.6092324050139005,
+      "rand_null_std": 0.005828812534156189,
+      "rand_null_max": 0.6211198361215431,
+      "rand_p": 0.2857142857142857,
+      "rand_k": 5,
+      "signal_above_rand": 0.003607667170657858
+    }
+  },
+  "pooled": null
+}

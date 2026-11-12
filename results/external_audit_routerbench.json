@@ -1,0 +1,187 @@
+{
+  "artifact_audit": {
+    "source": "routerbench_0shot.pkl",
+    "n_benchmarks": 86,
+    "inventory": [
+      [
+        "raw prompt text",
+        true,
+        "partly -- features must be re-derived, so a paper's own matrix is still unavailable"
+      ],
+      [
+        "per-model performance (the reward table)",
+        true,
+        "no -- this is the reward, not the router's input"
+      ],
+      [
+        "per-model cost",
+        true,
+        "no"
+      ],
+      [
+        "per-model responses",
+        true,
+        "no"
+      ],
+      [
+        "oracle routing label",
+        true,
+        "no"
+      ],
+      [
+        "the feature matrix a router was trained on",
+        false,
+        "this is the only artifact that would make the leak checkable"
+      ]
+    ],
+    "verdict": "No. RouterBench ships no feature matrix, so metric-as-feature leakage is unauditable from this release -- and it is the most widely used public artifact in LLM routing. A reader cannot distinguish a router trained on label-free query features from one trained on features derived from the evaluation metric."
+  },
+  "leak_audit": {
+    "n_features": 12,
+    "feature_names": [
+      "n_chars",
+      "n_words",
+      "n_lines",
+      "mean_word_len",
+      "n_digits",
+      "n_upper",
+      "n_punct",
+      "n_question_marks",
+      "has_code_fence",
+      "n_unique_words",
+      "type_token_ratio",
+      "longest_word"
+    ],
+    "leaked": false,
+    "leaked_features": [],
+    "suspect_features": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11
+    ],
+    "report": "leakcheck 0.1.0: 36497 rows, 12 features, 11 arms\n  [SUSPECT] monotone_derived  n_question_marks vs meta/llama-2-70b-chat: Spearman rho = 0.881 (strong) on 15647 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.014 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_question_marks vs mistralai/mistral-7b-chat: Spearman rho = 0.867 (strong) on 15649 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.014 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_question_marks vs WizardLM/WizardLM-13B-V1.2: Spearman rho = 0.852 (strong) on 19499 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.029 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_question_marks vs claude-instant-v1: Spearman rho = 0.827 (strong) on 24711 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.054 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_question_marks vs claude-v2: Spearman rho = 0.821 (strong) on 25812 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.059 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_question_marks vs mistralai/mixtral-8x7b-chat: Spearman rho = 0.819 (strong) on 23631 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.061 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_question_marks vs claude-v1: Spearman rho = 0.817 (strong) on 25709 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.063 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_question_marks vs gpt-3.5-turbo-1106: Spearman rho = 0.817 (strong) on 25649 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.064 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_digits vs WizardLM/WizardLM-13B-V1.2: Spearman rho = 0.812 (strong) on 19499 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.001 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_digits vs meta/llama-2-70b-chat: Spearman rho = 0.811 (strong) on 15647 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.001 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_question_marks vs zero-one-ai/Yi-34B-Chat: Spearman rho = 0.808 (strong) on 27097 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.072 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_question_marks vs meta/code-llama-instruct-34b-chat: Spearman rho = 0.804 (strong) on 11537 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.076 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_digits vs claude-instant-v1: Spearman rho = 0.795 (strong) on 24711 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.017 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_digits vs claude-v1: Spearman rho = 0.791 (strong) on 25709 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.021 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_digits vs gpt-3.5-turbo-1106: Spearman rho = 0.788 (strong) on 25649 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.024 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_digits vs mistralai/mixtral-8x7b-chat: Spearman rho = 0.788 (strong) on 23631 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.024 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_digits vs claude-v2: Spearman rho = 0.787 (strong) on 25812 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.025 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_digits vs mistralai/mistral-7b-chat: Spearman rho = 0.785 (strong) on 15649 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.027 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_question_marks vs gpt-4-1106-preview: Spearman rho = 0.784 (strong) on 31165 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.096 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_digits vs zero-one-ai/Yi-34B-Chat: Spearman rho = 0.777 (strong) on 27097 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.035 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_upper vs meta/llama-2-70b-chat: Spearman rho = 0.755 (strong) on 15647 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.029 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_digits vs gpt-4-1106-preview: Spearman rho = 0.750 (strong) on 31165 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.062 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_upper vs WizardLM/WizardLM-13B-V1.2: Spearman rho = 0.726 (strong) on 19499 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.029 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_upper vs mistralai/mistral-7b-chat: Spearman rho = 0.720 (strong) on 15649 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.035 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_upper vs claude-instant-v1: Spearman rho = 0.701 (strong) on 24711 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.054 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_upper vs claude-v1: Spearman rho = 0.700 (strong) on 25709 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.055 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_upper vs claude-v2: Spearman rho = 0.693 (strong) on 25812 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.062 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_upper vs gpt-3.5-turbo-1106: Spearman rho = 0.690 (strong) on 25649 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.065 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_upper vs mistralai/mixtral-8x7b-chat: Spearman rho = 0.689 (strong) on 23631 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.065 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_upper vs zero-one-ai/Yi-34B-Chat: Spearman rho = 0.683 (strong) on 27097 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.072 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_digits vs meta/code-llama-instruct-34b-chat: Spearman rho = 0.683 (strong) on 11537 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.129 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_upper vs gpt-4-1106-preview: Spearman rho = 0.661 (strong) on 31165 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.094 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_upper vs meta/code-llama-instruct-34b-chat: Spearman rho = 0.647 (strong) on 11537 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.108 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_words vs WizardLM/WizardLM-13B-V1.2: Spearman rho = 0.626 (strong) on 19499 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.031 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_punct vs WizardLM/WizardLM-13B-V1.2: Spearman rho = 0.606 (strong) on 19499 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.020 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  longest_word vs meta/llama-2-70b-chat: Spearman rho = 0.599 (strong) on 15647 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.179 - arm-specific, which is what a real leak looks like\n  [SUSPECT] monotone_derived  n_words vs mistralai/mixtral-8x7b-chat: Spearman rho = 0.596 (strong) on 23631 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.031 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_punct vs mistralai/mixtral-8x7b-chat: Spearman rho = 0.587 (strong) on 23631 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.020 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_words vs mistralai/mistral-7b-chat: Spearman rho = 0.586 (strong) on 15649 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.041 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_unique_words vs WizardLM/WizardLM-13B-V1.2: Spearman rho = 0.585 (strong) on 19499 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.023 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_chars vs WizardLM/WizardLM-13B-V1.2: Spearman rho = 0.581 (strong) on 19499 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.022 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_words vs gpt-3.5-turbo-1106: Spearman rho = 0.567 (strong) on 25649 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.059 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_words vs claude-v1: Spearman rho = 0.564 (strong) on 25709 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.062 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_unique_words vs mistralai/mixtral-8x7b-chat: Spearman rho = 0.562 (strong) on 23631 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.023 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_words vs claude-instant-v1: Spearman rho = 0.562 (strong) on 24711 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.064 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_chars vs mistralai/mixtral-8x7b-chat: Spearman rho = 0.559 (strong) on 23631 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.022 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_punct vs mistralai/mistral-7b-chat: Spearman rho = 0.559 (strong) on 15649 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.048 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_words vs claude-v2: Spearman rho = 0.551 (strong) on 25812 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.075 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  type_token_ratio vs claude-v1: Spearman rho = 0.549 (strong) on 25709 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.052 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_unique_words vs mistralai/mistral-7b-chat: Spearman rho = 0.539 (strong) on 15649 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.046 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_punct vs gpt-3.5-turbo-1106: Spearman rho = 0.536 (strong) on 25649 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.070 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_chars vs mistralai/mistral-7b-chat: Spearman rho = 0.531 (strong) on 15649 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.049 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_chars vs gpt-3.5-turbo-1106: Spearman rho = 0.531 (strong) on 25649 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.050 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_punct vs claude-v1: Spearman rho = 0.530 (strong) on 25709 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.076 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_unique_words vs gpt-3.5-turbo-1106: Spearman rho = 0.528 (strong) on 25649 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.056 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_punct vs claude-instant-v1: Spearman rho = 0.528 (strong) on 24711 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.078 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_chars vs claude-v1: Spearman rho = 0.523 (strong) on 25709 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.058 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_unique_words vs claude-v1: Spearman rho = 0.522 (strong) on 25709 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.063 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_words vs meta/code-llama-instruct-34b-chat: Spearman rho = 0.521 (strong) on 11537 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.106 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_chars vs claude-instant-v1: Spearman rho = 0.518 (strong) on 24711 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.062 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_words vs meta/llama-2-70b-chat: Spearman rho = 0.518 (strong) on 15647 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.108 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_unique_words vs claude-instant-v1: Spearman rho = 0.517 (strong) on 24711 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.068 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_words vs gpt-4-1106-preview: Spearman rho = 0.516 (strong) on 31165 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.110 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_chars vs claude-v2: Spearman rho = 0.515 (strong) on 25812 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.066 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_words vs zero-one-ai/Yi-34B-Chat: Spearman rho = 0.514 (strong) on 27097 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.112 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  type_token_ratio vs zero-one-ai/Yi-34B-Chat: Spearman rho = 0.514 (strong) on 27097 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.087 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_unique_words vs claude-v2: Spearman rho = 0.508 (strong) on 25812 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.077 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_punct vs claude-v2: Spearman rho = 0.505 (strong) on 25812 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.101 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  mean_word_len vs WizardLM/WizardLM-13B-V1.2: Spearman rho = 0.502 (strong) on 19499 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.015 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  type_token_ratio vs gpt-4-1106-preview: Spearman rho = 0.498 (moderate) on 31165 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.103 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  mean_word_len vs mistralai/mixtral-8x7b-chat: Spearman rho = 0.487 (moderate) on 23631 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.015 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_chars vs gpt-4-1106-preview: Spearman rho = 0.484 (moderate) on 31165 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.097 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_chars vs zero-one-ai/Yi-34B-Chat: Spearman rho = 0.477 (moderate) on 27097 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.103 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_unique_words vs gpt-4-1106-preview: Spearman rho = 0.477 (moderate) on 31165 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.108 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  mean_word_len vs mistralai/mistral-7b-chat: Spearman rho = 0.471 (moderate) on 15649 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.031 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_punct vs gpt-4-1106-preview: Spearman rho = 0.467 (moderate) on 31165 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.139 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_unique_words vs zero-one-ai/Yi-34B-Chat: Spearman rho = 0.464 (moderate) on 27097 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.121 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  mean_word_len vs claude-v1: Spearman rho = 0.460 (moderate) on 25709 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.042 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_punct vs zero-one-ai/Yi-34B-Chat: Spearman rho = 0.460 (moderate) on 27097 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.146 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_chars vs meta/llama-2-70b-chat: Spearman rho = 0.458 (moderate) on 15647 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.123 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_chars vs meta/code-llama-instruct-34b-chat: Spearman rho = 0.451 (moderate) on 11537 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.130 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_unique_words vs meta/code-llama-instruct-34b-chat: Spearman rho = 0.444 (moderate) on 11537 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.141 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  mean_word_len vs claude-instant-v1: Spearman rho = 0.441 (moderate) on 24711 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.061 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  mean_word_len vs gpt-3.5-turbo-1106: Spearman rho = 0.436 (moderate) on 25649 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.066 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  mean_word_len vs claude-v2: Spearman rho = 0.429 (moderate) on 25812 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.073 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_unique_words vs meta/llama-2-70b-chat: Spearman rho = 0.428 (moderate) on 15647 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.157 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  longest_word vs meta/code-llama-instruct-34b-chat: Spearman rho = 0.419 (moderate) on 11537 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.179 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  mean_word_len vs zero-one-ai/Yi-34B-Chat: Spearman rho = 0.415 (moderate) on 27097 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.087 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  mean_word_len vs gpt-4-1106-preview: Spearman rho = 0.389 (moderate) on 31165 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.113 - spread across arms, which is what a confound looks like\n  [SUSPECT] monotone_derived  n_punct vs meta/code-llama-instruct-34b-chat: Spearman rho = 0.372 (moderate) on 11537 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.234 - spread across arms, which is what a confound looks like\n  [SUSPECT] jittered          type_token_ratio vs WizardLM/WizardLM-13B-V1.2: Spearman rho = 0.601 (strong) on 19499 non-zero-reward rows with only 0.6% exact agreement; arm selectivity +0.028 - spread across arms, which is what a confound looks like\n  [SUSPECT] jittered          type_token_ratio vs mistralai/mixtral-8x7b-chat: Spearman rho = 0.573 (strong) on 23631 non-zero-reward rows with only 0.6% exact agreement; arm selectivity -0.028 - spread across arms, which is what a confound looks like\n  [SUSPECT] jittered          type_token_ratio vs mistralai/mistral-7b-chat: Spearman rho = 0.571 (strong) on 15649 non-zero-reward rows with only 0.8% exact agreement; arm selectivity -0.030 - spread across arms, which is what a confound looks like\n  [SUSPECT] jittered          type_token_ratio vs gpt-3.5-turbo-1106: Spearman rho = 0.551 (strong) on 25649 non-zero-reward rows with only 0.7% exact agreement; arm selectivity -0.050 - spread across arms, which is what a confound looks like\n  [SUSPECT] jittered          type_token_ratio vs claude-instant-v1: Spearman rho = 0.544 (strong) on 24711 non-zero-reward rows with only 0.7% exact agreement; arm selectivity -0.057 - spread across arms, which is what a confound looks like\n  [SUSPECT] jittered          type_token_ratio vs claude-v2: Spearman rho = 0.539 (strong) on 25812 non-zero-reward rows with only 0.7% exact agreement; arm selectivity -0.062 - spread across arms, which is what a confound looks like\n  [SUSPECT] jittered          type_token_ratio vs meta/llama-2-70b-chat: Spearman rho = 0.528 (strong) on 15647 non-zero-reward rows with only 0.7% exact agreement; arm selectivity -0.073 - spread across arms, which is what a confound looks like\n  [SUSPECT] jittered          type_token_ratio vs meta/code-llama-instruct-34b-chat: Spearman rho = 0.498 (moderate) on 11537 non-zero-reward rows with only 0.9% exact agreement; arm selectivity -0.103 - spread across arms, which is what a confound looks like\n  98 SUSPECT finding(s) on column(s) [0, 1, 3, 4, 5, 6, 7, 9, 10, 11]. These are NOT verdicts: a confound through a shared upstream cause produces the same signature as a monotone leak. Check the selectivity figures, then resolve by ablation - retrain without these columns and see if the result survives.",
+    "verdict": "No verdicts, as it must be: features built from the prompt alone cannot encode a model's score. But 98 SUSPICIONS, and those are the interesting result. Prompt-length and punctuation-count features reach |rho| = 0.88 against a model's reward, with zero exact agreement and near-zero arm selectivity. The association is real (Pearson agrees), and its cause is that RouterBench pools 86 benchmarks whose prompts differ in format: a feature like 'number of question marks' is effectively a benchmark identifier, and benchmark identity predicts which model wins.\n\nThis is a confound, not a leak, and it is what forced leakcheck's central design decision. An earlier version called a verdict on strong rank correlation and would have reported all 98 of these as leakage. A confound through a shared upstream cause is indistinguishable from a monotone leak by correlation alone at any threshold, so only exact agreement can be a verdict. This dataset is the falsifying case that establishes it."
+  },
+  "structural": {
+    "n": 36497,
+    "n_arms": 11,
+    "per_arm_mean": {
+      "WizardLM/WizardLM-13B-V1.2": 0.4311272159355564,
+      "claude-instant-v1": 0.5984135682384855,
+      "claude-v1": 0.6301175439077188,
+      "claude-v2": 0.6358056826588484,
+      "gpt-3.5-turbo-1106": 0.6193207660903639,
+      "gpt-4-1106-preview": 0.7813998410828287,
+      "meta/code-llama-instruct-34b-chat": 0.20222758034906982,
+      "meta/llama-2-70b-chat": 0.3286886593418637,
+      "mistralai/mistral-7b-chat": 0.30611146121599053,
+      "mistralai/mixtral-8x7b-chat": 0.5471148313560016,
+      "zero-one-ai/Yi-34B-Chat": 0.6474915746499714
+    },
+    "best_fixed_arm": "gpt-4-1106-preview",
+    "best_fixed": 0.7813998410828287,
+    "oracle": 0.9120681151875497,
+    "headroom": 0.13066827410472104,
+    "headroom_rel": 0.16722331799254891,
+    "tie_rate": 0.9300490451269967,
+    "informative_rate": 0.06995095487300326,
+    "n_informative": 2553,
+    "majority_share": 0.3008225616921269,
+    "majority_arm": "gpt-4-1106-preview",
+    "class_counts": {
+      "WizardLM/WizardLM-13B-V1.2": 224,
+      "claude-instant-v1": 182,
+      "claude-v1": 149,
+      "claude-v2": 164,
+      "gpt-3.5-turbo-1106": 235,
+      "gpt-4-1106-preview": 768,
+      "meta/code-llama-instruct-34b-chat": 49,
+      "meta/llama-2-70b-chat": 55,
+      "mistralai/mistral-7b-chat": 266,
+      "mistralai/mixtral-8x7b-chat": 201,
+      "zero-one-ai/Yi-34B-Chat": 260
+    }
+  },
+  "fragility": {
+    "reward_std": 0.4559605837922969,
+    "noise_sweep": [
+      {
+        "noise_frac": 0.0,
+        "oracle": 0.9120681151875497,
+        "headroom": 0.13066827410472104
+      },
+      {
+        "noise_frac": 0.05,
+        "oracle": 0.938254736911154,
+        "headroom": 0.15685489582832535
+      },
+      {
+        "noise_frac": 0.1,
+        "oracle": 0.964468555495819,
+        "headroom": 0.18306871441299033
+      },
+      {
+        "noise_frac": 0.25,
+        "oracle": 1.0434230395151822,
+        "headroom": 0.26202319843235355
+      }
+    ],
+    "margin_decomposition": [
+      {
+        "margin_frac_of_best_fixed": 0.01,
+        "margin_abs": 0.007813998410828287,
+        "share_of_headroom": 0.6992136716292724,
+        "n_queries": 33944
+      },
+      {
+        "margin_frac_of_best_fixed": 0.05,
+        "margin_abs": 0.03906999205414144,
+        "share_of_headroom": 0.6992136716292724,
+        "n_queries": 33944
+      },
+      {
+        "margin_frac_of_best_fixed": 0.1,
+        "margin_abs": 0.07813998410828288,
+        "share_of_headroom": 0.6992136716292724,
+        "n_queries": 33944
+      },
+      {
+        "margin_frac_of_best_fixed": 0.25,
+        "margin_abs": 0.19534996027070717,
+        "share_of_headroom": 0.6995491717341162,
+        "n_queries": 33956
+      }
+    ]
+  },
+  "reference_rlroute": {
+    "n": 3612,
+    "n_arms": 3,
+    "per_arm_mean": {
+      "bm25": 0.12110199820277885,
+      "dense": 0.16818202713687735,
+      "hybrid": 0.15482257607232977
+    },
+    "best_fixed_arm": "dense",
+    "best_fixed": 0.16818202713687735,
+    "oracle": 0.2245351177628051,
+    "headroom": 0.05635309062592775,
+    "headroom_rel": 0.3350720144433981,
+    "tie_rate": 0.12098560354374308,
+    "informative_rate": 0.8790143964562569,
+    "n_informative": 3175,
+    "majority_share": 0.608503937007874,
+    "majority_arm": "dense",
+    "class_counts": {
+      "bm25": 833,
+      "dense": 1932,
+      "hybrid": 410
+    }
+  }
+}

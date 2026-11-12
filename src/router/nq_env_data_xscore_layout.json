@@ -1,0 +1,23 @@
+{
+  "handcrafted": [
+    0,
+    29
+  ],
+  "embedding": [
+    29,
+    61
+  ],
+  "cross_score": [
+    61,
+    67
+  ],
+  "total_dim": 67,
+  "cross_score_names": [
+    "bm25_under_dense",
+    "dense_under_bm25",
+    "hybrid_under_bm25",
+    "hybrid_under_dense",
+    "dense_gap",
+    "bm25_gap"
+  ]
+}

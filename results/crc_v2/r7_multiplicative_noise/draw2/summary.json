@@ -1,0 +1,45 @@
+{
+  "anchors": {
+    "source": "<repo>\\results\\crc_v2\\crc_v2\\r5_random_noise\\summary.json",
+    "honest": {
+      "gbt": 0.5981858267716536,
+      "logreg": 0.6050267716535433
+    },
+    "exact": {
+      "gbt": 0.7309984251968504,
+      "logreg": 0.7062299212598424
+    }
+  },
+  "arms": {
+    "mrr20_mult_s015": {
+      "family": "mrr20",
+      "scale": 0.15,
+      "n_rows": 5,
+      "draws": [
+        2
+      ],
+      "gbt": {
+        "mean": 0.7302803149606298,
+        "min": 0.7295748031496062,
+        "max": 0.7314015748031495,
+        "draw_means": [
+          0.7302803149606298
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 13.209448818897629,
+        "retention": 0.9945930563460434
+      },
+      "logreg": {
+        "mean": 0.7063055118110235,
+        "min": 0.7058267716535432,
+        "max": 0.7070236220472441,
+        "draw_means": [
+          0.7063055118110235
+        ],
+        "draw_range_pp": 0.0,
+        "delta_vs_honest_pp": 10.127874015748016,
+        "retention": 1.000746918959293
+      }
+    }
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "header": {
+    "started_at": "2026-11-12 12:51:55",
+    "python": "3.14.2",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "argv": [
+      "r11_queryroute_audit.py",
+      "--data-dir",
+      "<local-path>"
+    ],
+    "args": {
+      "data_dir": "<local-path>",
+      "download": false,
+      "out_dir": "<repo>\\results\\crc_v2\\r11_queryroute_audit",
+      "n_perm": 100
+    },
+    "leakcheck_version": "0.2.1",
+    "source": "huggingface.co/datasets/haisonle001/QueryRoute",
+    "backbone": "Qwen2.5-7B-Instruct",
+    "reward_retriever": "BM25"
+  },
+  "datasets": {
+    "scifact": {
+      "n_queries": 300,
+      "n_features": 484,
+      "n_arms": 11,
+      "by_metric": {
+        "nDCG10": {
+          "n_verdicts": 0,
+          "n_suspicions": 24,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.4015089406961117,
+          "top_suspicions": [
+            "[SUSPECT] monotone_derived  bert_qpp:bert_qpp_cross_encoder@0010 vs 0010: Spearman rho = 0.402 (moderate) on 247 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.018 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  bert_qpp:bert_qpp_cross_encoder@0010 vs 0009: Spearman rho = 0.383 (moderate) on 254 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.018 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  bert_qpp:bert_qpp_cross_encoder@0010 vs 0006: Spearman rho = 0.362 (moderate) on 263 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.040 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  bert_qpp:bert_qpp_cross_encoder@0010 vs 0007: Spearman rho = 0.359 (moderate) on 259 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.043 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:sigma-max@0003 vs 0002: Spearman rho = 0.356 (moderate) on 261 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.015 - spread across arms, which is what a confound looks like"
+          ]
+        },
+        "RR10": {
+          "n_verdicts": 0,
+          "n_suspicions": 222,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.5096756208670995,
+          "top_suspicions": [
+            "[SUSPECT] monotone_derived  bert_qpp:bert_qpp_cross_encoder@0010 vs 0010: Spearman rho = 0.510 (strong) on 293 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.045 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  post_qpp:sigma-max@0000 vs 0010: Spearman rho = 0.478 (moderate) on 293 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.007 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:sigma-max@0003 vs 0010: Spearman rho = 0.475 (moderate) on 293 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.008 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:sigma-max@0000 vs 0004: Spearman rho = 0.471 (moderate) on 299 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.007 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:sigma-max@0008 vs 0008: Spearman rho = 0.469 (moderate) on 298 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.004 - spread across arms, which is what a confound looks like"
+          ]
+        },
+        "AP10": {
+          "n_verdicts": 0,
+          "n_suspicions": 24,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.40361206422584506,
+          "top_suspicions": [
+            "[SUSPECT] monotone_derived  bert_qpp:bert_qpp_cross_encoder@0010 vs 0010: Spearman rho = 0.404 (moderate) on 247 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.018 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  bert_qpp:bert_qpp_cross_encoder@0010 vs 0009: Spearman rho = 0.386 (moderate) on 254 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.018 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  bert_qpp:bert_qpp_cross_encoder@0010 vs 0006: Spearman rho = 0.360 (moderate) on 263 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.043 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  bert_qpp:bert_qpp_cross_encoder@0010 vs 0007: Spearman rho = 0.356 (moderate) on 259 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.048 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:sigma-max@0003 vs 0002: Spearman rho = 0.355 (moderate) on 261 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.013 - spread across arms, which is what a confound looks like"
+          ]
+        },
+        "mAP": {
+          "n_verdicts": 0,
+          "n_suspicions": 204,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.4937911992128354,
+          "top_suspicions": [
+            "[SUSPECT] monotone_derived  bert_qpp:bert_qpp_cross_encoder@0010 vs 0010: Spearman rho = 0.494 (moderate) on 293 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.036 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:sigma-max@0000 vs 0010: Spearman rho = 0.475 (moderate) on 293 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.009 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:sigma-max@0003 vs 0010: Spearman rho = 0.472 (moderate) on 293 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.009 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:sigma-max@0007 vs 0010: Spearman rho = 0.467 (moderate) on 293 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.012 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:sigma-max@0000 vs 0004: Spearman rho = 0.466 (moderate) on 299 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.009 - spread across arms, which is what a confound looks like"
+          ]
+        },
+        "Recall1000": {
+          "n_verdicts": 0,
+          "n_suspicions": 0,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.0,
+          "top_suspicions": []
+        }
+      },
+      "audit_v2_nDCG10": {
+        "n_verdicts": 0,
+        "n_decodable_pairs": 562,
+        "decodable_column_share": 0.1487603305785124,
+        "max_heldout_r2": 0.2592684631038512,
+        "top_decodable": [
+          "[SUSPECT] decodable         post_qpp:sigma-max@0000 vs 0008: held-out R^2 = 0.259 from this column alone (permutation p = 0.0099, n_perm = 100)",
+          "[SUSPECT] decodable         post_qpp:sigma-max@0007 vs 0010: held-out R^2 = 0.252 from this column alone (permutation p = 0.0099, n_perm = 100)",
+          "[SUSPECT] decodable         post_qpp:sigma-max@0000 vs 0001: held-out R^2 = 0.249 from this column alone (permutation p = 0.0099, n_perm = 100)",
+          "[SUSPECT] decodable         post_qpp:sigma-x0.5@0009 vs 0010: held-out R^2 = 0.243 from this column alone (permutation p = 0.0099, n_perm = 100)",
+          "[SUSPECT] decodable         post_qpp:sigma-max@0008 vs 0008: held-out R^2 = 0.234 from this column alone (permutation p = 0.0099, n_perm = 100)"
+        ],
+        "seconds": 41.4
+      }
+    },
+    "fiqa": {
+      "n_queries": 648,
+      "n_features": 484,
+      "n_arms": 11,
+      "by_metric": {
+        "nDCG10": {
+          "n_verdicts": 0,
+          "n_suspicions": 21,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.42416940247805823,
+          "top_suspicions": [
+            "[SUSPECT] monotone_derived  pre_qpp:IDF-max@0010 vs 0005: Spearman rho = 0.424 (moderate) on 300 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.022 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  pre_qpp:IDF-max@0010 vs 0008: Spearman rho = 0.402 (moderate) on 325 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.022 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  pre_qpp:IDF-avg@0006 vs 0005: Spearman rho = 0.401 (moderate) on 300 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.024 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  pre_qpp:avgICTF@0006 vs 0005: Spearman rho = 0.389 (moderate) on 300 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.018 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  bert_qpp:bert_qpp_cross_encoder@0010 vs 0010: Spearman rho = 0.378 (moderate) on 310 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.101 - arm-specific, which is what a real leak looks like"
+          ]
+        },
+        "RR10": {
+          "n_verdicts": 0,
+          "n_suspicions": 14,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.4186731942451984,
+          "top_suspicions": [
+            "[SUSPECT] monotone_derived  bert_qpp:bert_qpp_cross_encoder@0010 vs 0010: Spearman rho = 0.419 (moderate) on 569 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.059 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  bert_qpp:bert_ce_mean3@0010 vs 0010: Spearman rho = 0.379 (moderate) on 569 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.054 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  post_qpp:nqc-norm-k100@0008 vs 0004: Spearman rho = 0.370 (moderate) on 594 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.018 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:sigma-max@0008 vs 0003: Spearman rho = 0.369 (moderate) on 597 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.005 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:sigma-max@0008 vs 0005: Spearman rho = 0.363 (moderate) on 590 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.005 - spread across arms, which is what a confound looks like"
+          ]
+        },
+        "AP10": {
+          "n_verdicts": 0,
+          "n_suspicions": 20,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.4233038615105107,
+          "top_suspicions": [
+            "[SUSPECT] monotone_derived  pre_qpp:IDF-max@0010 vs 0005: Spearman rho = 0.423 (moderate) on 300 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.020 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  pre_qpp:IDF-max@0010 vs 0008: Spearman rho = 0.403 (moderate) on 325 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.020 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  pre_qpp:IDF-avg@0006 vs 0005: Spearman rho = 0.399 (moderate) on 300 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.023 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  pre_qpp:avgICTF@0006 vs 0005: Spearman rho = 0.385 (moderate) on 300 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.017 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  bert_qpp:bert_qpp_cross_encoder@0010 vs 0010: Spearman rho = 0.383 (moderate) on 310 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.101 - arm-specific, which is what a real leak looks like"
+          ]
+        },
+        "mAP": {
+          "n_verdicts": 0,
+          "n_suspicions": 153,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.42824162439400626,
+          "top_suspicions": [
+            "[SUSPECT] monotone_derived  bert_qpp:bert_qpp_cross_encoder@0010 vs 0010: Spearman rho = 0.428 (moderate) on 569 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.059 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  post_qpp:nqc-norm-k100@0008 vs 0004: Spearman rho = 0.422 (moderate) on 594 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.011 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:nqc-norm-k100@0008 vs 0008: Spearman rho = 0.411 (moderate) on 588 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.011 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:nqc-norm-k100@0003 vs 0003: Spearman rho = 0.410 (moderate) on 597 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.003 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:nqc-norm-k100@0008 vs 0003: Spearman rho = 0.408 (moderate) on 597 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.014 - spread across arms, which is what a confound looks like"
+          ]
+        },
+        "Recall1000": {
+          "n_verdicts": 0,
+          "n_suspicions": 236,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.35313489645669804,
+          "top_suspicions": [
+            "[SUSPECT] monotone_derived  post_qpp:clarity-score-k10@0007 vs 0008: Spearman rho = 0.353 (moderate) on 588 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.007 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:clarity-score-k10@0003 vs 0008: Spearman rho = 0.353 (moderate) on 588 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.020 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] correlated_proxy  bert_qpp:bert_qpp_cross_encoder@0001 vs argmax: alone recovers the winning arm at 48.8% vs a 26.8% majority rate (+22.0%) on 41 rows with a strictly-best arm",
+            "[SUSPECT] correlated_proxy  bert_qpp:bert_bi_mean5@0000 vs argmax: alone recovers the winning arm at 46.3% vs a 26.8% majority rate (+19.5%) on 41 rows with a strictly-best arm",
+            "[SUSPECT] correlated_proxy  pre_qpp:IDF-std@0001 vs argmax: alone recovers the winning arm at 46.3% vs a 26.8% majority rate (+19.5%) on 41 rows with a strictly-best arm"
+          ]
+        }
+      },
+      "audit_v2_nDCG10": {
+        "n_verdicts": 0,
+        "n_decodable_pairs": 976,
+        "decodable_column_share": 0.30991735537190085,
+        "max_heldout_r2": 0.1225605045948337,
+        "top_decodable": [
+          "[SUSPECT] decodable         post_qpp:sigma-max@0010 vs 0010: held-out R^2 = 0.123 from this column alone (permutation p = 0.0099, n_perm = 100)",
+          "[SUSPECT] decodable         post_qpp:sigma-max@0010 vs 0005: held-out R^2 = 0.121 from this column alone (permutation p = 0.0099, n_perm = 100)",
+          "[SUSPECT] decodable         post_qpp:sigma-max@0006 vs 0005: held-out R^2 = 0.117 from this column alone (permutation p = 0.0099, n_perm = 100)",
+          "[SUSPECT] decodable         post_qpp:nqc-norm-k100@0005 vs 0005: held-out R^2 = 0.113 from this column alone (permutation p = 0.0099, n_perm = 100)",
+          "[SUSPECT] decodable         post_qpp:sigma-max@0006 vs 0010: held-out R^2 = 0.112 from this column alone (permutation p = 0.0099, n_perm = 100)"
+        ],
+        "seconds": 50.8
+      }
+    },
+    "arguana": {
+      "n_queries": 1406,
+      "n_features": 484,
+      "n_arms": 11,
+      "by_metric": {
+        "nDCG10": {
+          "n_verdicts": 0,
+          "n_suspicions": 0,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.0,
+          "top_suspicions": []
+        },
+        "RR10": {
+          "n_verdicts": 0,
+          "n_suspicions": 0,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.0,
+          "top_suspicions": []
+        },
+        "AP10": {
+          "n_verdicts": 0,
+          "n_suspicions": 0,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.0,
+          "top_suspicions": []
+        },
+        "mAP": {
+          "n_verdicts": 0,
+          "n_suspicions": 0,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.0,
+          "top_suspicions": []
+        },
+        "Recall1000": {
+          "n_verdicts": 0,
+          "n_suspicions": 0,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.0,
+          "top_suspicions": []
+        }
+      },
+      "audit_v2_nDCG10": {
+        "n_verdicts": 0,
+        "n_decodable_pairs": 106,
+        "decodable_column_share": 0.04338842975206612,
+        "max_heldout_r2": 0.03908089193593789,
+        "top_decodable": [
+          "[SUSPECT] decodable         bert_qpp:bert_qpp_cross_encoder@0003 vs 0009: held-out R^2 = 0.039 from this column alone (permutation p = 0.0099, n_perm = 100)",
+          "[SUSPECT] decodable         bert_qpp:bert_qpp_cross_encoder@0003 vs 0006: held-out R^2 = 0.039 from this column alone (permutation p = 0.0099, n_perm = 100)",
+          "[SUSPECT] decodable         bert_qpp:bert_qpp_cross_encoder@0003 vs 0008: held-out R^2 = 0.038 from this column alone (permutation p = 0.0099, n_perm = 100)",
+          "[SUSPECT] decodable         bert_qpp:bert_qpp_cross_encoder@0003 vs 0010: held-out R^2 = 0.038 from this column alone (permutation p = 0.0099, n_perm = 100)",
+          "[SUSPECT] decodable         bert_qpp:bert_qpp_cross_encoder@0003 vs 0007: held-out R^2 = 0.038 from this column alone (permutation p = 0.0099, n_perm = 100)"
+        ],
+        "seconds": 26.6
+      }
+    },
+    "trec2019": {
+      "n_queries": 43,
+      "n_features": 484,
+      "n_arms": 11,
+      "by_metric": {
+        "nDCG10": {
+          "n_verdicts": 0,
+          "n_suspicions": 982,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.6467611336032388,
+          "top_suspicions": [
+            "[SUSPECT] monotone_derived  post_qpp:nqc-norm-k100@0008 vs 0001: Spearman rho = 0.647 (strong) on 39 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.075 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  post_qpp:smv-norm-k100@0008 vs 0001: Spearman rho = 0.646 (strong) on 39 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.080 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  post_qpp:nqc-norm-k100@0004 vs 0004: Spearman rho = 0.628 (strong) on 43 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.025 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:smv-norm-k100@0007 vs 0001: Spearman rho = 0.625 (strong) on 39 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.118 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  post_qpp:nqc-norm-k100@0007 vs 0001: Spearman rho = 0.624 (strong) on 39 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.118 - arm-specific, which is what a real leak looks like"
+          ]
+        },
+        "RR10": {
+          "n_verdicts": 0,
+          "n_suspicions": 390,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.5975320708315998,
+          "top_suspicions": [
+            "[SUSPECT] monotone_derived  post_qpp:nqc-no-norm-k100@0007 vs 0005: Spearman rho = 0.598 (strong) on 43 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.151 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  post_qpp:smv-no-norm-k100@0007 vs 0005: Spearman rho = 0.596 (strong) on 43 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.140 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  post_qpp:wig-no-norm-k100@0004 vs 0002: Spearman rho = 0.565 (strong) on 43 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.181 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  pre_qpp:VAR-var-avg@0008 vs 0001: Spearman rho = 0.531 (strong) on 43 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.036 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  pre_qpp:SCQ-max@0007 vs 0001: Spearman rho = 0.520 (strong) on 43 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.048 - arm-specific, which is what a real leak looks like"
+          ]
+        },
+        "AP10": {
+          "n_verdicts": 0,
+          "n_suspicions": 1315,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.6420615447280056,
+          "top_suspicions": [
+            "[SUSPECT] monotone_derived  pre_qpp:IDF-max@0007 vs 0004: Spearman rho = 0.642 (strong) on 43 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.143 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  pre_qpp:avgICTF@0004 vs 0002: Spearman rho = 0.619 (strong) on 42 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.091 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  post_qpp:nqc-norm-k100@0009 vs 0001: Spearman rho = 0.614 (strong) on 39 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.045 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  bert_qpp:bert_bi_weighted10@0002 vs 0001: Spearman rho = 0.612 (strong) on 39 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.064 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  bert_qpp:bert_qpp_cross_encoder@0010 vs 0001: Spearman rho = 0.609 (strong) on 39 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.018 - spread across arms, which is what a confound looks like"
+          ]
+        },
+        "mAP": {
+          "n_verdicts": 0,
+          "n_suspicions": 1496,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.7117185140440955,
+          "top_suspicions": [
+            "[SUSPECT] monotone_derived  post_qpp:smv-norm-k100@0008 vs 0008: Spearman rho = 0.712 (strong) on 43 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.066 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  post_qpp:nqc-norm-k100@0003 vs 0003: Spearman rho = 0.707 (strong) on 42 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.068 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  post_qpp:nqc-norm-k100@0008 vs 0008: Spearman rho = 0.701 (strong) on 43 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.062 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  post_qpp:smv-norm-k100@0003 vs 0003: Spearman rho = 0.698 (strong) on 42 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.056 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  post_qpp:smv-norm-k100@0006 vs 0006: Spearman rho = 0.697 (strong) on 43 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.068 - arm-specific, which is what a real leak looks like"
+          ]
+        },
+        "Recall1000": {
+          "n_verdicts": 0,
+          "n_suspicions": 1488,
+          "max_exact_share_nonzero_rows": 0.0,
+          "max_abs_rho_among_suspicions": 0.6484449276205475,
+          "top_suspicions": [
+            "[SUSPECT] monotone_derived  post_qpp:sigma-x0.5@0002 vs 0002: Spearman rho = 0.648 (strong) on 43 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.124 - arm-specific, which is what a real leak looks like",
+            "[SUSPECT] monotone_derived  pre_qpp:avgICTF@0004 vs 0009: Spearman rho = 0.614 (strong) on 43 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.014 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:sigma-max@0008 vs 0008: Spearman rho = 0.602 (strong) on 43 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.026 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  pre_qpp:avgICTF@0004 vs 0001: Spearman rho = 0.600 (strong) on 43 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.014 - spread across arms, which is what a confound looks like",
+            "[SUSPECT] monotone_derived  post_qpp:wig-norm-k100@0006 vs 0005: Spearman rho = 0.595 (strong) on 43 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.087 - arm-specific, which is what a real leak looks like"
+          ]
+        }
+      },
+      "audit_v2_nDCG10": {
+        "n_verdicts": 0,
+        "n_decodable_pairs": 0,
+        "decodable_column_share": 0.0,
+        "max_heldout_r2": 0.0,
+        "top_decodable": [],
+        "seconds": 8.1
+      }
+    }
+  }
+}

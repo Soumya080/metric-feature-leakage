@@ -1,0 +1,106 @@
+{
+  "absolute": [
+    {
+      "seed": 42,
+      "reward_shaping": "absolute",
+      "final_mrr": 0.42,
+      "best_mrr": 0.4328,
+      "final_oracle_acc": 0.44,
+      "best_oracle_acc": 0.76,
+      "best_fixed_mrr": 0.3862,
+      "improvement": 0.0467
+    },
+    {
+      "seed": 123,
+      "reward_shaping": "absolute",
+      "final_mrr": 0.3957,
+      "best_mrr": 0.4035,
+      "final_oracle_acc": 0.56,
+      "best_oracle_acc": 0.91,
+      "best_fixed_mrr": 0.3552,
+      "improvement": 0.0483
+    },
+    {
+      "seed": 456,
+      "reward_shaping": "absolute",
+      "final_mrr": 0.4208,
+      "best_mrr": 0.4283,
+      "final_oracle_acc": 0.59,
+      "best_oracle_acc": 0.74,
+      "best_fixed_mrr": 0.3997,
+      "improvement": 0.0287
+    },
+    {
+      "seed": 789,
+      "reward_shaping": "absolute",
+      "final_mrr": 0.4912,
+      "best_mrr": 0.4928,
+      "final_oracle_acc": 0.47,
+      "best_oracle_acc": 0.75,
+      "best_fixed_mrr": 0.4662,
+      "improvement": 0.0267
+    },
+    {
+      "seed": 1024,
+      "reward_shaping": "absolute",
+      "final_mrr": 0.4117,
+      "best_mrr": 0.4225,
+      "final_oracle_acc": 0.61,
+      "best_oracle_acc": 0.75,
+      "best_fixed_mrr": 0.3655,
+      "improvement": 0.057
+    }
+  ],
+  "pairwise": [
+    {
+      "seed": 42,
+      "reward_shaping": "pairwise",
+      "final_mrr": 0.4203,
+      "best_mrr": 0.4378,
+      "final_oracle_acc": 0.52,
+      "best_oracle_acc": 0.79,
+      "best_fixed_mrr": 0.3862,
+      "improvement": 0.0517
+    },
+    {
+      "seed": 123,
+      "reward_shaping": "pairwise",
+      "final_mrr": 0.3957,
+      "best_mrr": 0.4035,
+      "final_oracle_acc": 0.65,
+      "best_oracle_acc": 0.76,
+      "best_fixed_mrr": 0.3552,
+      "improvement": 0.0483
+    },
+    {
+      "seed": 456,
+      "reward_shaping": "pairwise",
+      "final_mrr": 0.4188,
+      "best_mrr": 0.4283,
+      "final_oracle_acc": 0.44,
+      "best_oracle_acc": 0.76,
+      "best_fixed_mrr": 0.3997,
+      "improvement": 0.0287
+    },
+    {
+      "seed": 789,
+      "reward_shaping": "pairwise",
+      "final_mrr": 0.4942,
+      "best_mrr": 0.4942,
+      "final_oracle_acc": 0.52,
+      "best_oracle_acc": 0.8,
+      "best_fixed_mrr": 0.4662,
+      "improvement": 0.028
+    },
+    {
+      "seed": 1024,
+      "reward_shaping": "pairwise",
+      "final_mrr": 0.4158,
+      "best_mrr": 0.422,
+      "final_oracle_acc": 0.58,
+      "best_oracle_acc": 0.72,
+      "best_fixed_mrr": 0.3655,
+      "improvement": 0.0565
+    }
+  ]
+}

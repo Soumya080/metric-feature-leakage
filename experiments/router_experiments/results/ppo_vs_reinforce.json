@@ -1,0 +1,168 @@
+{
+  "dataset": "nq",
+  "num_seeds": 5,
+  "seeds": [
+    42,
+    123,
+    456,
+    789,
+    1024
+  ],
+  "num_epochs": 300,
+  "comparison": {
+    "REINFORCE": {
+      "test_mrr_mean": 0.2193,
+      "test_mrr_std": 0.0084,
+      "best_mrr_mean": 0.2244,
+      "best_mrr_std": 0.0071,
+      "oracle_acc_mean": 0.3427,
+      "oracle_acc_std": 0.0253,
+      "convergence_epoch_mean": 7.0,
+      "convergence_epoch_std": 4.1,
+      "wall_time_mean": 246.8,
+      "wall_time_std": 0.6,
+      "improvement_mean": 0.0289,
+      "improvement_std": 0.0076
+    },
+    "PPO": {
+      "test_mrr_mean": 0.2192,
+      "test_mrr_std": 0.0053,
+      "best_mrr_mean": 0.2235,
+      "best_mrr_std": 0.006,
+      "oracle_acc_mean": 0.2558,
+      "oracle_acc_std": 0.0122,
+      "convergence_epoch_mean": 1.0,
+      "convergence_epoch_std": 0.6,
+      "wall_time_mean": 189.2,
+      "wall_time_std": 5.6,
+      "improvement_mean": 0.0288,
+      "improvement_std": 0.0037
+    }
+  },
+  "per_seed": {
+    "REINFORCE": [
+      {
+        "algorithm": "REINFORCE",
+        "seed": 42,
+        "final_test_mrr": 0.23525963149078732,
+        "best_test_mrr": 0.23710217755443888,
+        "final_oracle_accuracy": 0.32663316582914576,
+        "final_entropy": 0.9163483816273932,
+        "convergence_epoch": 0,
+        "wall_time_seconds": 246.9,
+        "best_fixed_mrr": 0.1981574539363484,
+        "improvement": 0.037102177554438925
+      },
+      {
+        "algorithm": "REINFORCE",
+        "seed": 123,
+        "final_test_mrr": 0.21829983249581242,
+        "best_test_mrr": 0.22625628140703521,
+        "final_oracle_accuracy": 0.35175879396984927,
+        "final_entropy": 0.9148426567133174,
+        "convergence_epoch": 10,
+        "wall_time_seconds": 245.7,
+        "best_fixed_mrr": 0.18450586264656618,
+        "improvement": 0.033793969849246236
+      },
+      {
+        "algorithm": "REINFORCE",
+        "seed": 456,
+        "final_test_mrr": 0.21352596314907873,
+        "best_test_mrr": 0.21654103852596315,
+        "final_oracle_accuracy": 0.314070351758794,
+        "final_entropy": 0.9060142921742771,
+        "convergence_epoch": 12,
+        "wall_time_seconds": 247.2,
+        "best_fixed_mrr": 0.19007537688442214,
+        "improvement": 0.023450586264656598
+      },
+      {
+        "algorithm": "REINFORCE",
+        "seed": 789,
+        "final_test_mrr": 0.21122278056951424,
+        "best_test_mrr": 0.22219430485762143,
+        "final_oracle_accuracy": 0.3341708542713568,
+        "final_entropy": 0.9310454458062959,
+        "convergence_epoch": 6,
+        "wall_time_seconds": 246.8,
+        "best_fixed_mrr": 0.19438860971524285,
+        "improvement": 0.016834170854271385
+      },
+      {
+        "algorithm": "REINFORCE",
+        "seed": 1024,
+        "final_test_mrr": 0.21829983249581245,
+        "best_test_mrr": 0.21976549413735352,
+        "final_oracle_accuracy": 0.3869346733668342,
+        "final_entropy": 0.9012446702143475,
+        "convergence_epoch": 7,
+        "wall_time_seconds": 247.5,
+        "best_fixed_mrr": 0.18488274706867672,
+        "improvement": 0.03341708542713573
+      }
+    ],
+    "PPO": [
+      {
+        "algorithm": "PPO",
+        "seed": 42,
+        "final_test_mrr": 0.22948073701842547,
+        "best_test_mrr": 0.23500837520938025,
+        "final_oracle_accuracy": 0.271356783919598,
+        "final_entropy": 0.8097846275568008,
+        "convergence_epoch": 0,
+        "wall_time_seconds": 185.8,
+        "best_fixed_mrr": 0.1981574539363484,
+        "improvement": 0.031323283082077075
+      },
+      {
+        "algorithm": "PPO",
+        "seed": 123,
+        "final_test_mrr": 0.21809045226130655,
+        "best_test_mrr": 0.223534338358459,
+        "final_oracle_accuracy": 0.24874371859296482,
+        "final_entropy": 0.7955920165777206,
+        "convergence_epoch": 1,
+        "wall_time_seconds": 183.3,
+        "best_fixed_mrr": 0.18450586264656618,
+        "improvement": 0.03358458961474037
+      },
+      {
+        "algorithm": "PPO",
+        "seed": 456,
+        "final_test_mrr": 0.21658291457286433,
+        "best_test_mrr": 0.21876046901172527,
+        "final_oracle_accuracy": 0.23618090452261306,
+        "final_entropy": 0.7945707815885544,
+        "convergence_epoch": 1,
+        "wall_time_seconds": 185.0,
+        "best_fixed_mrr": 0.19007537688442214,
+        "improvement": 0.02650753768844219
+      },
+      {
+        "algorithm": "PPO",
+        "seed": 789,
+        "final_test_mrr": 0.21729480737018425,
+        "best_test_mrr": 0.2201005025125628,
+        "final_oracle_accuracy": 0.25879396984924624,
+        "final_entropy": 0.8162830084562301,
+        "convergence_epoch": 2,
+        "wall_time_seconds": 196.6,
+        "best_fixed_mrr": 0.19438860971524285,
+        "improvement": 0.022906197654941396
+      },
+      {
+        "algorithm": "PPO",
+        "seed": 1024,
+        "final_test_mrr": 0.21432160804020106,
+        "best_test_mrr": 0.21997487437185934,
+        "final_oracle_accuracy": 0.2638190954773869,
+        "final_entropy": 0.810749397277832,
+        "convergence_epoch": 1,
+        "wall_time_seconds": 195.2,
+        "best_fixed_mrr": 0.18488274706867672,
+        "improvement": 0.029438860971524344
+      }
+    ]
+  }
+}

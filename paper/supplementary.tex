@@ -1,0 +1,185 @@
+% supplementary.tex -- optional supplementary material of the camera-ready; compiles separately
+% from main_v2.tex, so references to the main paper are plain text.
+\documentclass{article}
+
+\IfFileExists{neurips_2026.sty}{%
+  \usepackage[final]{neurips_2026}%
+}{%
+  \usepackage[margin=1in]{geometry}%
+  \PackageWarningNoLine{main}{neurips_2026.sty not found - using fallback geometry. Page count will NOT match the official template.}%
+}
+
+\makeatletter
+\renewcommand{\@noticestring}{NewInML Workshop at the 40th Conference on Neural Information Processing Systems (NeurIPS 2026), Paris, France, 2026.}
+\makeatother
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\newcommand{\justification}[1]{#1}
+
+\graphicspath{{../results/figures/}{figures/}}
+
+\title{Supplementary Material for\\ Metric-as-Feature Leakage: A Feature-Side\\
+       Failure Mode in Retriever Routing}
+
+\author{
+  Soumy Sawant\\
+  Manipal University Jaipur\\
+  Jaipur, India\\
+  \texttt{soumy.250205119@muj.manipal.edu}
+  \And
+  Chirag Joshi\\
+  Manipal University Jaipur\\
+  Jaipur, India\\
+  \texttt{joshi.chirag@jaipur.manipal.edu}
+}
+
+\begin{document}
+\maketitle
+\renewcommand{\thesection}{S\arabic{section}}
+Section, table and figure numbers without an S refer to the main paper.
+
+\section{Positive control: a genuine gain beside a leak}
+\label{sup:positive}
+Our data has no exploitable honest signal, so we build a synthetic task that does: three of twenty Gaussian features set each arm's
+utility, and rewards are reciprocal-rank-like. With no signal, gradient boosting matches the
+majority rate ($-0.4$ points) and \texttt{leakcheck} raises nothing. With signal it gains $+14.0$
+and $+17.4$ points at two strengths, with no verdict. Appending each arm's reward with independent
+additive noise of $\pm$0.15 adds a further 26--34 points, again with no verdict. Suspicions, however, fall on
+the genuine signal features as well as on the leaked ones. A gain is therefore not evidence of
+leakage, and neither is a suspicion: both are resolved by ablation, as \S6 of the paper argues.
+
+
+\section{Supporting checks for Section~5 of the paper}
+\label{app:checks}
+
+\paragraph{Why the label is hard.} The reward depends on where a gold passage landed, and which
+passage counts as gold depends on the candidate draw: 34.3\% of the 1{,}989 prepared NQ queries
+contain at least one answer-bearing distractor (13.4 on average among those that do; 4.59 over
+all), as do 46.1\% of TriviaQA and 27.0\% of HotpotQA queries, so the gold rank is partly
+arbitrary. Gold is the presence of the answer string in a 100K-passage Wikipedia sample, which
+1{,}157 of 1{,}989 NQ, 1{,}539 of 1{,}894 TriviaQA and 916 of 1{,}995 HotpotQA queries have. Systematic BM25--Dense differences exist (rare terms
+versus paraphrase) but are smaller than this variance. The oracle over more arms is also a maximum over more noise, so more arms of the same
+kind would raise the headroom without necessarily raising what a selector can capture; a more
+diverse pool remains the proper test (Limitations of the paper).
+
+
+\paragraph{Removing the redundant arm.} Hybrid loses to Dense everywhere (\S3 of the paper), so the
+failure might come from a non-competitive action. Restricting to
+BM25 and Dense moves lift from $-3.3/-3.1/-6.3$ points to $-2.0/-2.8/-5.0$: still negative. This does not show that the arm caused the failure, because dropping Hybrid also
+raises the majority baseline (63.4$\to$69.6, 61.7$\to$69.0, 56.4$\to$63.0) and changes the informative set,
+and a two-class problem at 70\% majority sits closer to its baseline than a three-class one at
+63\%. Detection is also harder here: on the test splits a router would need to capture 85\% (NQ), 51\%
+(TriviaQA) or 78\% (HotpotQA) of the two-arm headroom to be detectable (one-sided, $\alpha{=}0.05$,
+80\% power).
+
+
+\paragraph{The structural findings on RouterBench.} The two diagnostics that \S5 of the paper
+applies to our data give, on RouterBench, 69.9\% of oracle headroom from queries won by
+$\le 1\%$ margins (ours: 16--22\%) and 40\% headroom inflation under noise at 10\% of the reward's
+spread (ours: 16--29\%). Same sign, larger magnitude, over 11 arms rather than three, as expected when a maximum is taken
+over more arms.
+
+\paragraph{Per-dataset null cells.} Observed vs.\ shuffled-label null ($n$, majority): NQ 60.1
+vs.\ $59.1{\pm}0.6$, $p{=}0.066$ (1{,}021, 63.4); TriviaQA 58.6 vs.\ $58.2{\pm}0.5$, $p{=}0.181$
+(1{,}307, 61.7); HotpotQA 50.1 vs.\ $50.8{\pm}1.0$, $p{=}0.740$ (847, 56.4). Random-feature null:
+0.090, 0.187, 0.820. On HotpotQA the observed point is below its own null. NQ has the largest per-dataset effect and is
+still not significant.
+
+\paragraph{Baseline details for Table~3 of the paper.} The score-gap heuristic was repaired before
+comparison: it swept a fixed threshold range outside the feature's support, and sweeping the
+training split's quantiles instead raises it from 0.1029 to 0.1657 on NQ. Best fixed is chosen in
+hindsight on the test split; chosen on training data it would be Hybrid on HotpotQA, against which
+every method ``gains'' 12--35\%, all by always choosing Dense. Convex fusion, which combines rather
+than chooses, gains on TriviaQA ($+7.0\%$ capture) and loses on NQ ($-2.4\%$) and HotpotQA
+($-45.2\%$). Paired-bootstrap 95\% intervals on capture are wide: score-gap on NQ is $+0.4\%$
+[0.0, 1.5], and the largest upper limit among the supervised methods is 45.6\% (ridge, HotpotQA),
+so point estimates are not ceilings. RL capture per dataset is $-10.8$, $-0.0$ and $-9.1\%$
+(single seeds $-49\%$ to $+9\%$). Two arms (BM25 and Dense) would need 85\%, 51\% and 78\% capture
+to be detectable (one-sided, 80\% power).
+
+\paragraph{Policy-gradient settings and additional negatives.}
+REINFORCE~\cite{williams1992reinforce}, PPO~\cite{schulman2017ppo} and
+GRPO~\cite{shao2024deepseekmath} span 0.0139 MRR on NQ, all below best-fixed---a separate
+five-seed sweep at 300 epochs, reporting final-epoch weights, rather than the fifteen-seed
+best-validation run of Table~3 of the paper, so the two are not directly comparable.
+The policy of Table~3 of the paper is a three-layer MLP (hidden width 128) trained with REINFORCE
+for 150 epochs at learning rate $3{\times}10^{-3}$, entropy bonus 0.01 and a per-query advantage
+(each arm's reward minus the query's mean over arms), on the full reward table of the training
+split; the checkpoint is chosen on the validation split. A cost-aware cascade finds no Pareto improvement; gold-type
+stratification changes nothing. Per-retriever reward regression, scored as MRR@20, is negative on 11 of 15
+configurations; the exception is HotpotQA, where ridge beats best-fixed by $+0.021$ and $+0.024$
+($p{=}0.036$, $p{=}0.029$). Those are the only nominal $p<0.05$ results among the fifteen, they
+sit on the smallest split, and they are ridge variants differing only in whether embeddings are
+included---one finding rather than two. A cross-score feature variant reproduces both and adds a
+third marginal hit ($p{=}0.046$). None survives Bonferroni ($\alpha{=}0.0033$) nor reaches the
+72\% capture that detection on the HotpotQA test split would require (one-sided, 80\% power), so we
+do not claim them.
+
+
+
+\section{Detector benchmark: which check catches which leak}
+\label{sup:bench}
+Each synthetic problem has 20 honest features, three of which carry genuine signal about the
+winning arm, and reciprocal-rank-like rewards; one planted column (or block) is added per scenario,
+built from arm 0's reward. A detector flags a column if it fires against any arm. Ten seeds per
+scenario, $n{=}2000$. The leaks copy a full reward and are therefore strong; rates near 1 reflect
+that, not performance on subtler leaks.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Rate at which each detector flags the planted column. ``none'' and ``confound'' are not
+leaks, so their rates are false flags. Equality: exact agreement on more than 25\% of non-zero
+rows. AUC scan: bioLeak-style $|\mathrm{AUC}-0.5|\times 2 \ge 0.90$. Importance: held-out
+permutation importance of a gradient-boosting router $>0.01$ accuracy (not SHAP). v1: any
+\texttt{leakcheck} 0.1 finding; v2: any finding of the opt-in decodability test.}
+\label{tab:bench}
+\begin{tabular}{lccccccc}
+\toprule
+Scenario & Equality & Pearson & AUC scan & Importance & v1 verdict & v1 any & v2 any \\
+\midrule
+none (not a leak)          & 0 & 0   & 0   & 0.2 & 0 & 0   & 0 \\
+exact copy                 & 1 & 1   & 0.2 & 1   & 1 & 1   & 1 \\
+truncated (MRR@5-like)     & 1 & 1   & 0   & 1   & 1 & 1   & 1 \\
+monotone (rank)            & 0 & 1   & 0.2 & 1   & 0 & 1   & 1 \\
+value-keyed $\pm$0.15      & 0 & 1   & 0   & 1   & 0 & 1   & 1 \\
+order-scrambled recoding   & 0 & 0.2 & 0   & 1   & 0 & 0.8 & 1 \\
+independent noise $\pm$0.15 & 0 & 1  & 0   & 1   & 0 & 1   & 1 \\
+independent noise $\pm$0.50 & 0 & 1  & 0   & 1   & 0 & 1   & 1 \\
+group confound (not a leak) & 0 & 0  & 0   & 1   & 0 & 0.9 & 1$^\dagger$ \\
+split over two columns     & 0 & 1   & 0   & 1   & 0 & 1   & 1 \\
+PCA-mixed over six columns & 0 & 1   & 0   & 1   & 0 & 1   & 1 \\
+\midrule
+genuine-signal columns     & 0 & 0.67 & 0  & 0.85 & 0 & 0.74 & 0.91 \\
+pure-noise columns         & 0 & 0    & 0  & 0.026 & 0 & 0   & 0 \\
+\bottomrule
+\end{tabular}
+
+{\footnotesize $^\dagger$ labelled \texttt{GROUP CONFOUND} in 10 of 10 seeds when the group id is supplied.}
+\end{table}
+
+Verdicts never fire on a non-leak, but they catch only exact and truncated copies. Every detector
+that catches perturbed leaks also flags genuinely predictive features, because a predictive
+feature is what a leak looks like from the data; flags are triage, resolved by ablation. The
+decodability test adds three things: it catches the order-scrambled recoding in 10 of 10 seeds
+(against 8 of 10 for v1 and 2 of 10 for Pearson), it names the group confound as one, and it raises
+no flags on pure-noise columns. On our own pooled data it flags the leak slots 22--23 under the
+value-keyed recoding at $\pm$50\% and $\pm$100\%, where v1 flags nothing, and on the honest matrix it
+flags the label-free overlap features 26--28, which carry real signal. None of its real-data flags
+reads as a group confound.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

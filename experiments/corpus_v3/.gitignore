@@ -1,0 +1,7 @@
+# Generated artifacts — rebuilt by 01-05 on whatever machine runs them.
+# Nothing here is an input; the corpus is derived deterministically from
+# experiments/baseline_v2/cache/wiki_passage_pool.json given CORPUS_SEED.
+artifacts/
+results/
+__pycache__/
+*.pyc

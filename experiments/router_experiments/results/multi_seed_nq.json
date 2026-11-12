@@ -1,0 +1,126 @@
+{
+  "dataset": "nq",
+  "num_seeds": 5,
+  "seeds": [
+    42,
+    123,
+    456,
+    789,
+    1024
+  ],
+  "test_mrr_mean": 0.2193,
+  "test_mrr_std": 0.0084,
+  "best_mrr_mean": 0.2244,
+  "best_mrr_std": 0.0071,
+  "improvement_mean": 0.0289,
+  "improvement_std": 0.0076,
+  "oracle_acc_mean": 0.3427,
+  "oracle_acc_std": 0.0253,
+  "per_seed": [
+    {
+      "seed": 42,
+      "final_test_mrr": 0.23525963149078732,
+      "best_test_mrr": 0.23710217755443888,
+      "final_oracle_mrr": 0.2410804020100503,
+      "final_oracle_accuracy": 0.32663316582914576,
+      "final_entropy": 0.9163483816273932,
+      "action_distribution": {
+        "0": 436,
+        "1": 695,
+        "2": 460
+      },
+      "convergence_epoch": 0,
+      "baselines": {
+        "bm25": 0.08534338358458962,
+        "dense": 0.1981574539363484,
+        "hybrid": 0.12675879396984926
+      },
+      "best_fixed_mrr": 0.1981574539363484,
+      "improvement_over_best_fixed": 0.037102177554438925
+    },
+    {
+      "seed": 123,
+      "final_test_mrr": 0.21829983249581242,
+      "best_test_mrr": 0.22625628140703521,
+      "final_oracle_mrr": 0.22881072026800672,
+      "final_oracle_accuracy": 0.35175879396984927,
+      "final_entropy": 0.9148426567133174,
+      "action_distribution": {
+        "0": 423,
+        "1": 677,
+        "2": 491
+      },
+      "convergence_epoch": 10,
+      "baselines": {
+        "bm25": 0.08371021775544389,
+        "dense": 0.18450586264656618,
+        "hybrid": 0.1173785594639866
+      },
+      "best_fixed_mrr": 0.18450586264656618,
+      "improvement_over_best_fixed": 0.033793969849246236
+    },
+    {
+      "seed": 456,
+      "final_test_mrr": 0.21352596314907873,
+      "best_test_mrr": 0.21654103852596315,
+      "final_oracle_mrr": 0.22223618090452263,
+      "final_oracle_accuracy": 0.314070351758794,
+      "final_entropy": 0.9060142921742771,
+      "action_distribution": {
+        "0": 477,
+        "1": 662,
+        "2": 452
+      },
+      "convergence_epoch": 12,
+      "baselines": {
+        "bm25": 0.08350083752093802,
+        "dense": 0.19007537688442214,
+        "hybrid": 0.11214405360134003
+      },
+      "best_fixed_mrr": 0.19007537688442214,
+      "improvement_over_best_fixed": 0.023450586264656598
+    },
+    {
+      "seed": 789,
+      "final_test_mrr": 0.21122278056951424,
+      "best_test_mrr": 0.22219430485762143,
+      "final_oracle_mrr": 0.22391122278056946,
+      "final_oracle_accuracy": 0.3341708542713568,
+      "final_entropy": 0.9310454458062959,
+      "action_distribution": {
+        "0": 467,
+        "1": 631,
+        "2": 493
+      },
+      "convergence_epoch": 6,
+      "baselines": {
+        "bm25": 0.07102177554438861,
+        "dense": 0.19438860971524285,
+        "hybrid": 0.09660804020100504
+      },
+      "best_fixed_mrr": 0.19438860971524285,
+      "improvement_over_best_fixed": 0.016834170854271385
+    },
+    {
+      "seed": 1024,
+      "final_test_mrr": 0.21829983249581245,
+      "best_test_mrr": 0.21976549413735352,
+      "final_oracle_mrr": 0.22453936348408712,
+      "final_oracle_accuracy": 0.3869346733668342,
+      "final_entropy": 0.9012446702143475,
+      "action_distribution": {
+        "0": 461,
+        "1": 659,
+        "2": 471
+      },
+      "convergence_epoch": 7,
+      "baselines": {
+        "bm25": 0.06662479061976549,
+        "dense": 0.18488274706867672,
+        "hybrid": 0.10615577889447236
+      },
+      "best_fixed_mrr": 0.18488274706867672,
+      "improvement_over_best_fixed": 0.03341708542713573
+    }
+  ]
+}

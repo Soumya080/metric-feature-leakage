@@ -1,0 +1,139 @@
+{
+  "claim_1_leaked_subsets": {
+    "arm": "leaky",
+    "n_informative": 3175,
+    "majority": 0.608503937007874,
+    "seed": 0,
+    "cv": "5-fold stratified x 5 repeats",
+    "per_dataset": {
+      "nq": {
+        "n": 1157,
+        "dim": 61
+      },
+      "triviaqa": {
+        "n": 1539,
+        "dim": 61
+      },
+      "hotpotqa": {
+        "n": 916,
+        "dim": 61
+      }
+    },
+    "subsets": {
+      "leaked_pair (22,23)": {
+        "n_features": 2,
+        "accuracy": 0.7341102362204723,
+        "std": 0.012760220908999786,
+        "lift_vs_majority": 0.12560629921259836
+      },
+      "leaked_block (22-25)": {
+        "n_features": 4,
+        "accuracy": 0.7310866141732282,
+        "std": 0.011668685629343544,
+        "lift_vs_majority": 0.1225826771653542
+      },
+      "f22_only (bm25 mrr)": {
+        "n_features": 1,
+        "accuracy": 0.6486299212598425,
+        "std": 0.012498183884437,
+        "lift_vs_majority": 0.04012598425196856
+      },
+      "f23_only (dense mrr)": {
+        "n_features": 1,
+        "accuracy": 0.6056692913385827,
+        "std": 0.0034213481862047724,
+        "lift_vs_majority": -0.002834645669291258
+      },
+      "all_features": {
+        "n_features": 61,
+        "accuracy": 0.7307086614173228,
+        "std": 0.01036981268230194,
+        "lift_vs_majority": 0.12220472440944885
+      },
+      "everything_but_leak": {
+        "n_features": 57,
+        "accuracy": 0.5993700787401575,
+        "std": 0.006914802645700829,
+        "lift_vs_majority": -0.00913385826771651
+      }
+    }
+  },
+  "claim_2_method_capture": {
+    "method_names": [
+      "always_bm25",
+      "always_dense",
+      "always_hybrid",
+      "convex_fusion",
+      "gradient_boosting",
+      "logistic_regression",
+      "random_forest",
+      "ridge",
+      "rl_route_mean",
+      "score_gap"
+    ],
+    "n_methods": 10,
+    "max_capture": 0.0698149100707777,
+    "per_dataset": {
+      "nq": {
+        "best_fixed_name": "dense",
+        "best_fixed": 0.16553222302554108,
+        "oracle": 0.2001398577066311,
+        "headroom": 0.034607634681090016,
+        "headroom_relative": 0.2090688691817434,
+        "n_methods": 10,
+        "capture": {
+          "always_bm25": -1.8086256579375424,
+          "always_dense": 0.0,
+          "always_hybrid": -0.5534327379812664,
+          "score_gap": 0.0039000178670066028,
+          "logistic_regression": -0.047141784564219476,
+          "random_forest": -0.0436730111374464,
+          "ridge": -0.1770313811655917,
+          "gradient_boosting": -0.03826294656094241,
+          "rl_route_mean": -0.4152319397041357,
+          "convex_fusion": -0.02443929351411005
+        }
+      },
+      "triviaqa": {
+        "best_fixed_name": "dense",
+        "best_fixed": 0.20002428837670316,
+        "oracle": 0.26935462920887326,
+        "headroom": 0.0693303408321701,
+        "headroom_relative": 0.3466096112368172,
+        "n_methods": 10,
+        "capture": {
+          "always_bm25": -0.7199842987314901,
+          "always_dense": 0.0,
+          "always_hybrid": -0.13427682509582795,
+          "score_gap": -0.04683019306962235,
+          "logistic_regression": -0.014550224826843169,
+          "random_forest": -0.04683019306962235,
+          "ridge": -0.0274433879965448,
+          "gradient_boosting": 0.0,
+          "rl_route_mean": -0.1715876108562106,
+          "convex_fusion": 0.0698149100707777
+        }
+      },
+      "hotpotqa": {
+        "best_fixed_name": "dense",
+        "best_fixed": 0.07529434821546678,
+        "oracle": 0.10956066197193373,
+        "headroom": 0.03426631375646695,
+        "headroom_relative": 0.45509808596003026,
+        "n_methods": 10,
+        "capture": {
+          "always_bm25": -0.8325943397698885,
+          "always_dense": 0.0,
+          "always_hybrid": -0.5268093987387347,
+          "score_gap": 0.0,
+          "logistic_regression": -0.34551614828417393,
+          "random_forest": -0.000519747633439989,
+          "ridge": -0.008601102258384815,
+          "gradient_boosting": 0.0,
+          "rl_route_mean": -0.20549420295415366,
+          "convex_fusion": -0.4524922415988772
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "header": {
+    "started_at": "2026-11-12 00:46:41",
+    "python": "3.14.2",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "argv": [
+      "r10_review3_checks.py"
+    ],
+    "args": {
+      "out_dir": "<repo>\\results\\crc_v2\\r10_review3_checks",
+      "leaked_arms": [
+        "leaky",
+        "leak_noisy"
+      ],
+      "skip_leaked": false
+    },
+    "canonical_sha256": "7b5de57627a216e443c24459bc39000f2c78339f5662cc5effc18a047e791ed2"
+  },
+  "shared_index_arms": {
+    "nq": {
+      "n_all": 1989,
+      "n_answerable": 1333,
+      "rr_full": {
+        "means": {
+          "bm25": 0.11300082635684226,
+          "dense": 0.15719395812116155,
+          "hybrid": 0.14786230335192943
+        },
+        "oracle": 0.215080096467064,
+        "best_fixed": "dense"
+      },
+      "mrr_at_20": {
+        "means": {
+          "bm25": 0.10779930216038276,
+          "dense": 0.1513850054453665,
+          "hybrid": 0.1419900141330596
+        },
+        "oracle": 0.21036758022200203,
+        "best_fixed": "dense"
+      },
+      "mrr_at_5": {
+        "means": {
+          "bm25": 0.0955113778444611,
+          "dense": 0.13634658664666166,
+          "hybrid": 0.12631907976994247
+        },
+        "oracle": 0.19364841210302575,
+        "best_fixed": "dense"
+      }
+    },
+    "triviaqa": {
+      "n_all": 1894,
+      "n_answerable": 1633,
+      "rr_full": {
+        "means": {
+          "bm25": 0.1626965699529593,
+          "dense": 0.19912718429356507,
+          "hybrid": 0.20267964579165904
+        },
+        "oracle": 0.28572019647397184,
+        "best_fixed": "hybrid"
+      },
+      "mrr_at_20": {
+        "means": {
+          "bm25": 0.15762927802188195,
+          "dense": 0.19339149752018336,
+          "hybrid": 0.19751165296404355
+        },
+        "oracle": 0.28105190543500913,
+        "best_fixed": "hybrid"
+      },
+      "mrr_at_5": {
+        "means": {
+          "bm25": 0.1431516636048173,
+          "dense": 0.17804654011022658,
+          "hybrid": 0.1804858134313125
+        },
+        "oracle": 0.2659522351500306,
+        "best_fixed": "hybrid"
+      }
+    },
+    "hotpotqa": {
+      "n_all": 1995,
+      "n_answerable": 1095,
+      "rr_full": {
+        "means": {
+          "bm25": 0.10168725759332131,
+          "dense": 0.09305162901989826,
+          "hybrid": 0.10891781623393684
+        },
+        "oracle": 0.17270062856096716,
+        "best_fixed": "hybrid"
+      },
+      "mrr_at_20": {
+        "means": {
+          "bm25": 0.09633497595985403,
+          "dense": 0.08708956646613036,
+          "hybrid": 0.10300503258877236
+        },
+        "oracle": 0.16716429767099852,
+        "best_fixed": "hybrid"
+      },
+      "mrr_at_5": {
+        "means": {
+          "bm25": 0.08474885844748858,
+          "dense": 0.07377473363774734,
+          "hybrid": 0.08928462709284626
+        },
+        "oracle": 0.15293759512937596,
+        "best_fixed": "hybrid"
+      }
+    }
+  },
+  "mde_bracket": {
+    "nq": {
+      "n_test": 174,
+      "headroom_abs": 0.03460763468109003,
+      "oracle_variance_model": 0.6766635700997935,
+      "selective_router_model": 0.4739413194131942
+    },
+    "triviaqa": {
+      "n_test": 231,
+      "headroom_abs": 0.06933034083217007,
+      "oracle_variance_model": 0.4290855903756618,
+      "selective_router_model": 0.20460822608226084
+    },
+    "hotpotqa": {
+      "n_test": 138,
+      "headroom_abs": 0.03426631375646696,
+      "oracle_variance_model": 0.7202329156204136,
+      "selective_router_model": 0.5357800378003781
+    }
+  },
+  "method_pvalues": {
+    "nq": {
+      "best_fixed": "dense",
+      "score_gap": {
+        "p_one_sided": 0.2635736426357364,
+        "n_queries_changed": 1,
+        "mean_diff": 0.00013497039359108325
+      },
+      "logistic_regression": {
+        "p_one_sided": 0.5923407659234077,
+        "n_queries_changed": 21,
+        "mean_diff": -0.0016314656584131431
+      },
+      "random_forest": {
+        "p_one_sided": 0.9086091390860914,
+        "n_queries_changed": 2,
+        "mean_diff": -0.0015114196148678907
+      },
+      "ridge": {
+        "p_one_sided": 0.8497150284971503,
+        "n_queries_changed": 57,
+        "mean_diff": -0.006126637366467588
+      },
+      "gradient_boosting": {
+        "p_one_sided": 0.7938206179382061,
+        "n_queries_changed": 5,
+        "mean_diff": -0.0013241900764031514
+      }
+    },
+    "triviaqa": {
+      "best_fixed": "dense",
+      "score_gap": {
+        "p_one_sided": 0.9206079392060794,
+        "n_queries_changed": 1,
+        "mean_diff": -0.003246753246753247
+      },
+      "logistic_regression": {
+        "p_one_sided": 0.6708329167083291,
+        "n_queries_changed": 15,
+        "mean_diff": -0.001008772046429735
+      },
+      "random_forest": {
+        "p_one_sided": 0.9206079392060794,
+        "n_queries_changed": 1,
+        "mean_diff": -0.003246753246753247
+      },
+      "ridge": {
+        "p_one_sided": 0.5692430756924307,
+        "n_queries_changed": 95,
+        "mean_diff": -0.001902659443389957
+      },
+      "gradient_boosting": {
+        "p_one_sided": 1.0,
+        "n_queries_changed": 0,
+        "mean_diff": 0.0
+      }
+    },
+    "hotpotqa": {
+      "best_fixed": "dense",
+      "score_gap": {
+        "p_one_sided": 1.0,
+        "n_queries_changed": 0,
+        "mean_diff": 0.0
+      },
+      "logistic_regression": {
+        "p_one_sided": 0.8265173482651735,
+        "n_queries_changed": 36,
+        "mean_diff": -0.011839564745031452
+      },
+      "random_forest": {
+        "p_one_sided": 0.9183081691830817,
+        "n_queries_changed": 1,
+        "mean_diff": -1.7809835481644742e-05
+      },
+      "ridge": {
+        "p_one_sided": 0.48895110488951105,
+        "n_queries_changed": 73,
+        "mean_diff": -0.00029472806863725757
+      },
+      "gradient_boosting": {
+        "p_one_sided": 1.0,
+        "n_queries_changed": 0,
+        "mean_diff": 0.0
+      }
+    }
+  },
+  "ladder_verdicts": {
+    "honest_minimal": {
+      "verdict": false,
+      "suspicion": false,
+      "findings_on_leak_slots": []
+    },
+    "leak_one_arm": {
+      "verdict": true,
+      "suspicion": true,
+      "findings_on_leak_slots": [
+        "[LEAK] single_arm        features[22] vs arm[0]: equal on 1108/3612 non-zero-reward rows (30.7%, 20 distinct values) - only this arm's reward leaked",
+        "[SUSPECT] jittered          features[22] vs arm[1]: Spearman rho = 0.564 (strong) on 3612 non-zero-reward rows with only 5.0% exact agreement; arm selectivity -0.252 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] jittered          features[22] vs arm[2]: Spearman rho = 0.751 (strong) on 3612 non-zero-reward rows with only 7.0% exact agreement; arm selectivity -0.065 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] monotone_derived  features[24] vs arm[0]: Spearman rho = 0.503 (strong) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.029 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] monotone_derived  features[24] vs arm[1]: Spearman rho = 0.365 (moderate) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.138 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] monotone_derived  features[24] vs arm[2]: Spearman rho = 0.475 (moderate) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.029 - spread across arms, which is what a confound looks like"
+      ]
+    },
+    "leak_hit": {
+      "verdict": false,
+      "suspicion": true,
+      "findings_on_leak_slots": [
+        "[SUSPECT] monotone_derived  features[22] vs arm[0]: Spearman rho = 0.799 (strong) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.062 - arm-specific, which is what a real leak looks like",
+        "[SUSPECT] monotone_derived  features[22] vs arm[1]: Spearman rho = 0.544 (strong) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.255 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] monotone_derived  features[22] vs arm[2]: Spearman rho = 0.737 (strong) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.062 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] monotone_derived  features[23] vs arm[0]: Spearman rho = 0.550 (strong) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.299 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] monotone_derived  features[23] vs arm[1]: Spearman rho = 0.849 (strong) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.086 - arm-specific, which is what a real leak looks like",
+        "[SUSPECT] monotone_derived  features[23] vs arm[2]: Spearman rho = 0.763 (strong) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.086 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] monotone_derived  features[25] vs arm[0]: Spearman rho = 0.532 (strong) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.033 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] monotone_derived  features[25] vs arm[1]: Spearman rho = 0.366 (moderate) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.166 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] monotone_derived  features[25] vs arm[2]: Spearman rho = 0.499 (moderate) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.033 - spread across arms, which is what a confound looks like"
+      ]
+    },
+    "leak_noisy": {
+      "verdict": false,
+      "suspicion": true,
+      "findings_on_leak_slots": [
+        "[SUSPECT] monotone_derived  features[22] vs arm[0]: Spearman rho = 0.614 (strong) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.054 - arm-specific, which is what a real leak looks like",
+        "[SUSPECT] monotone_derived  features[22] vs arm[1]: Spearman rho = 0.434 (moderate) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.180 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] monotone_derived  features[22] vs arm[2]: Spearman rho = 0.560 (strong) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.054 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] monotone_derived  features[23] vs arm[0]: Spearman rho = 0.419 (moderate) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.154 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] monotone_derived  features[23] vs arm[1]: Spearman rho = 0.574 (strong) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.061 - arm-specific, which is what a real leak looks like",
+        "[SUSPECT] monotone_derived  features[23] vs arm[2]: Spearman rho = 0.513 (strong) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.061 - spread across arms, which is what a confound looks like"
+      ]
+    },
+    "leaky": {
+      "verdict": true,
+      "suspicion": true,
+      "findings_on_leak_slots": [
+        "[LEAK] direct            features[22] vs arm[0]: equal on 1108/3612 non-zero-reward rows (30.7%, 20 distinct values)",
+        "[SUSPECT] jittered          features[22] vs arm[1]: Spearman rho = 0.564 (strong) on 3612 non-zero-reward rows with only 5.0% exact agreement; arm selectivity -0.252 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] jittered          features[22] vs arm[2]: Spearman rho = 0.751 (strong) on 3612 non-zero-reward rows with only 7.0% exact agreement; arm selectivity -0.065 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] jittered          features[23] vs arm[0]: Spearman rho = 0.592 (strong) on 3612 non-zero-reward rows with only 5.0% exact agreement; arm selectivity -0.293 - spread across arms, which is what a confound looks like",
+        "[LEAK] direct            features[23] vs arm[1]: equal on 1444/3612 non-zero-reward rows (40.0%, 20 distinct values)",
+        "[SUSPECT] jittered          features[23] vs arm[2]: Spearman rho = 0.790 (strong) on 3612 non-zero-reward rows with only 8.4% exact agreement; arm selectivity -0.095 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] jittered          features[24] vs arm[1]: Spearman rho = 0.444 (moderate) on 3612 non-zero-reward rows with only 16.7% exact agreement; arm selectivity +0.255 - arm-specific, which is what a real leak looks like",
+        "[SUSPECT] monotone_derived  features[25] vs arm[0]: Spearman rho = 0.537 (strong) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity +0.035 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] monotone_derived  features[25] vs arm[1]: Spearman rho = 0.370 (moderate) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.167 - spread across arms, which is what a confound looks like",
+        "[SUSPECT] monotone_derived  features[25] vs arm[2]: Spearman rho = 0.502 (strong) on 3612 non-zero-reward rows with only 0.0% exact agreement; arm selectivity -0.035 - spread across arms, which is what a confound looks like"
+      ]
+    }
+  },
+  "leaked_router_test": {
+    "leaky": {
+      "nq": {
+        "gb_mean": 0.1823138269877353,
+        "best_fixed": "dense",
+        "best_fixed_mean": 0.16553222302554108,
+        "capture": 0.484910457384245,
+        "p_one_sided": 0.016198380161983803,
+        "n_test": 174
+      },
+      "triviaqa": {
+        "gb_mean": 0.2486408644360202,
+        "best_fixed": "dense",
+        "best_fixed_mean": 0.20002428837670316,
+        "capture": 0.7012308821184733,
+        "p_one_sided": 9.999000099990002e-05,
+        "n_test": 231
+      },
+      "hotpotqa": {
+        "gb_mean": 0.09714822251470255,
+        "best_fixed": "dense",
+        "best_fixed_mean": 0.07529434821546678,
+        "capture": 0.6377655459105627,
+        "p_one_sided": 0.0052994700529947,
+        "n_test": 138
+      }
+    },
+    "leak_noisy": {
+      "nq": {
+        "gb_mean": 0.17997333811407143,
+        "best_fixed": "dense",
+        "best_fixed_mean": 0.16553222302554108,
+        "capture": 0.4172811930548127,
+        "p_one_sided": 0.0451954804519548,
+        "n_test": 174
+      },
+      "triviaqa": {
+        "gb_mean": 0.24826465334552336,
+        "best_fixed": "dense",
+        "best_fixed_mean": 0.20002428837670316,
+        "capture": 0.6958045264135799,
+        "p_one_sided": 9.999000099990002e-05,
+        "n_test": 231
+      },
+      "hotpotqa": {
+        "gb_mean": 0.09879772670997333,
+        "best_fixed": "dense",
+        "best_fixed_mean": 0.07529434821546678,
+        "capture": 0.6859033236415998,
+        "p_one_sided": 0.004199580041995801,
+        "n_test": 138
+      }
+    }
+  }
+}

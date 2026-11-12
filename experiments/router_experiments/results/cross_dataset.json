@@ -1,0 +1,36 @@
+{
+  "nq_to_triviaqa": {
+    "train_dataset": "NQ",
+    "test_dataset": "TriviaQA",
+    "train_size": 809,
+    "val_size": 174,
+    "test_size": 1539,
+    "final_test_mrr": 0.1913,
+    "best_test_mrr_DIAGNOSTIC_ONLY": 0.2057,
+    "oracle_mrr": 0.2659,
+    "baselines": {
+      "bm25": 0.1476,
+      "dense": 0.2049,
+      "hybrid": 0.1903
+    },
+    "best_fixed_mrr": 0.2049,
+    "improvement": -0.0136
+  },
+  "triviaqa_to_nq": {
+    "train_dataset": "TriviaQA",
+    "test_dataset": "NQ",
+    "train_size": 1077,
+    "val_size": 231,
+    "test_size": 1157,
+    "final_test_mrr": 0.1351,
+    "best_test_mrr_DIAGNOSTIC_ONLY": 0.1677,
+    "oracle_mrr": 0.2121,
+    "baselines": {
+      "bm25": 0.109,
+      "dense": 0.1678,
+      "hybrid": 0.1463
+    },
+    "best_fixed_mrr": 0.1678,
+    "improvement": -0.0327
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "seed": 0,
+  "n_splits": 200,
+  "noise_fractions": [
+    0.0,
+    0.05,
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "margin_fractions": [
+    0.01,
+    0.05,
+    0.1,
+    0.25
+  ],
+  "per_dataset": {
+    "nq": {
+      "n": 1157,
+      "best_fixed_arm": "dense",
+      "best_fixed": 0.1677504666264858,
+      "oracle": 0.21214529848697605,
+      "headroom": 0.04439483186049026,
+      "headroom_rel": 0.2646480379654625,
+      "reward_std": 0.2759635640998599,
+      "arm_split": {
+        "same_split": 0.16885994984458916,
+        "cross_split": 0.16664289961428622,
+        "selection_bias": 0.0022170502303029416,
+        "n_splits": 200
+      },
+      "noise_sweep": [
+        {
+          "noise_frac": 0.0,
+          "oracle": 0.21214529848697605,
+          "headroom": 0.04439483186049026
+        },
+        {
+          "noise_frac": 0.05,
+          "oracle": 0.2175468014417305,
+          "headroom": 0.0497963348152447
+        },
+        {
+          "noise_frac": 0.1,
+          "oracle": 0.22504588798953126,
+          "headroom": 0.05729542136304547
+        },
+        {
+          "noise_frac": 0.25,
+          "oracle": 0.25096207551547683,
+          "headroom": 0.08321160888899104
+        },
+        {
+          "noise_frac": 0.5,
+          "oracle": 0.3000570050209902,
+          "headroom": 0.1323065383945044
+        },
+        {
+          "noise_frac": 1.0,
+          "oracle": 0.40349259525909054,
+          "headroom": 0.23574212863260474
+        }
+      ],
+      "margin_decomposition": [
+        {
+          "margin_frac_of_best_fixed": 0.01,
+          "margin_abs": 0.001677504666264858,
+          "share_of_headroom": 0.19236143671099104,
+          "n_queries": 337
+        },
+        {
+          "margin_frac_of_best_fixed": 0.05,
+          "margin_abs": 0.00838752333132429,
+          "share_of_headroom": 0.2066433867204479,
+          "n_queries": 586
+        },
+        {
+          "margin_frac_of_best_fixed": 0.1,
+          "margin_abs": 0.01677504666264858,
+          "share_of_headroom": 0.22535216577156655,
+          "n_queries": 702
+        },
+        {
+          "margin_frac_of_best_fixed": 0.25,
+          "margin_abs": 0.04193761665662145,
+          "share_of_headroom": 0.2666399207847376,
+          "n_queries": 840
+        }
+      ],
+      "total_oracle_gain": 51.364820462587204
+    },
+    "triviaqa": {
+      "n": 1539,
+      "best_fixed_arm": "dense",
+      "best_fixed": 0.20488005957114583,
+      "oracle": 0.265935057974994,
+      "headroom": 0.061054998403848176,
+      "headroom_rel": 0.29800361504993833,
+      "reward_std": 0.3156599139853574,
+      "arm_split": {
+        "same_split": 0.20438021035442816,
+        "cross_split": 0.20537925963303785,
+        "selection_bias": -0.0009990492786096927,
+        "n_splits": 200
+      },
+      "noise_sweep": [
+        {
+          "noise_frac": 0.0,
+          "oracle": 0.265935057974994,
+          "headroom": 0.061054998403848176
+        },
+        {
+          "noise_frac": 0.05,
+          "oracle": 0.2722316834319833,
+          "headroom": 0.06735162386083746
+        },
+        {
+          "noise_frac": 0.1,
+          "oracle": 0.2806824256127238,
+          "headroom": 0.07580236604157795
+        },
+        {
+          "noise_frac": 0.25,
+          "oracle": 0.31020367983163477,
+          "headroom": 0.10532362026048894
+        },
+        {
+          "noise_frac": 0.5,
+          "oracle": 0.36393870141285944,
+          "headroom": 0.15905864184171362
+        },
+        {
+          "noise_frac": 1.0,
+          "oracle": 0.4802067414486186,
+          "headroom": 0.2753266818774728
+        }
+      ],
+      "margin_decomposition": [
+        {
+          "margin_frac_of_best_fixed": 0.01,
+          "margin_abs": 0.0020488005957114584,
+          "share_of_headroom": 0.22156686470864878,
+          "n_queries": 505
+        },
+        {
+          "margin_frac_of_best_fixed": 0.05,
+          "margin_abs": 0.010244002978557293,
+          "share_of_headroom": 0.2340844815690492,
+          "n_queries": 831
+        },
+        {
+          "margin_frac_of_best_fixed": 0.1,
+          "margin_abs": 0.020488005957114586,
+          "share_of_headroom": 0.2438150821543192,
+          "n_queries": 960
+        },
+        {
+          "margin_frac_of_best_fixed": 0.25,
+          "margin_abs": 0.05122001489278646,
+          "share_of_headroom": 0.2816638489479663,
+          "n_queries": 1133
+        }
+      ],
+      "total_oracle_gain": 93.96364254352125
+    },
+    "hotpotqa": {
+      "n": 916,
+      "best_fixed_arm": "dense",
+      "best_fixed": 0.10706962931393504,
+      "oracle": 0.17062738077107534,
+      "headroom": 0.0635577514571403,
+      "headroom_rel": 0.5936113897507282,
+      "reward_std": 0.22810277090405467,
+      "arm_split": {
+        "same_split": 0.10873120415440723,
+        "cross_split": 0.10451204761205701,
+        "selection_bias": 0.004219156542350222,
+        "n_splits": 200
+      },
+      "noise_sweep": [
+        {
+          "noise_frac": 0.0,
+          "oracle": 0.17062738077107534,
+          "headroom": 0.0635577514571403
+        },
+        {
+          "noise_frac": 0.05,
+          "oracle": 0.1749708658903955,
+          "headroom": 0.06790123657646047
+        },
+        {
+          "noise_frac": 0.1,
+          "oracle": 0.18098248236058975,
+          "headroom": 0.07391285304665471
+        },
+        {
+          "noise_frac": 0.25,
+          "oracle": 0.20247077165209512,
+          "headroom": 0.09540114233816008
+        },
+        {
+          "noise_frac": 0.5,
+          "oracle": 0.2424478831547612,
+          "headroom": 0.13537825384082616
+        },
+        {
+          "noise_frac": 1.0,
+          "oracle": 0.3270014986940184,
+          "headroom": 0.21993186938008336
+        }
+      ],
+      "margin_decomposition": [
+        {
+          "margin_frac_of_best_fixed": 0.01,
+          "margin_abs": 0.0010706962931393506,
+          "share_of_headroom": 0.1560015008428388,
+          "n_queries": 203
+        },
+        {
+          "margin_frac_of_best_fixed": 0.05,
+          "margin_abs": 0.005353481465696752,
+          "share_of_headroom": 0.1641309688466766,
+          "n_queries": 402
+        },
+        {
+          "margin_frac_of_best_fixed": 0.1,
+          "margin_abs": 0.010706962931393504,
+          "share_of_headroom": 0.17436362386482296,
+          "n_queries": 513
+        },
+        {
+          "margin_frac_of_best_fixed": 0.25,
+          "margin_abs": 0.02676740732848376,
+          "share_of_headroom": 0.19717783803746178,
+          "n_queries": 620
+        }
+      ],
+      "total_oracle_gain": 58.21890033474066
+    }
+  }
+}

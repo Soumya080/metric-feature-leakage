@@ -1,0 +1,161 @@
+{
+  "nq": {
+    "n": 1157,
+    "feature_dim": 67,
+    "metric": "mrr_at_20",
+    "k_fail": 20,
+    "has_cross_scores": true,
+    "probes": {
+      "bm25": {
+        "failure_rate": 0.7018150388936906,
+        "majority_baseline": 0.7018150388936906,
+        "sets": {
+          "pre_retrieval": {
+            "auc": 0.5328093197966646,
+            "auc_std": 0.03781681348947574,
+            "n_features": 22
+          },
+          "+self_score": {
+            "auc": 0.5414674201186159,
+            "auc_std": 0.03787375595952138,
+            "n_features": 24
+          },
+          "+cross_score": {
+            "auc": 0.5530162775917199,
+            "auc_std": 0.033700266778112734,
+            "n_features": 25
+          }
+        },
+        "post_minus_pre": 0.020206957795055325
+      },
+      "dense": {
+        "failure_rate": 0.5859982713915298,
+        "majority_baseline": 0.5859982713915298,
+        "sets": {
+          "pre_retrieval": {
+            "auc": 0.571888737195658,
+            "auc_std": 0.029367612003027257,
+            "n_features": 22
+          },
+          "+self_score": {
+            "auc": 0.6019384800338264,
+            "auc_std": 0.033863624309368755,
+            "n_features": 23
+          },
+          "+cross_score": {
+            "auc": 0.5994934097055001,
+            "auc_std": 0.030110673861293985,
+            "n_features": 24
+          }
+        },
+        "post_minus_pre": 0.02760467250984211
+      }
+    }
+  },
+  "triviaqa": {
+    "n": 1539,
+    "feature_dim": 67,
+    "metric": "mrr_at_20",
+    "k_fail": 20,
+    "has_cross_scores": true,
+    "probes": {
+      "bm25": {
+        "failure_rate": 0.6608187134502924,
+        "majority_baseline": 0.6608187134502924,
+        "sets": {
+          "pre_retrieval": {
+            "auc": 0.5191098403552403,
+            "auc_std": 0.03725247442604124,
+            "n_features": 22
+          },
+          "+self_score": {
+            "auc": 0.5683230304057962,
+            "auc_std": 0.030738377352336355,
+            "n_features": 24
+          },
+          "+cross_score": {
+            "auc": 0.5815272691304638,
+            "auc_std": 0.0306526830576311,
+            "n_features": 25
+          }
+        },
+        "post_minus_pre": 0.062417428775223494
+      },
+      "dense": {
+        "failure_rate": 0.5523066926575698,
+        "majority_baseline": 0.5523066926575698,
+        "sets": {
+          "pre_retrieval": {
+            "auc": 0.5194713785228467,
+            "auc_std": 0.027444540008646035,
+            "n_features": 22
+          },
+          "+self_score": {
+            "auc": 0.549356668595715,
+            "auc_std": 0.0306558401350192,
+            "n_features": 23
+          },
+          "+cross_score": {
+            "auc": 0.5555017765913093,
+            "auc_std": 0.023002013486372357,
+            "n_features": 24
+          }
+        },
+        "post_minus_pre": 0.03603039806846253
+      }
+    }
+  },
+  "hotpotqa": {
+    "n": 916,
+    "feature_dim": 67,
+    "metric": "mrr_at_20",
+    "k_fail": 20,
+    "has_cross_scores": true,
+    "probes": {
+      "bm25": {
+        "failure_rate": 0.7368995633187773,
+        "majority_baseline": 0.7368995633187773,
+        "sets": {
+          "pre_retrieval": {
+            "auc": 0.5421482741244646,
+            "auc_std": 0.042208712585471965,
+            "n_features": 22
+          },
+          "+self_score": {
+            "auc": 0.5403835978835978,
+            "auc_std": 0.03760931062859153,
+            "n_features": 24
+          },
+          "+cross_score": {
+            "auc": 0.5360483749055177,
+            "auc_std": 0.03205059512615527,
+            "n_features": 25
+          }
+        },
+        "post_minus_pre": -0.006099899218946936
+      },
+      "dense": {
+        "failure_rate": 0.6986899563318777,
+        "majority_baseline": 0.6986899563318777,
+        "sets": {
+          "pre_retrieval": {
+            "auc": 0.555067877435065,
+            "auc_std": 0.037526573894594115,
+            "n_features": 22
+          },
+          "+self_score": {
+            "auc": 0.5528614549512987,
+            "auc_std": 0.03987928320208325,
+            "n_features": 23
+          },
+          "+cross_score": {
+            "auc": 0.5377767857142857,
+            "auc_std": 0.04958268429985032,
+            "n_features": 24
+          }
+        },
+        "post_minus_pre": -0.01729109172077936
+      }
+    }
+  }
+}

@@ -1,0 +1,180 @@
+% =====================================================================================
+% NeurIPS Paper Checklist.
+%
+% Included via \input{checklist} immediately before \end{document}, AFTER the
+% bibliography and the appendix, which is where the template requires it.
+%
+% Does NOT count toward the page limit (NeurIPS 2026 formatting instructions, lines
+% 171-173: "The checklist should follow the references and follow the (optional)
+% supplemental material. The checklist does NOT count towards the page limit.")
+%
+% The main conference desk-rejects papers without it. The NewInML call does not mention
+% it either way, so this is insurance: zero page cost, and it cannot count against us.
+% If the OpenReview form for the workshop does not ask for a checklist, delete the
+% \input line -- nothing else in the paper depends on this file.
+%
+% The instruction block from the template has been deleted as required; the section
+% heading, the subsection headings and the questions are kept verbatim.
+% =====================================================================================
+
+\newpage
+\section*{NeurIPS Paper Checklist}
+
+\begin{enumerate}
+
+\item {\bf Claims}\\
+Do the main claims made in the abstract and introduction accurately reflect the paper's
+contributions and scope?\\
+Answer: \answerYes{}\\
+Justification: \justification{The introduction states three contributions and each is discharged in a named
+section: the graded leak measurement in \S\ref{sec:doseresponse}, the bounded negative result in
+\S\ref{sec:results}, the audit tool in \S\ref{sec:tool}. Every quantitative claim in the abstract
+is reproduced from a released artifact (REPRODUCE.md). The abstract states the bound on the
+negative claim (the test splits detect only methods capturing roughly 43--72\% of the gap) rather
+than asserting that no useful router exists, and \S\ref{sec:doseresponse} separates the size of
+the leak's effect, which transfers to RouterBench, from how often the failure occurs, which is
+left open.}
+
+\item {\bf Limitations}\\
+Does the paper discuss the limitations of the work performed by the authors?\\
+Answer: \answerYes{}\\
+Justification: \justification{\S\ref{sec:limitations} lists four: one naturally occurring leak in one pipeline,
+with the other rungs constructed; weak, Dense-dominated arms (Dense was fine-tuned on NQ and
+TriviaQA questions); a proxy reward with 27--46\% answer-bearing distractors, query-side features
+only, and no cost axis; and limited power on one small test split. \S\ref{sec:setup} additionally
+states that BM25's IDF is computed per candidate set and that on a shared index the best fixed
+arm differs by dataset.}
+
+\item {\bf Theory assumptions and proofs}\\
+For each theoretical result, does the paper provide the full set of assumptions and a complete
+(and correct) proof?\\
+Answer: \answerNA{}\\
+Justification: \justification{The paper contains no theoretical results. Its claims are empirical throughout.}
+
+\item {\bf Experimental result reproducibility}\\
+Does the paper fully disclose all the information needed to reproduce the main experimental
+results?\\
+Answer: \answerYes{}\\
+Justification: \justification{\S\ref{sec:setup} gives datasets, query counts, the three retrievers with their
+hyperparameters, the reward definition, the 61-dimensional feature layout with the index range of
+the leaked features, and the fixed-seed split shared by every method. \S\ref{sec:doseresponse}
+states the cross-validation protocol (5-fold, repeated 5 times) and that the reward table is
+byte-identical across all five feature sets. The released repository maps each claim to the
+command that regenerates it.}
+
+\item {\bf Open access to data and code}\\
+Does the paper provide open access to the data and code, with sufficient instructions to
+faithfully reproduce the main experimental results?\\
+Answer: \answerYes{}\\
+Justification: \justification{The detector (\texttt{leakcheck} 0.2.1) is released as a standalone installable
+package with a test suite. The
+research code, the per-query result files and the environment lookup tables are released with a
+document mapping every claim to its regenerating command. The Wikipedia passage pool is
+deliberately \emph{not} redistributed --- it is CC BY-SA text and is instead regenerated
+deterministically from its original source at a fixed seed, which is stated in the release. All
+artifacts are anonymized for review.}
+
+\item {\bf Experimental setting/details}\\
+Does the paper specify all the training and test details necessary to understand the results?\\
+Answer: \answerYes{}\\
+Justification: \justification{\S\ref{sec:setup} and \S\ref{sec:doseresponse} give the splits, the estimator
+(gradient boosting, with logistic regression reported alongside in \S\ref{sec:doseresponse}
+because retention depends on the choice) and the number of seeds. Supplementary~S2 gives the
+tuning procedure for the heuristic baseline, including the defect that was repaired in it, and
+the policy-gradient settings (architecture, epochs, learning rate, entropy bonus, advantage
+and checkpoint rule) and how the additional policy-gradient negatives differ from them.}
+
+\item {\bf Experiment statistical significance}\\
+Does the paper report error bars suitably and correctly defined or other appropriate information
+about the statistical significance of the experiments?\\
+Answer: \answerYes{}\\
+Justification: \justification{\S\ref{sec:doseresponse} reports the cross-validation seed range of the leak
+ladder ($\le$0.22 points) and the range over noise draws; Figure~\ref{fig:ladder}(b) shows the
+range of capture over 15 dataset--split cells. Figure~\ref{fig:perm} reports two null
+distributions at $B{=}1000$ with one-sided $p$-values. Table~\ref{tab:capture} gives one-sided
+paired-bootstrap $p$-values against the best fixed retriever and the policy-gradient spread
+across 15 training seeds; \S\ref{sec:results} gives a paired-bootstrap 95\% interval on the best
+capture and the minimum detectable capture at $\alpha{=}0.05$ and 80\% power under two
+variance models.}
+
+\item {\bf Experiments compute resources}\\
+Does the paper provide sufficient information on the computer resources needed to reproduce the
+experiments?\\
+Answer: \answerNo{}\\
+Justification: \justification{The paper does not report wall-clock time or hardware. The experiments are modest
+--- retrieval over candidate sets of 500 passages and a shared index of at most 100K, with
+gradient boosting and logistic regression on at most 3{,}634 rows --- and the released code runs
+on a single machine without a GPU except for the dense encoder; REVIEWERS.md gives the run time
+of each reproduction step. We judged a compute table to be a
+poor use of a strict page limit relative to the reproducibility material we did include.}
+
+\item {\bf Code of ethics}\\
+Does the research conform, in every respect, with the NeurIPS Code of Ethics?\\
+Answer: \answerYes{}\\
+Justification: \justification{The work uses public question-answering datasets and public Wikipedia text, involves
+no human subjects and no personally identifying data, and introduces no model or dataset with
+foreseeable misuse potential. Anonymity is preserved throughout the submission and the released
+artifacts.}
+
+\item {\bf Broader impacts}\\
+Does the paper discuss both potential positive societal impacts and negative societal impacts?\\
+Answer: \answerNA{}\\
+Justification: \justification{The work is a measurement and audit study of an evaluation failure mode in
+retrieval systems. Its foreseeable effect is on research practice rather than on deployed
+technology: it argues that a class of reported result may be inflated, and releases a tool for
+detecting the cause. We identify no direct path to a negative societal application.}
+
+\item {\bf Safeguards}\\
+Does the paper describe safeguards for responsible release of data or models with high risk for
+misuse?\\
+Answer: \answerNA{}\\
+Justification: \justification{The released assets are a leakage-detection utility and derived evaluation tables.
+Neither is a generative model, a scraped corpus of unvetted content, or otherwise high-risk.}
+
+\item {\bf Licenses for existing assets}\\
+Are the creators or original owners of assets used in the paper properly credited, and are the
+license and terms of use explicitly mentioned and properly respected?\\
+Answer: \answerYes{}\\
+Justification: \justification{The release carries a per-asset licence record: Wikipedia passages via
+\texttt{wiki\_snippets} (CC BY-SA), NQ-Open (CC BY-SA 3.0), HotpotQA (CC BY-SA 4.0), TriviaQA
+(Apache 2.0), and RouterBench under its upstream terms with no RouterBench data redistributed.
+The code is MIT; any released file containing question, answer or passage text is distributed
+under CC BY-SA 4.0 rather than MIT, because MIT is incompatible with the share-alike terms of the
+sources. This separation was introduced after an audit found an earlier release had committed
+CC BY-SA text under an MIT-only licence, and that correction is recorded in the release rather
+than made silently. The retriever and encoder papers are cited in \S\ref{sec:setup}.}
+
+\item {\bf New assets}\\
+Are new assets introduced in the paper well documented and is the documentation provided alongside
+the assets?\\
+Answer: \answerYes{}\\
+Justification: \justification{The detector of \S\ref{sec:tool} ships with a README, a calibration note recording
+the threshold that its own external audit falsified, a test suite, and an explicit statement of
+what it does not certify. The derived evaluation artifacts ship with a document recording three
+open defects found by audit in the artifacts themselves, including what does and does not depend
+on each. All assets are anonymized for review.}
+
+\item {\bf Crowdsourcing and research with human subjects}\\
+For crowdsourcing experiments and research with human subjects, does the paper include the full
+text of instructions, screenshots, and details about compensation?\\
+Answer: \answerNA{}\\
+Justification: \justification{The work involves no crowdsourcing and no human subjects. All relevance signals are
+computed automatically by answer-string matching, whose limitations as a proxy are stated in
+\S\ref{sec:limitations}.}
+
+\item {\bf Institutional review board (IRB) approvals or equivalent}\\
+Does the paper describe potential risks incurred by study participants and whether IRB approval
+was obtained?\\
+Answer: \answerNA{}\\
+Justification: \justification{The work involves no human subjects, so no review board approval was required.}
+
+\item {\bf Declaration of LLM usage}\\
+Does the paper describe the usage of LLMs if it is an important, original, or non-standard
+component of the core methods?\\
+Answer: \answerNA{}\\
+Justification: \justification{No large language model is a component of the methods evaluated here. The pipeline
+studied is retrieval only --- sparse, dense and rank-fusion retrieval scored by reciprocal rank
+--- and the router is a gradient-boosted classifier or a small policy network over hand-built
+features. Language models are discussed only as related work.}
+
+\end{enumerate}

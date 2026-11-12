@@ -1,0 +1,43 @@
+archive/
+dump/
+*.pt
+__pycache__/
+.venv/
+data/cache/
+*.pyc
+.pytest_cache/
+
+# Prepared corpora are ~577MB each (~1.7GB total), well over GitHub's free Git-LFS
+# quota. They do not need to travel with the repo: 01_prepare_data.py is deterministic
+# (RANDOM_SEED 42/43/44) and cache/wiki_passage_pool.json IS tracked, so any machine
+# regenerates them bit-identically. Transfer directly (rsync/scp) to skip that step.
+experiments/baseline_v2/data/*.json
+
+# Run logs are per-machine artifacts, not results.
+logs/
+
+# Timestamped snapshots the lab runner takes before overwriting results/. They are local
+# safety copies, not results: 269 of them were tracked, which is how .git reached 1.9 GB.
+# Untracked with `git rm -r --cached`, so they stay on disk and stop travelling with the repo.
+results_backup_*/
+
+# Overleaf upload bundle, rebuilt on demand from paper/
+paper.zip
+
+# CC BY-SA Wikipedia text -- must not ship inside an MIT repo. Regenerate with
+# experiments/baseline_v2/01_prepare_data.py (seed is fixed, so the pool is identical).
+# See DATA_LICENSES.md
+experiments/baseline_v2/cache/wiki_passage_pool*.json
+
+# Third-party benchmark data. RouterBench ships ~95 MB pickles under its own terms;
+# fetch them yourself per REPRODUCE.md rather than redistributing them here.
+data/external/
+paper/build/
+
+# CRC v2 noise-variant env files (~105 MB): regenerate with
+#   python experiments/crc_v2/r1_build_noise_variants.py
+results/crc_v2/crc_v2/env_data/
+
+__pycache__/
+*.egg-info/
+.venv/

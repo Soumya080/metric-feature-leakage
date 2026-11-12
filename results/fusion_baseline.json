@@ -1,0 +1,243 @@
+{
+  "nq": {
+    "n_train": 809,
+    "n_test": 174,
+    "selected_alpha": 0.1,
+    "alpha_selected_on": "train split",
+    "train_curve": {
+      "0.0": 0.1645707295906191,
+      "0.1": 0.16562783503896633,
+      "0.2": 0.16473987148307778,
+      "0.3": 0.16017066184532558,
+      "0.4": 0.1521252718545326,
+      "0.5": 0.14531382458743716,
+      "0.6": 0.1368570006045942,
+      "0.7": 0.13110579555599525,
+      "0.8": 0.12074817338031514,
+      "0.9": 0.11376752994165305,
+      "1.0": 0.10855125442665131
+    },
+    "test_curve": {
+      "0.0": 0.16553222302554108,
+      "0.1": 0.16468643688374082,
+      "0.2": 0.15192146084306285,
+      "0.3": 0.1434022927885827,
+      "0.4": 0.1379165687504143,
+      "0.5": 0.1324812006964296,
+      "0.6": 0.12339622997580668,
+      "0.7": 0.11605507958592887,
+      "0.8": 0.10712898824771777,
+      "0.9": 0.10912495942891107,
+      "1.0": 0.10294837039723663
+    },
+    "convex_fusion_test": 0.16468643688374082,
+    "arms_test": {
+      "bm25": 0.10293996698079254,
+      "dense": 0.16553222302554108,
+      "hybrid": 0.14637922500893
+    },
+    "best_fixed_name": "dense",
+    "best_fixed_test": 0.16553222302554108,
+    "rrf_hybrid_test": 0.14637922500893,
+    "oracle_test": 0.2001398577066311
+  },
+  "triviaqa": {
+    "n_train": 1077,
+    "n_test": 231,
+    "selected_alpha": 0.1,
+    "alpha_selected_on": "train split",
+    "train_curve": {
+      "0.0": 0.20547118812816056,
+      "0.1": 0.20902424018625973,
+      "0.2": 0.20561203321655022,
+      "0.3": 0.2012084501863263,
+      "0.4": 0.19213227457267615,
+      "0.5": 0.18399928693071846,
+      "0.6": 0.17409742589519805,
+      "0.7": 0.16466263221023839,
+      "0.8": 0.1524030814277572,
+      "0.9": 0.1474601478320392,
+      "1.0": 0.14135930944956737
+    },
+    "test_curve": {
+      "0.0": 0.20002428837670316,
+      "0.1": 0.20486457988707749,
+      "0.2": 0.1950635539439248,
+      "0.3": 0.19261885975108808,
+      "0.4": 0.18800616395111258,
+      "0.5": 0.17992702072738787,
+      "0.6": 0.17187445007862662,
+      "0.7": 0.16307663462556493,
+      "0.8": 0.1585972290558066,
+      "0.9": 0.15380558868938446,
+      "1.0": 0.1501099539126772
+    },
+    "convex_fusion_test": 0.20486457988707749,
+    "arms_test": {
+      "bm25": 0.15010753155183798,
+      "dense": 0.20002428837670316,
+      "hybrid": 0.19071483032694772
+    },
+    "best_fixed_name": "dense",
+    "best_fixed_test": 0.20002428837670316,
+    "rrf_hybrid_test": 0.19071483032694772,
+    "oracle_test": 0.26935462920887326
+  },
+  "hotpotqa": {
+    "n_train": 641,
+    "n_test": 138,
+    "selected_alpha": 0.3,
+    "alpha_selected_on": "train split",
+    "train_curve": {
+      "0.0": 0.11786213450254769,
+      "0.1": 0.12093848033203018,
+      "0.2": 0.1242718911164678,
+      "0.3": 0.1274226625009338,
+      "0.4": 0.12504731873757133,
+      "0.5": 0.1218352457410601,
+      "0.6": 0.11803725621594713,
+      "0.7": 0.11699088531893258,
+      "0.8": 0.1118934316471306,
+      "0.9": 0.10746008446733031,
+      "1.0": 0.10412130529375177
+    },
+    "test_curve": {
+      "0.0": 0.07529434821546678,
+      "0.1": 0.07502186671661808,
+      "0.2": 0.06746475190651406,
+      "0.3": 0.05978910709247261,
+      "0.4": 0.05784192348778092,
+      "0.5": 0.05365852968884693,
+      "0.6": 0.05373301247939675,
+      "0.7": 0.05117320224175255,
+      "0.8": 0.05324723468734239,
+      "0.9": 0.04734480426183492,
+      "1.0": 0.04676455514175061
+    },
+    "convex_fusion_test": 0.05978910709247261,
+    "arms_test": {
+      "bm25": 0.04676440933705333,
+      "dense": 0.07529434821546678,
+      "hybrid": 0.057242532068429594
+    },
+    "best_fixed_name": "dense",
+    "best_fixed_test": 0.07529434821546678,
+    "rrf_hybrid_test": 0.057242532068429594,
+    "oracle_test": 0.10956066197193373
+  },
+  "_provenance": {
+    "metric": "mrr",
+    "split_seed": 42,
+    "alpha_selected_on": "train split",
+    "datasets": {
+      "nq": {
+        "generated_utc": "2026-08-06T12:40:22+00:00",
+        "git_commit": "57759a7",
+        "dataset_variant": {
+          "env_data": "nq_env_data.json",
+          "suffix": "(none)",
+          "feature_mode": "honest_minimal",
+          "description": "retrieval-score features built from raw label-free scores",
+          "gold_type": null,
+          "n_queries": 1157,
+          "feature_dim": 61,
+          "wiki_pool_size": null,
+          "feature_layout": {
+            "handcrafted": [
+              0,
+              29
+            ],
+            "embedding": [
+              29,
+              61
+            ],
+            "cross_score": [
+              61,
+              61
+            ],
+            "total_dim": 61,
+            "cross_score_names": []
+          }
+        },
+        "metric": {
+          "name": "mrr",
+          "means": "reciprocal rank of the first answer-bearing passage, untruncated over the full per-query corpus"
+        },
+        "split_seed": 42,
+        "run_tag": null
+      },
+      "triviaqa": {
+        "generated_utc": "2026-08-06T12:40:22+00:00",
+        "git_commit": "57759a7",
+        "dataset_variant": {
+          "env_data": "triviaqa_env_data.json",
+          "suffix": "(none)",
+          "feature_mode": "honest_minimal",
+          "description": "retrieval-score features built from raw label-free scores",
+          "gold_type": null,
+          "n_queries": 1539,
+          "feature_dim": 61,
+          "wiki_pool_size": null,
+          "feature_layout": {
+            "handcrafted": [
+              0,
+              29
+            ],
+            "embedding": [
+              29,
+              61
+            ],
+            "cross_score": [
+              61,
+              61
+            ],
+            "total_dim": 61,
+            "cross_score_names": []
+          }
+        },
+        "metric": {
+          "name": "mrr",
+          "means": "reciprocal rank of the first answer-bearing passage, untruncated over the full per-query corpus"
+        },
+        "split_seed": 42,
+        "run_tag": null
+      },
+      "hotpotqa": {
+        "generated_utc": "2026-08-06T12:40:23+00:00",
+        "git_commit": "57759a7",
+        "dataset_variant": {
+          "env_data": "hotpotqa_env_data.json",
+          "suffix": "(none)",
+          "feature_mode": "honest_minimal",
+          "description": "retrieval-score features built from raw label-free scores",
+          "gold_type": null,
+          "n_queries": 916,
+          "feature_dim": 61,
+          "wiki_pool_size": null,
+          "feature_layout": {
+            "handcrafted": [
+              0,
+              29
+            ],
+            "embedding": [
+              29,
+              61
+            ],
+            "cross_score": [
+              61,
+              61
+            ],
+            "total_dim": 61,
+            "cross_score_names": []
+          }
+        },
+        "metric": {
+          "name": "mrr",
+          "means": "reciprocal rank of the first answer-bearing passage, untruncated over the full per-query corpus"
+        },
+        "split_seed": 42,
+        "run_tag": null
+      }
+    }
+  }
+}
