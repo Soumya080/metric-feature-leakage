@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code or leakcheck, please cite the paper below."
+title: "Metric-as-Feature Leakage: A Feature-Side Failure Mode in Retriever Routing"
+authors:
+  - family-names: Sawant
+    given-names: Soumy
+    affiliation: Manipal University Jaipur
+  - family-names: Joshi
+    given-names: Chirag
+    affiliation: Manipal University Jaipur
+license: MIT
+repository-code: "https://github.com/Soumya080/metric-feature-leakage"
+preferred-citation:
+  type: conference-paper
+  title: "Metric-as-Feature Leakage: A Feature-Side Failure Mode in Retriever Routing"
+  authors:
+    - family-names: Sawant
+      given-names: Soumy
+    - family-names: Joshi
+      given-names: Chirag
+  collection-title: "NewInML Workshop at the 40th Conference on Neural Information Processing Systems (NeurIPS 2026)"
+  year: 2026

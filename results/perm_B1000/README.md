@@ -1,7 +1,7 @@
 # Permutation controls, B=1000 — the canonical version
 
-These supersede `results/SUPERSEDED_permutation_control_B20.*`, which ran B=20 and are kept only
-so the change is auditable.
+These supersede an earlier B=20 run, which is not included
+ 
 
 **The B=20 run reported NQ at p=0.048.** That is exactly the floor a B=20 permutation test can
 attain under the (1+k)/(1+B) correction, so the one cell that appeared to clear its null had no
