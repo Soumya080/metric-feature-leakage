@@ -1,0 +1,190 @@
+{
+  "header": {
+    "started_at": "2026-11-09 18:41:35",
+    "python": "3.14.2",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "argv": [
+      "leak_capture_summary.py"
+    ],
+    "args": {
+      "inputs": [
+        "<repo>\\results\\crc_v2\\crc_v2\\r4_capture\\capture_rows.csv",
+        "<repo>\\results\\crc_v2\\crc_v2\\r4_capture_o1\\capture_rows.csv"
+      ],
+      "method": "gradient_boosting",
+      "out_dir": "<repo>\\results\\crc_v2\\r9_leak_capture_summary"
+    },
+    "input_sha256": {
+      "<repo>\\results\\crc_v2\\crc_v2\\r4_capture\\capture_rows.csv": "f4eff62e4aeee33be7418ccaf3ca8c0aac24167f613e4a393bbd63c9991eec42",
+      "<repo>\\results\\crc_v2\\crc_v2\\r4_capture_o1\\capture_rows.csv": "e4b92be4d4e5759a028ddaa6a7d0036a27c0ac5258156fb81f4a66dfab08edb1"
+    }
+  },
+  "method": "gradient_boosting",
+  "rungs": {
+    "honest_minimal": {
+      "split_seeds": [
+        "13",
+        "2024",
+        "42",
+        "7",
+        "99"
+      ],
+      "n": 15,
+      "mean": -0.004029074331778571,
+      "min": -0.03826294656094241,
+      "max": 0.0,
+      "per_dataset": {
+        "nq": {
+          "n_splits": 5,
+          "mean": -0.012087222995335715,
+          "min": -0.03826294656094241,
+          "max": 0.0
+        },
+        "triviaqa": {
+          "n_splits": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "hotpotqa": {
+          "n_splits": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      }
+    },
+    "leak_one_arm": {
+      "split_seeds": [
+        "13",
+        "2024",
+        "42",
+        "7",
+        "99"
+      ],
+      "n": 15,
+      "mean": 0.24915413740862716,
+      "min": -0.09927100750178526,
+      "max": 0.5939285296450623,
+      "per_dataset": {
+        "nq": {
+          "n_splits": 5,
+          "mean": 0.15717485109681653,
+          "min": -0.06173403977053609,
+          "max": 0.5567209570446722
+        },
+        "triviaqa": {
+          "n_splits": 5,
+          "mean": 0.4750653533020855,
+          "min": 0.1852195783244958,
+          "max": 0.5939285296450623
+        },
+        "hotpotqa": {
+          "n_splits": 5,
+          "mean": 0.11522220782697946,
+          "min": -0.09927100750178526,
+          "max": 0.31798561307989154
+        }
+      }
+    },
+    "leak_hit": {
+      "split_seeds": [
+        "13",
+        "2024",
+        "42",
+        "7",
+        "99"
+      ],
+      "n": 15,
+      "mean": 0.28864299189491943,
+      "min": 0.013666266379043284,
+      "max": 0.655761062452423,
+      "per_dataset": {
+        "nq": {
+          "n_splits": 5,
+          "mean": 0.25705820463732104,
+          "min": 0.013666266379043284,
+          "max": 0.655761062452423
+        },
+        "triviaqa": {
+          "n_splits": 5,
+          "mean": 0.22827035508280866,
+          "min": 0.12454184001432217,
+          "max": 0.3890541097551238
+        },
+        "hotpotqa": {
+          "n_splits": 5,
+          "mean": 0.3806004159646286,
+          "min": 0.2103570218964034,
+          "max": 0.6122535676898542
+        }
+      }
+    },
+    "leak_noisy": {
+      "split_seeds": [
+        "13",
+        "2024",
+        "42",
+        "7",
+        "99"
+      ],
+      "n": 15,
+      "mean": 0.6869269301096759,
+      "min": 0.44891267437246923,
+      "max": 0.8943205163165869,
+      "per_dataset": {
+        "nq": {
+          "n_splits": 5,
+          "mean": 0.6237835274287737,
+          "min": 0.44891267437246923,
+          "max": 0.7695750198654999
+        },
+        "triviaqa": {
+          "n_splits": 5,
+          "mean": 0.7200885923793255,
+          "min": 0.6456428851748623,
+          "max": 0.7708487565625363
+        },
+        "hotpotqa": {
+          "n_splits": 5,
+          "mean": 0.7169086705209282,
+          "min": 0.58398963313657,
+          "max": 0.8943205163165869
+        }
+      }
+    },
+    "leaky": {
+      "split_seeds": [
+        "13",
+        "2024",
+        "42",
+        "7",
+        "99"
+      ],
+      "n": 15,
+      "mean": 0.6964136750334041,
+      "min": 0.484910457384245,
+      "max": 0.8898348012657857,
+      "per_dataset": {
+        "nq": {
+          "n_splits": 5,
+          "mean": 0.6594610978030745,
+          "min": 0.484910457384245,
+          "max": 0.8346879715693705
+        },
+        "triviaqa": {
+          "n_splits": 5,
+          "mean": 0.7454000496277673,
+          "min": 0.6960275273329591,
+          "max": 0.8412076738765557
+        },
+        "hotpotqa": {
+          "n_splits": 5,
+          "mean": 0.6843798776693705,
+          "min": 0.5682532794713385,
+          "max": 0.8898348012657857
+        }
+      }
+    }
+  }
+}

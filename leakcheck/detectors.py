@@ -44,7 +44,7 @@ EQ_TOL = 1e-12
 EQ_RTOL = 1e-6
 
 # Share of non-zero-reward rows that must agree before a DIRECT leak is called. Measured
-# separation on the RL-Route corpora: honest arms <= 6.1% (small-integer collisions between
+# separation on the RL router corpora: honest arms <= 6.1% (small-integer collisions between
 # lexical counts and integer gold ranks); the paper's real MRR@20 leak against the untruncated
 # reward agrees on 26.3-44.8% of rows (it equals the reward only where the gold ranks in the top
 # 20), and against MRR@20 itself on 100%. 0.25 sits above every honest arm, but an exact copy of
@@ -55,7 +55,7 @@ EXACT_MATCH_THRESHOLD = 0.25
 # |Spearman rho| bands for the monotone/jittered rungs, in TWO levels rather than one,
 # because the measured separation does not support a single clean cut.
 #
-# Measured max |rho| over every (feature, arm) pair on the RL-Route corpora, against both the
+# Measured max |rho| over every (feature, arm) pair on the RL router corpora, against both the
 # training reward (untruncated MRR) and the truncated MRR@20 the leak arms were built from:
 #
 #                     vs reward      vs MRR@20
@@ -90,8 +90,8 @@ RANK_CORRELATION_SUSPECT = 0.35
 
 # Arm selectivity: how much more a feature correlates with its top arm than with the next one.
 # A leak of arm a's reward is specific to arm a; a confound correlates with every arm at once.
-# Measured: RouterBench confounds 0.001-0.031, RL-Route honest 0.033, RL-Route real leaks
-# 0.053-0.078. It separates, but only just, because RL-Route's own arms are correlated (Hybrid
+# Measured: RouterBench confounds 0.001-0.031, RL router honest 0.033, RL router real leaks
+# 0.053-0.078. It separates, but only just, because the RL router's own arms are correlated (Hybrid
 # is RRF of the other two) which suppresses selectivity for genuine leaks. Reported as
 # supporting evidence for a human, deliberately NOT used as a threshold -- the margin is too
 # thin to carry a decision.

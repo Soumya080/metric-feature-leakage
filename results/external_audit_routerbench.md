@@ -25,7 +25,7 @@ This is not a criticism of RouterBench, which is a performance benchmark and nev
 
 ## Q2 — Do the structural findings reproduce here?
 
-| quantity | RouterBench (11 LLMs) | RL-Route (3 retrievers, pooled) |
+| quantity | RouterBench (11 LLMs) | RL router (3 retrievers, pooled) |
 |---|---:|---:|
 | queries | 36,497 | 3,612 |
 | arms | 11 | 3 |

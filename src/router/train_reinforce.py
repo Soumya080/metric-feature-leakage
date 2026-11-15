@@ -94,7 +94,7 @@ class ReinforceTrainer:
                 yields (0 - baseline) < 0, punishing whichever action was randomly sampled.
                 That is a noise gradient on the large majority of queries, and because the
                 sampled action is uniform the punishment is symmetric — it drives the policy
-                toward uniform. Measured: RL-Route earned at or below a uniform random
+                toward uniform. Measured: RL router earned at or below a uniform random
                 policy on all three datasets before this fix.
         """
         if advantage_mode not in ("per_query", "global_ema"):

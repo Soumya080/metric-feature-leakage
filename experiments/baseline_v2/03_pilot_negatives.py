@@ -21,7 +21,7 @@ commit the full run.
 What it measures
 ----------------
 For each strategy, per dataset: mean MRR@5 per retriever, best-fixed MRR, oracle MRR, and
-HEADROOM = oracle - best_fixed (the quantity RL-Route exists to capture). It also reports
+HEADROOM = oracle - best_fixed (the quantity RL router exists to capture). It also reports
 headroom restricted to `real_wikipedia` gold queries, since those are what the headline
 results filter to (see prepare_env_data.py --gold-type).
 

@@ -75,7 +75,7 @@ METHOD_LABELS = [
     ("random_forest", "Random Forest"),
     ("ridge", "Ridge Regression"),
     ("gradient_boosting", "Gradient Boosting (Tuned)"),
-    ("rl_route_mean", "RL-Route (Ours)"),
+    ("rl_route_mean", "RL (REINFORCE)"),
     ("oracle", "Oracle"),
 ]
 # These never touch `features` — compute_static_baselines reads env.retrievers directly —

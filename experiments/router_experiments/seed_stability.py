@@ -8,8 +8,7 @@ WHY THIS EXISTS
 
     This resamples the whole dose-response across several CV seeds. It changes no claim if the
     ordering holds; if the ordering does NOT hold -- if honest ever beats leak_one, or jittered
-    ever collapses toward honest -- that is a finding the paper must report, and better found here
-    than by a reviewer.
+    ever collapses toward honest -- that is a finding the paper must report.
 
 WHAT IT DOES NOT FIX
     This varies the cross-validation partition, not the upstream train/test split used to build

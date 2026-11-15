@@ -12,5 +12,5 @@ Pooling moved the other way: **p=0.003**, well clear of the 0.001 floor. So the 
 do carry signal above chance, and the reason it was invisible per dataset was power rather than
 absence — while still landing 1.0 point *below* the majority baseline.
 
-Anything citing the B=20 numbers is stale. `paper/main_v2.tex` was updated in the same commit
+Anything citing the B=20 numbers is stale. `paper/main.tex` was updated in the same commit
 that added this file.

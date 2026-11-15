@@ -8,21 +8,21 @@ can't find a real Wikipedia passage containing the answer, emitting formulaic fi
 like "<answer> is widely recognized in this context. According to various sources...". On
 NQ this is ~56% of queries. That text repeats the answer string verbatim in a short, clean,
 keyword-dense passage — which is close to a best case for BM25 and changes what "retrieval
-difficulty" even means. If the headline numbers are driven by the constructed half, a
-reviewer who notices will discount the whole result.
+difficulty" even means. This script checks whether the headline
+numbers depend on the constructed half.
 
 The defensible move is not to hide this: report both strata, and headline the
 real_wikipedia subset (the honest, harder, genuinely-Wikipedia condition). This script
 produces exactly that table, plus a paired significance test on the real subset alone, so
-"RL-Route still wins where it counts" is a tested claim rather than an assertion.
+"RL router still wins where it counts" is a tested claim rather than an assertion.
 
 Two modes, chosen automatically:
   A. Preferred - results/canonical_results.json contains the `per_query` block written by
-     canonical_evaluation.py. Every method (including RL-Route) is stratified with zero
+     canonical_evaluation.py. Every method (including RL router) is stratified with zero
      retraining, straight from the saved per-query scores.
   B. Fallback - no `per_query` block (older results file, or the run predates that change).
      Static/heuristic/supervised baselines are recomputed directly from env data, which is
-     cheap; RL-Route is reported as unavailable, since reproducing it would need retraining.
+     cheap; RL router is reported as unavailable, since reproducing it would need retraining.
 
 Usage:
     python experiments/router_experiments/gold_type_analysis.py
@@ -55,7 +55,7 @@ METHOD_LABELS = [
     ("random_forest", "Random Forest"),
     ("ridge", "Ridge Regression"),
     ("gradient_boosting", "Gradient Boosting (Tuned)"),
-    ("rl_route", "RL-Route (Ours)"),
+    ("rl_route", "RL (REINFORCE)"),
     ("oracle", "Oracle"),
 ]
 
@@ -157,7 +157,7 @@ def main():
             if not os.path.exists(ds_path):
                 print(f"SKIP {ds_name}: no env data at {ds_path}")
                 continue
-            mode = "B (recomputed; RL-Route unavailable without retraining)"
+            mode = "B (recomputed; RL router unavailable without retraining)"
             print(f"[{ds_name}] no per_query block in results — recomputing non-RL methods...")
             strat, counts, pq = stratify_fallback(ds_name, ds_path)
 
@@ -206,8 +206,8 @@ def main():
                 }
                 lines.append(
                     f"\n**Significance on real_wikipedia only (n={int(mask.sum())}):** "
-                    f"RL-Route vs. tuned GBT delta={d_gbt:+.4f} (p={p_gbt:.4f}); "
-                    f"RL-Route vs. Best-Fixed ({best_fixed_key}) delta={d_bf:+.4f} (p={p_bf:.4f})."
+                    f"RL router vs. tuned GBT delta={d_gbt:+.4f} (p={p_gbt:.4f}); "
+                    f"RL router vs. Best-Fixed ({best_fixed_key}) delta={d_bf:+.4f} (p={p_bf:.4f})."
                 )
 
     os.makedirs(os.path.dirname(OUTPUT_JSON), exist_ok=True)

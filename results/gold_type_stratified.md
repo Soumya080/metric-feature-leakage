@@ -19,10 +19,10 @@ Test split: 174 queries (174 real_wikipedia, 0 constructed = 0% synthetic)
 | Random Forest | 0.1640 | 0.1640 | n/a | n/a |
 | Ridge Regression | 0.1594 | 0.1594 | n/a | n/a |
 | Gradient Boosting (Tuned) | 0.1642 | 0.1642 | n/a | n/a |
-| RL-Route (Ours) | 0.1512 | 0.1512 | n/a | n/a |
+| RL (REINFORCE) | 0.1512 | 0.1512 | n/a | n/a |
 | Oracle | 0.2001 | 0.2001 | n/a | n/a |
 
-**Significance on real_wikipedia only (n=174):** RL-Route vs. tuned GBT delta=-0.0130 (p=0.9136); RL-Route vs. Best-Fixed (dense) delta=-0.0144 (p=0.9303).
+**Significance on real_wikipedia only (n=174):** RL router vs. tuned GBT delta=-0.0130 (p=0.9136); RL router vs. Best-Fixed (dense) delta=-0.0144 (p=0.9303).
 
 ## TRIVIAQA
 
@@ -40,10 +40,10 @@ Test split: 231 queries (231 real_wikipedia, 0 constructed = 0% synthetic)
 | Random Forest | 0.1968 | 0.1968 | n/a | n/a |
 | Ridge Regression | 0.1981 | 0.1981 | n/a | n/a |
 | Gradient Boosting (Tuned) | 0.2000 | 0.2000 | n/a | n/a |
-| RL-Route (Ours) | 0.1881 | 0.1881 | n/a | n/a |
+| RL (REINFORCE) | 0.1881 | 0.1881 | n/a | n/a |
 | Oracle | 0.2694 | 0.2694 | n/a | n/a |
 
-**Significance on real_wikipedia only (n=231):** RL-Route vs. tuned GBT delta=-0.0119 (p=0.8781); RL-Route vs. Best-Fixed (dense) delta=-0.0119 (p=0.8781).
+**Significance on real_wikipedia only (n=231):** RL router vs. tuned GBT delta=-0.0119 (p=0.8781); RL router vs. Best-Fixed (dense) delta=-0.0119 (p=0.8781).
 
 ## HOTPOTQA
 
@@ -61,7 +61,7 @@ Test split: 138 queries (138 real_wikipedia, 0 constructed = 0% synthetic)
 | Random Forest | 0.0753 | 0.0753 | n/a | n/a |
 | Ridge Regression | 0.0750 | 0.0750 | n/a | n/a |
 | Gradient Boosting (Tuned) | 0.0753 | 0.0753 | n/a | n/a |
-| RL-Route (Ours) | 0.0683 | 0.0683 | n/a | n/a |
+| RL (REINFORCE) | 0.0683 | 0.0683 | n/a | n/a |
 | Oracle | 0.1096 | 0.1096 | n/a | n/a |
 
-**Significance on real_wikipedia only (n=138):** RL-Route vs. tuned GBT delta=-0.0070 (p=0.8353); RL-Route vs. Best-Fixed (dense) delta=-0.0070 (p=0.8353).
+**Significance on real_wikipedia only (n=138):** RL router vs. tuned GBT delta=-0.0070 (p=0.8353); RL router vs. Best-Fixed (dense) delta=-0.0070 (p=0.8353).

@@ -1,0 +1,40 @@
+{
+  "header": {
+    "started_at": "2026-10-29 13:52:27",
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "argv": [
+      "experiments\\crc_v2\\reproduce_checks.py"
+    ],
+    "args": {
+      "out_dir": "<local-path> (2)\\efficient-rag-pipeline\\results\\crc_v2\\r0",
+      "n_jobs": -1
+    }
+  },
+  "leak_gradient_exit_code": 0,
+  "table2_mismatches": [],
+  "env_sha256": {
+    "hotpotqa_env_data.json": "8bd441e481d5479ab7c4dd4a61b40c3cb950844ae223e23e290dc804aaa733e5",
+    "hotpotqa_env_data_all.json": "fb17a4dae000705441b063c1fd5e28d4873d559345345021dcb890cd052b2133",
+    "hotpotqa_env_data_leak1.json": "1ffe9a04a103edeb0b42f5d5689a6d9f1be43b16d88c0fa6b1fd408e1a418885",
+    "hotpotqa_env_data_leakhit.json": "f71ea9def66a0c12ec9b797df6260480ef020266d2eba93b88391d97581797f4",
+    "hotpotqa_env_data_leaknoisy.json": "23af6d1ff967feeb769e253f2112a53f5e4157570838729d0eb155ab107271f9",
+    "hotpotqa_env_data_leaky.json": "c34745cf86c3a4aacdcb201443c14ff9eabfede403a9853811b374ffa801c715",
+    "hotpotqa_env_data_xscore.json": "ac39b066cc7be847f376619b556c08ac5377690f6cc1bd72631c97d943d59a61",
+    "nq_env_data.json": "c156b860ff9ac55110b0f02c00a36cc9cb0533b157e50d4d480ef5f65cd89edb",
+    "nq_env_data_all.json": "1e0ebd9c0b96aa65541608522f9591b71334cc297aea154b0fea6c01cc9efdfd",
+    "nq_env_data_leak1.json": "fdd32130d646a8905d2568357320c20d6628d9b75ef8cbcbffb4877d2c6b78ef",
+    "nq_env_data_leakhit.json": "60dbb15c42ce0262d0b816a5086725048b2ddda1ee1d8d9ff49525f192bcfbd9",
+    "nq_env_data_leaknoisy.json": "c0284902549d26f9b3be0542ab994a1b8239b614c4c67a7c54b28b5abd51bb29",
+    "nq_env_data_leaky.json": "4210e2fb309d8e9514d24e97e01efbc34cde8f457551b30c4e88b247625a2588",
+    "nq_env_data_xscore.json": "40f954f851de2db5b3d995301b40a120d19aba8b7e16bcfd62f1ef3bb27f21b2",
+    "triviaqa_env_data.json": "7a7a4aa96ba6f01ead5fa48108af16d7b7ff3afbd68845ed73166082bbdd3302",
+    "triviaqa_env_data_all.json": "d4aaee45345df409002d0e10b426e305be15bc5ddb94af691ca157dea750a459",
+    "triviaqa_env_data_leak1.json": "f94728e54c2fe59d38a1775bc8eb4ef662fe05c8312c34820d3d37731aeb51db",
+    "triviaqa_env_data_leakhit.json": "eea8c8df70086b66faef9553de627ceb8e5f0e4e27da5bb6ed9936ea6bd6d035",
+    "triviaqa_env_data_leaknoisy.json": "b1d0a65f6b4e96867c332e61284946cc73c60dd6d7c08812dd9af03c1b992057",
+    "triviaqa_env_data_leaky.json": "dece261097feb08926b91660b7509c7b91993258f7b8a2bf16647ca7d86b87b4",
+    "triviaqa_env_data_xscore.json": "7bf2c4457ddd12b29b1da8420cd6c19593332f82caa6510acb17579e11853342"
+  },
+  "audit_numbers_exit_code": 0
+}

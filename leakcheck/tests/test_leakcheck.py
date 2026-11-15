@@ -2,7 +2,7 @@
 
 The synthetic tests are the ones that must always pass -- they construct leakage deliberately
 and assert it is found, and construct clean data and assert it is not. The calibration tests
-skip when the RL-Route env data is not present, since that data is a generated artifact that
+skip when the RL router env data is not present, since that data is a generated artifact that
 does not live in every working tree.
 """
 
@@ -18,7 +18,7 @@ from leakcheck import (CORRELATED_PROXY, DIRECT, JITTERED, MONOTONE_DERIVED, SIN
                        inject, make_synthetic)
 
 ACTIONS = ["bm25", "dense", "hybrid"]
-ENV_DIR = os.environ.get("RLROUTE_ENV_DIR") or os.path.join(
+ENV_DIR = os.environ.get("ENV_DATA_DIR") or os.path.join(
     os.path.dirname(os.path.abspath(__file__)), "..", "..", "src", "router")
 
 

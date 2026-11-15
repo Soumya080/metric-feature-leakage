@@ -12,8 +12,7 @@ Two differences from `experiments/baseline_v2/01_prepare_data.py` matter:
     setting, 41.8% of NQ gold passages are template-generated filler containing the
     answer string (see results/corpus_census.json); those passages were in the pool
     during retrieval and perturbed real queries' rankings too. corpus_v3 contains
-    only genuine Wikipedia text, which makes it the cleaner of the two settings —
-    worth stating in the paper rather than burying.
+    only genuine Wikipedia text, which makes it the cleaner of the two settings.
 
 A query whose answer appears in no corpus passage is NOT dropped. It stays and
 scores zero for every retriever, which is the honest open-domain condition; the

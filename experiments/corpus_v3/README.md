@@ -1,18 +1,17 @@
-# corpus_v3 — leak severity vs. corpus scale
+# corpus_v3: leak severity vs. corpus scale
 
-Builds **one shared retrieval index** that every query searches, at four **nested**
+Builds one shared retrieval index that every query searches, at four nested
 scales (5K ⊂ 20K ⊂ 50K ⊂ 100K), and rebuilds the six leak-gradient arms at each scale.
 
-The question it answers — *how much does metric-as-feature contamination inflate a
-router, as a function of corpus size?* — is not answerable in `baseline_v2`, because
+The question, *how much does metric-as-feature contamination inflate a
+router, as a function of corpus size?*, is not answerable in `baseline_v2`, because
 there every query gets its own private 500-passage corpus. There is no corpus to grow,
 only a negative-sampling pool.
 
-## Run it on the lab machine
+## Running it
 
 ```bash
-# 0. Optional but strongly recommended — this venv has a CPU-only torch build, which
-#    makes stage 02 roughly 20 minutes instead of 3. Everything else is CPU regardless.
+# 0. Optional: a CUDA build of torch makes stage 02 about 3 minutes instead of 20. Everything else is CPU regardless.
 pip install --force-reinstall torch --index-url https://download.pytorch.org/whl/cu121
 
 # 1. Smoke test first: 5K corpus, 200 queries/dataset, ~8 minutes end to end.
@@ -32,7 +31,7 @@ python experiments/corpus_v3/05_build_arms.py
 ```
 
 `--force` on stage 01 is needed once because the smoke run leaves a 5K corpus on disk
-and every stage is idempotent — it skips work whose output already exists.
+and every stage is idempotent, it skips work whose output already exists.
 
 ### Expected cost
 
@@ -67,41 +66,41 @@ results/
 
 ## Design decisions that the result depends on
 
-**Nested subsets.** One seeded permutation of document ids is computed once; scale *N*
+Nested subsets. One seeded permutation of document ids is computed once; scale *N*
 takes its first *N* entries. So the smaller corpora are literal subsets of the larger
 and the curve varies corpus size and nothing else. Verified on disk by
 `03_build_indexes.py`, which fails if the nesting is violated.
 
-**Same ranking function as the 500-passage setting.** `bm25_sparse.SparseBM25` is a
+Same ranking function as the 500-passage setting. `bm25_sparse.SparseBM25` is a
 vectorised Okapi BM25 with the same constants, tokeniser and IDF formula as
 `src/retrieval/sparse.BM25Retriever`. `tests/test_bm25_parity.py` asserts identical
 scores and ordering (19 tests). Without this, a change in the leak-vs-scale curve could
 be the retriever changing rather than the corpus growing.
 
-**Metrics are imported, not reimplemented.** `common.load_metric_module()` loads
+Metrics are imported, not reimplemented. `common.load_metric_module()` loads
 `02_run_baselines.py` and uses its `check_hit` / `compute_mrr` / `f1_score` /
 `compute_recall_at_k` / `substring_match_score` directly. A difference between the two
 settings can therefore never be a difference in how Hit or MRR was computed.
 
-**Arms are imported, not restated.** `05_build_arms.py` reads `ARMS` and `ARM_ORDER`
+Arms are imported, not restated. `05_build_arms.py` reads `ARMS` and `ARM_ORDER`
 from `experiments/router_experiments/leakage_ablation.py`, and builds each arm by
-calling `src/router/prepare_env_data.py --feature-mode ...` — the same code that built
+calling `src/router/prepare_env_data.py --feature-mode ...`, the same code that built
 the 500-passage arms. Nothing about feature construction lives in this directory.
 
-**No synthetic passages.** `baseline_v2/01_prepare_data.py` fabricates a gold passage
+No synthetic passages. `baseline_v2/01_prepare_data.py` fabricates a gold passage
 when no real one is found; 41.8% of NQ's gold is such template filler
 (`results/corpus_census.json`). corpus_v3 has no equivalent and never synthesises text,
 which makes it the *cleaner* of the two settings.
 
-**Two Hit@5 numbers, and the difference matters.** In the 500-passage setting a gold
+Two Hit@5 numbers, and the difference matters. In the 500-passage setting a gold
 passage was inserted into every query's corpus, so every query was answerable by
 construction. A shared corpus promises nothing: the answer may simply be absent. Overall
 Hit@5 mixes "the retriever failed" with "there was nothing to find", and that mixture
-shifts with corpus size — the very axis under study. `04_run_retrieval.py` reports both
+shifts with corpus size, the very axis under study. `04_run_retrieval.py` reports both
 and gates on the answerable subset. The unanswerable share is itself a result worth
 reporting, not a nuisance.
 
-**The sanity gate is against chance, not an absolute band.** Chance for top-5 over *N*
+The sanity gate is against chance, not an absolute band. Chance for top-5 over *N*
 documents is 5/N; the gate asks for 20× that. An absolute floor would be miscalibrated,
 because absolute Hit@5 legitimately falls as *N* grows. Cells above chance but low in
 absolute terms are printed as `warn`, not `FAIL`.
@@ -115,7 +114,7 @@ absolute terms are printed as `warn`, not `FAIL`.
 | RRF matches reference | `04_run_retrieval.py --verify` | vectorised fusion is not a new system |
 | `gold_rank` matches reference | `04_run_retrieval.py --verify` | inverted-index lookup ≡ linear scan |
 | Retrieval above chance | `04_run_retrieval.py` | pipeline is functioning at each scale |
-| Reward tables identical across arms | `05_build_arms.py` | **only features differ** — else an accuracy gap could be the reward moving |
+| Reward tables identical across arms | `05_build_arms.py` | **only features differ**, else an accuracy gap could be the reward moving |
 | features[0:22] and [26:] identical across arms | `05_build_arms.py` | contamination is confined to features 22–25 |
 | features[22:26] differ between every arm pair | `05_build_arms.py` | no arm is being compared against itself |
 | `leaky` reproduces the bug exactly | `05_build_arms.py` | f22 == BM25 MRR@k, f23 == Dense MRR@k |
@@ -126,5 +125,5 @@ Full chain green at 5K/200 queries: parity 19/19, nesting verified, `--verify` c
 sanity gate passed, all six arms built, integrity clean on all three datasets.
 
 `hotpotqa` at 5K came back `warn` (Hit@5 0.087 among answerable = 87× chance). Expected
-for multi-hop questions against a small shared corpus — worth re-checking at 100K, not a
+for multi-hop questions against a small shared corpus, worth re-checking at 100K, not a
 blocker.

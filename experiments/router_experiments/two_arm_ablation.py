@@ -16,23 +16,18 @@ other two thirds. That creates two problems the paper has to answer:
      base rate. So the "two of three arms" leak is worth more than two of three, and the
      naive ceiling of 87.4% is not the true ceiling.
 
-A reviewer can therefore ask: does routing fail because routing is hard, or because you gave
+The question is therefore: does routing fail because routing is hard, or because you gave
 it three arms of which one is redundant? This script answers it by re-running the core
 learnability measurement on {BM25, Dense} only -- two genuinely distinct retrievers, one
 sparse and one embedding-based, with no functional dependence.
 
-The outcome is informative either way, which is why it is worth the compute:
-
-  * Negative again -> the finding is about routing, not about a degenerate action space, and
-    the paper is strictly stronger for having checked.
-  * Positive -> routing IS learnable between two distinct retrievers and the whole conclusion
-    changes. That would be the most interesting possible result, and it is cheap to find.
+A negative result says the finding is about routing, not a degenerate action space; a
+positive one would mean routing is learnable between two distinct retrievers.
 
 Also reports the MINIMUM DETECTABLE EFFECT, because "we found no effect" is only meaningful
 alongside "and here is the smallest effect we could have found". With a test split of ~150-230
 queries and per-query rewards this variable, the MDE can exceed the headroom being chased --
-in which case the experiment could not have detected success even if it were there, and
-saying so first is far better than having a reviewer say it.
+in which case the experiment could not have detected success even if it were there.
 
 Methodology is imported from learnability_analysis so the two-arm numbers are directly
 comparable to the three-arm ones rather than being a separate protocol.

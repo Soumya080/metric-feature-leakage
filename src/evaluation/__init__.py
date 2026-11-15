@@ -1,4 +1,4 @@
-"""Evaluation helpers for datasets, metrics, and oracle analysis."""
+"""Evaluation helpers: benchmark datasets and retrieval metrics."""
 
 from .benchmark_datasets import load_dataset_examples, load_local_fallback_dataset, DatasetExample
 from .metrics import (
@@ -9,7 +9,6 @@ from .metrics import (
     recall_at_k,
     bootstrap_confidence_interval,
 )
-from .oracle_analysis import run_oracle_analysis, evaluate_retrieval_modes
 
 __all__ = [
     "DatasetExample",
@@ -21,6 +20,4 @@ __all__ = [
     "mrr_at_k",
     "recall_at_k",
     "bootstrap_confidence_interval",
-    "run_oracle_analysis",
-    "evaluate_retrieval_modes",
 ]

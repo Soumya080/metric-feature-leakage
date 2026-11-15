@@ -1,4 +1,4 @@
-"""Extract every numeric claim in main_v2.tex, with its sentence, for manual checking.
+"""Extract every numeric claim in main.tex, with its sentence, for manual checking.
 
 Six wrong numbers have already been found in this file by hand, all of them inherited
 from pre-fix or superseded runs. The failure mode is not arithmetic, it is a number that
@@ -19,7 +19,7 @@ import os
 import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-TEX = os.path.join(HERE, "main_v2.tex")
+TEX = os.path.join(HERE, "main.tex")
 
 # Numbers already traced to a results file during the verification passes. Keyed by the
 # distinctive literal as it appears in the tex, so a later edit that changes the value
@@ -49,8 +49,8 @@ CHECKED = {
     # per-dataset lifts + two-arm ablation (results/two_arm_ablation.json)
     "3.3", "3.1", "6.4", "2.0", "2.8", "5.0", "53--83", "137--231",
     # capture (results/headroom_analysis.json, results/paper_claim_checks.json)
-    # CRC 2026-10-31: "172/174", "228/231" REMOVED -- wrong (GB matches Always-Dense on 169/174
-    # and 231/231; results/crc_v2/crc_text_checks/summary.json gb_test_actions). "45.3" -> "45.2"
+    # 2026-10-31: "172/174", "228/231" REMOVED -- wrong (GB matches Always-Dense on 169/174
+    # and 231/231; results/analyses/paper_number_checks/summary.json gb_test_actions). "45.3" -> "45.2"
     # (convex fusion HotpotQA is -45.25%, paper_claim_checks.json).
     "0.4", "0.1029", "0.1657", "138/138", "7.0", "2.4",
     "174", "231", "138", "21", "35", "46", "30",
@@ -120,54 +120,54 @@ CHECKED = {
     "9.2", "10.6", "0.21", "0.17", "0.12",
     # Section 4, retracted contribution, at full precision so it reconstructs
     "59.40", "60.85", "1.45",
-    # ---- CRC pass, 2026-10-31 (paper/crc_audit/CRC_METHODS_CLAIMS_LITERATURE_AUDIT.md) ----
+    # ---- Numbers added or corrected in the October 2026 revision ----
     # Table 2 caption: MRR@20 leak equals the reward on 26.3-44.8% of rows
-    # (results/crc_v2/crc_text_checks/summary.json leak_equality).
+    # (results/analyses/paper_number_checks/summary.json leak_equality).
     "26--45",
-    # Section 4.1: value-keyed jitter keeps 92% at s=1.0 (results/crc_v2/crc_v2/r1_classifier_sweep);
+    # Section 4.1: value-keyed jitter keeps 92% at s=1.0 (results/analyses/classifier_noise_sweep);
     # independent noise keeps 54% (+7.1 of +13.3), 53-55% over draws, LR 33%, true-reward copy
-    # 91.1% (+31.3) keeping 22% (results/crc_v2/crc_v2/r5_random_noise/summary.json). MRR@20 has
+    # 91.1% (+31.3) keeping 22% (results/analyses/random_noise_sweep/summary.json). MRR@20 has
     # 21 distinct values (0 and 1/1..1/20).
     "92", "54", "7.1", "13.3", "53--55", "33", "91.1", "31.3", "21",
-    # Section 4 per-corpus premium (results/learnability_analysis.json; checked in CRC pass 1).
+    # Section 4 per-corpus premium (results/learnability_analysis.json; checked in verification pass).
     "11.9", "12.4", "16.8", "13.2",
-    # Figure 1 caption: MRR@5 leak zero on 76-95% of rows at 20K/50K/100K (crc_text_checks).
+    # Figure 1 caption: MRR@5 leak zero on 76-95% of rows at 20K/50K/100K (paper_number_checks).
     "76--95",
-    # Section 5 / Table 3 (crc_text_checks): GB == Always-Dense counts; capture against the
+    # Section 5 / Table 3 (paper_number_checks): GB == Always-Dense counts; capture against the
     # train-selected arm (Hybrid on HotpotQA) 11.9-34.5%; smallest bootstrap p vs Dense 0.094;
-    # restored RL row and per-seed capture range from results/crc_v2/crc_v2/rl_restore.
+    # restored RL row and per-seed capture range from results/analyses/rl_checkpoint_rerun.
     "169/174", "231/231", "12--35", "0.094", "0.1618", "0.0722", "49", "10.8", "9.1",
     "45.2",
     # Section 6 blind spot: value-keyed jitter at s>=0.50 raises no suspicion
-    # (results/crc_v2/crc_v2/r3_leakcheck_sweep) while GB gains +12.25 (r1_classifier_sweep).
+    # (results/analyses/leakcheck_noise_sweep) while GB gains +12.25 (classifier_noise_sweep).
     "12.3", "50",
     # Appendix: census over all 1,989 prepared NQ queries; 9,125/682 = 13.4 per contaminated
     # query (results/corpus_census.json). RL settings are canonical_evaluation.py constants.
     "1{,}989", "13.4", "128", "150", "0.01",
-    # Setup: Table 1 cells, 5-24% and 62-75% (canonical_results.json, CRC pass 1); retriever
+    # Setup: Table 1 cells, 5-24% and 62-75% (canonical_results.json, verification pass); retriever
     # constants (src/retrieval/sparse.py, hybrid.py); split ratios (routing_env.py).
     "0.103", "0.166", "0.146", "0.200", "0.150", "0.191", "0.269", "0.047", "0.075", "0.057",
     "0.110", "5--24", "62--75", "1.5", "0.75", "60", "70/15",
     # Related work: verified against the sources in paper/NOVELTY_AUDIT.md; 2.5 is verbatim from
     # the RetrievalRouter abstract (arXiv:2608.25625, checked 2026-10-31).
     "17", "294", "2{,}047", "1.75", "2018", "94.9", "2.5",
-    # Recomputed in CRC pass 1 but never registered: MDE and two-arm majorities
+    # Recomputed in verification pass but never registered: MDE and two-arm majorities
     # (results/two_arm_ablation.json), headroom shares (headroom_analysis.json), candidate-set
     # config (results/corpus_census.json _config), RouterBench m values, and definitional
     # constants (alpha, power).
     "53--69", "65--83", "69.6", "63.0", "70", "63", "174/231", "21/35", "26/30",
     "100{,}000", "499", "4", "8", "0.05", "80", "0.0",
-    # Table 2 seed ranges (results/seed_stability.json, CRC pass 1), headroom 59
-    # (learnability_analysis.json), per-seed RL capture max +8.6 -> "+9" (rl_restore).
+    # Table 2 seed ranges (results/seed_stability.json, verification pass), headroom 59
+    # (learnability_analysis.json), per-seed RL capture max +8.6 -> "+9" (rl_checkpoint_rerun).
     "0.15", "0.20", "0.13", "59", "9",
     # Not claims: the review URL's suffix and the "August 2026" date.
     "251", "2026",
     # Appendix A provenance: commit hashes and dates from `git log` (4d2dade 2026-07-23,
     # eaa39e7 2026-08-02, bab7e48 2026-08-05, 17577c2 2026-08-05).
     "23", "17577",
-    # Appendix positive control (results/crc_v2/b_positive_control/summary.json): honest lift
+    # Appendix positive control (results/analyses/positive_control/summary.json): honest lift
     # -0.4 / +14.0 / +17.4 at alpha 0 / 0.5 / 1.0; random-noise leak adds 47.9-14.0 = 33.9 and
-    # 43.2-17.4 = 25.8 -> "26--34". Figure 11 from results/crc_v2/c_detection_power/table.json.
+    # 43.2-17.4 = 25.8 -> "26--34". Figure 11 from results/analyses/detection_power/table.json.
     "14.0", "17.4", "26--34",
 }
 

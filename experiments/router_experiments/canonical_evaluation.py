@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
-canonical_evaluation.py - The Single Source of Truth for RL-Route (NewInML 2026).
-Computes static, heuristic, supervised (tuned), and RL baselines with 15 seeds.
-Outputs rigorous paired bootstrap tests and JSON results.
+Main routing evaluation (Table 3).
+
+Fixed retrievers, heuristic routers, tuned supervised routers and a REINFORCE router (15
+seeds) on one train/val/test split per dataset, with paired bootstrap tests against the best
+fixed retriever. Writes results/canonical_results.json.
 """
 
 import argparse
@@ -84,7 +86,7 @@ def compute_static_baselines(env: RouterEnvironment, metric: str = 'mrr'):
 def best_fixed_per_query_scores(env_test: RouterEnvironment, static_res: dict, metric: str = 'mrr'):
     """Per-query scores for whichever of BM25/Dense/Hybrid has the best mean on the test
     set (per static_res, from compute_static_baselines). Needed for a paired significance
-    test of RL-Route vs. Best-Fixed, not just RL-Route vs. tuned GBT."""
+    test of RL router vs. Best-Fixed, not just RL router vs. tuned GBT."""
     best_action_name = max(("bm25", "dense", "hybrid"), key=lambda k: static_res[k])
     best_action = {"bm25": 0, "dense": 1, "hybrid": 2}[best_action_name]
     scores = [env_test.step(qid, best_action, target_metric=metric) for qid in env_test.query_pool]
@@ -289,7 +291,7 @@ def paired_bootstrap_test(scores_a, scores_b, n_resamples=10000, seed=12345):
     return observed_mean, p_value
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Canonical RL-Route evaluation (static/heuristic/supervised/RL baselines + significance tests).")
+    parser = argparse.ArgumentParser(description="Canonical RL router evaluation (static/heuristic/supervised/RL baselines + significance tests).")
     parser.add_argument("--seeds", type=str, default=None,
                         help=f"Comma-separated seed list (e.g. '42,123'), or a single int N to use the first N of the default {len(SEEDS)}-seed list. Default: all {len(SEEDS)} seeds.")
     parser.add_argument("--epochs", type=int, default=None,
@@ -412,7 +414,7 @@ def main():
         # analysis (gold_type stratification, extra significance tests, failure-mode
         # slicing) a pure re-read of this JSON instead of a multi-hour retrain. Given the
         # full run costs ~7-12h, not saving this is how you end up re-running everything
-        # to answer a single reviewer question.
+        # for a single follow-up question.
         ds_res["per_query"] = {
             "query_ids": list(env_test.query_pool),
             "gold_type": [env_test.get_gold_type(q) for q in env_test.query_pool],

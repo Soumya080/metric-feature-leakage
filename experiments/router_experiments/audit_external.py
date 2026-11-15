@@ -13,7 +13,7 @@ hardcoded 87 in the prose template disagreed with the computed field in the same
       the hazard a property of reporting conventions rather than of any one paper.
 
   Q2  Do the structural findings reproduce in a DIFFERENT domain?
-      RL-Route routes among retrievers on retrieval metrics. RouterBench routes among
+      RL router routes among retrievers on retrieval metrics. RouterBench routes among
       language models on answer correctness. Different arms, different metric, different
       task, independent authors. If majority-class dominance, oracle inflation, and near-tie
       fragility all appear here too, they are properties of the routing formulation rather
@@ -51,7 +51,7 @@ MODELS = [
 ]
 
 # Feature families a router could legitimately build from the prompt alone, with no access to
-# any model's output. These are the honest analogue of RL-Route's query-only features, and
+# any model's output. These are the honest analogue of the RL router's query-only features, and
 # auditing them is the cross-domain version of "is the state representation label-free?".
 def prompt_features(prompts):
     """Cheap label-free features derived from the prompt text only.
@@ -83,7 +83,7 @@ def prompt_features(prompts):
 
 
 def structural_stats(R, arm_names):
-    """Majority share, oracle headroom, tie rate -- the RL-Route Table 1 quantities."""
+    """Majority share, oracle headroom, tie rate -- the RL router Table 1 quantities."""
     means = R.mean(axis=0)
     best = int(means.argmax())
     oracle = float(R.max(axis=1).mean())
@@ -172,7 +172,7 @@ def render_markdown(res):
           "therefore a property of reporting conventions, not of any one paper.\n",
 
           "\n## Q2 — Do the structural findings reproduce here?\n",
-          "| quantity | RouterBench (11 LLMs) | RL-Route (3 retrievers, pooled) |",
+          "| quantity | RouterBench (11 LLMs) | RL router (3 retrievers, pooled) |",
           "|---|---:|---:|"]
     ref = res["reference_rlroute"]
     L += [f"| queries | {s['n']:,} | {ref['n']:,} |",
@@ -304,7 +304,7 @@ def main():
 
     frag = oracle_fragility(R)
 
-    # RL-Route's pooled numbers, recomputed here from its env data so the comparison column is
+    # the RL router's pooled numbers, recomputed here from its env data so the comparison column is
     # not a transcription of a number from a markdown file.
     ref = {"n": 0, "n_arms": 3}
     try:
@@ -319,7 +319,7 @@ def main():
                                 for v in q.values()]))
         ref = structural_stats(np.vstack(Rs), acts)
     except (OSError, KeyError, ValueError) as e:
-        print(f"  (RL-Route reference column unavailable: {e})")
+        print(f"  (RL router reference column unavailable: {e})")
 
     res = {
         "artifact_audit": {"source": os.path.basename(args.data),

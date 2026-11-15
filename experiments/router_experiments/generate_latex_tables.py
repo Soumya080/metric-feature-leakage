@@ -1,16 +1,8 @@
 #!/usr/bin/env python3
-"""
-generate_latex_tables.py
-Reads canonical_results.json and emits ready-to-paste LaTeX for the paper's main table
-plus a headroom-capture table.
+"""Render results/canonical_results.json as LaTeX tables (results/main_results_table.tex).
 
-Every claim in the captions is derived from the numbers in the JSON rather than written by
-hand. The previous version hard-coded three assertions that the results contradict -- that
-RL-Route "matches or slightly exceeds the best tuned supervised methods", that it is
-"uniquely capable of online adaptation", and that the metric is MRR@5 when the run records
-untruncated reciprocal rank -- and it bolded RL-Route whenever it merely beat Gradient
-Boosting, which on HotpotQA bolded a difference with p = 0.354. Captions that are generated
-cannot drift away from the table the way hand-written ones did.
+Captions are generated from the numbers in the JSON, not written by hand, so they cannot
+disagree with the table.
 """
 
 import os
@@ -87,7 +79,7 @@ def main():
             if p is not None and p < 0.05:
                 sig_wins.append(ds)
     finding = (
-        f"RL-Route exceeds the best fixed retriever on "
+        f"RL router exceeds the best fixed retriever on "
         f"{len(beats)} of {len(datasets)} datasets"
         + (f" ({', '.join(d.upper() for d in beats)})" if beats else "")
         + ", and on "
@@ -106,7 +98,7 @@ def main():
         r"\caption{Main results: mean " + metric_name + " on the fixed test split, measured as "
         + metric_means + ". " + finding
         + r" Bold marks the highest non-oracle value in each column; it does not imply "
-        + r"statistical significance. RL-Route is reported as mean $\pm$ std across "
+        + r"statistical significance. RL router is reported as mean $\pm$ std across "
         + (f"{n_seeds}" if n_seeds else "multiple") + r" training seeds, so its spread "
         + r"reflects seed variance only and not variation across data splits.}")
     latex.append(r"\label{tab:main_results}")
@@ -152,7 +144,7 @@ def main():
         std = data[ds].get("rl_route_std", 0.0)
         rl_scores.append(f"{cell(ds, 'rl_route_mean', mean)} $\\pm$ {std:.4f}")
 
-    latex.append(r"RL-Route (Ours) & " + " & ".join(rl_scores) + r" \\")
+    latex.append(r"RL (REINFORCE) & " + " & ".join(rl_scores) + r" \\")
     
     latex.append(r"\midrule")
     
@@ -196,7 +188,7 @@ def main():
                     ("ridge", rows["ridge"]),
                     ("random_forest", rows["random_forest"]),
                     ("gradient_boosting", rows["gradient_boosting"]),
-                    ("rl_route_mean", "RL-Route (Ours)")]
+                    ("rl_route_mean", "RL (REINFORCE)")]
     for key, label in capture_rows:
         cells = []
         for ds in datasets:

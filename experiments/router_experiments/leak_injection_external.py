@@ -7,20 +7,18 @@ WHY THIS EXISTS
     Kapoor & Narayanan decline to subdivide [L2], and no benchmark ships an engineered feature
     matrix. Only the jitter finding is measured, and it is measured on our data.
 
-    A reviewer's natural objection is that we found a bug in our own code, measured how bad our
-    own bug was, and asserted it generalises. This script answers that objection with evidence
-    instead of reasoning: take a routing dataset nobody here built, in a different domain (LLM
-    routing, not retriever routing), inject the same five rungs of contamination, and see whether
-    the curve reproduces -- above all whether the jittered rung still tracks the exact one.
+    Tests whether the effect is specific to our pipeline: take a routing dataset built by
+    others, in a different domain (LLM routing, not retriever routing), inject the same five
+    rungs of contamination, and check whether the curve reproduces, in particular whether the
+    jittered rung still tracks the exact one.
 
 WHAT WOULD FALSIFY THE PAPER'S CLAIM
     If exact leakage lifts accuracy but jittered leakage does not, the jitter finding is specific
-    to our reward distribution and the paper must say so. That is a real possible outcome and the
-    script reports it plainly rather than burying it. A flat curve here does not retract the
-    RL-Route result; it bounds it, which is the honest thing to publish either way.
+    to our reward distribution. The script reports either outcome; a flat curve would bound the
+    claim's generality, not overturn the result on our data.
 
 WHY THE ARM COUNT DIFFERS, AND WHY WE REPORT BOTH
-    RL-Route leaked 2 of 3 arms. RouterBench has 11. Leaking 2 of 11 is a much smaller dose in
+    Our leak covered 2 of 3 arms. RouterBench has 11. Leaking 2 of 11 is a much smaller dose in
     proportional terms, so a weaker curve there would be expected and would prove nothing. We
     therefore sweep k, the number of arms whose reward is exposed, and report the whole sweep.
     The claim under test is not "the lift is the same size" -- the settings are not comparable
@@ -53,14 +51,14 @@ RESULTS_DIR = os.path.join(PROJECT_ROOT, "results")
 
 N_SPLITS = 5
 N_REPEATS = 5
-JITTER_FRAC = 0.15   # same 15% magnitude as the RL-Route leak_noisy arm -- NOT the same construction
+JITTER_FRAC = 0.15   # same 15% magnitude as the RL router leak_noisy arm -- NOT the same construction
 
 
 def jitter(values, frac=JITTER_FRAC, seed=0):
     """Deterministic multiplicative Gaussian noise, seeded.
 
-    CORRECTED 2026-10-31: this is NOT the RL-Route leak_noisy construction, as this docstring
-    used to say. RL-Route adds a value-keyed crc32 offset (prepare_env_data._jitter), so equal
+    CORRECTED 2026-10-31: this is NOT the RL router leak_noisy construction, as this docstring
+    used to say. RL router adds a value-keyed crc32 offset (prepare_env_data._jitter), so equal
     values get equal offsets. This multiplies by (1 + 0.15 N(0, 1)) drawn independently per
     cell, so every zero reward stays exactly 0. On RouterBench's mostly-binary correctness
     rewards that keeps 0 and 1 almost perfectly separable, which is why retention here is
@@ -79,7 +77,7 @@ def build_arms(X_honest, R, k, seed=0):
 
     Returns {arm_name: X}. R itself is never modified, so the label is identical across arms by
     construction rather than by assertion -- the external analogue of the byte-identical reward
-    table check that guards the RL-Route dose-response.
+    table check that guards the RL router dose-response.
     """
     # Expose the k arms with the highest mean reward. Picking the strongest arms is the
     # pessimistic choice for us: those are the ones a router would most want to identify, so if
@@ -223,7 +221,7 @@ def main():
               "the paper should say the finding is specific to dense reward tables.")
     else:
         print(f"\nJitter retention across k: {min(rets):.1%}-{max(rets):.1%} "
-              f"(RL-Route: 97%). Retention near 1 means the mechanism is domain-general; "
+              f"(RL router: 97%). Retention near 1 means the mechanism is domain-general; "
               f"retention near 0 means it is not, and that bounds the paper's claim.")
     return 0
 

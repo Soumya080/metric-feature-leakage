@@ -3,20 +3,31 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "leakcheck"
+name = "leakcheck-router"
 version = "0.2.1"
 description = "Find the evaluation metric hiding in your router's input features."
 readme = "leakcheck/README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
+authors = [
+  {name = "Soumy Sawant"},
+  {name = "Chirag Joshi"},
+]
 keywords = ["leakage", "contextual-bandit", "routing", "evaluation", "reproducibility"]
 dependencies = ["numpy>=1.20"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://github.com/Soumya080/metric-feature-leakage"
+Paper = "https://github.com/Soumya080/metric-feature-leakage/tree/main/paper"
 
 [project.optional-dependencies]
-# Only the demo and the test suite need a learner; the detectors themselves are numpy-only.
 demo = ["scikit-learn>=1.0"]
 test = ["pytest>=7", "scikit-learn>=1.0"]
 
 [tool.setuptools]
-# Ship only the package. The surrounding repository is a research codebase, not part of it.
 packages = ["leakcheck"]

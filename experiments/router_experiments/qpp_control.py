@@ -5,7 +5,7 @@ WHY THIS EXISTS
     two summary statistics -- the mean and standard deviation of the top-5 retrieval scores --
     where information retrieval has spent twenty years building predictors for exactly the
     quantity a router needs: how well is this query about to do? NQC is, in effect, the
-    principled version of one of our two statistics. An IR reviewer will notice.
+    principled version of one of our two statistics, so it is the natural control.
 
     So "no signal in these features" has to become "no signal in the features the field would
     actually use", or the limitation stands. This computes the standard post-retrieval

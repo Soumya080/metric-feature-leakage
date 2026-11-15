@@ -53,7 +53,7 @@ METHODS = [
     ("random_forest", "Random Forest"),
     ("ridge", "Ridge Regression"),
     ("gradient_boosting", "Gradient Boosting (tuned)"),
-    ("rl_route_mean", "RL-Route"),
+    ("rl_route_mean", "RL router"),
 ]
 
 RANK_BUCKETS = [("rank 1-5", 1, 5), ("rank 6-20", 6, 20),

@@ -16,7 +16,7 @@ Three outcomes, and they mean different things:
   * embeddings also land at the majority baseline --- the negative is about the target, not
     the features, and the objection is closed.
   * embeddings do substantially better --- the negative is about OUR features, the paper's
-    claim must narrow, and we would need to know that before a reviewer does.
+    claim must narrow.
   * embeddings do worse --- expected if 384 dimensions overfit at n~3,000; reported as such
     rather than as evidence for anything.
 

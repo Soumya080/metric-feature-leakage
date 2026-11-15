@@ -11,7 +11,7 @@
 | Random Forest | -4% | -5% | -0% |
 | Ridge Regression | -18% | -3% | -1% |
 | Gradient Boosting (tuned) | -4% | +0% | +0% |
-| RL-Route | -42% | -17% | -21% |
+| RL router | -42% | -17% | -21% |
 
 Best-fixed and oracle per dataset:
 

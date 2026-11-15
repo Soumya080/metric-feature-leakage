@@ -1,9 +1,7 @@
 """
-cross_retriever_analysis.py — Does the router work for the reason we claim it does?
+Where does the routing headroom sit relative to retriever agreement?
 
-The paper's aggregate numbers show routing beats any fixed retriever. They do not show
-WHY, and a reviewer is entitled to suspect the gain is a well-fit noise pattern. This
-script tests the mechanism directly, as a falsifiable prediction:
+Tests a falsifiable prediction about the mechanism:
 
     Routing headroom (oracle - best-fixed) should be LARGEST where BM25 and Dense
     disagree, and near ZERO where they agree.
@@ -15,7 +13,7 @@ the routing story is wrong regardless of what the aggregate MRR says — which i
 what makes it worth testing rather than asserting.
 
 Reported per agreement bin: n, best-fixed MRR, oracle MRR, headroom, and each method's
-realized MRR (notably RL-Route vs. tuned Gradient Boosting). Plus a Spearman correlation
+realized MRR (notably RL router vs. tuned Gradient Boosting). Plus a Spearman correlation
 between per-query agreement and per-query headroom, so the trend is a number and not an
 eyeball judgement.
 
@@ -222,7 +220,7 @@ def render_markdown(all_res):
             f"- Best-fixed retriever (global): **{res['best_fixed_name']}**",
             corr_line,
             reading,
-            "| agreement (top-5 overlap) | n | best-fixed | oracle | headroom | RL-Route | GBT |",
+            "| agreement (top-5 overlap) | n | best-fixed | oracle | headroom | RL router | GBT |",
             "|---|---:|---:|---:|---:|---:|---:|",
         ]
         for b in res["bins"]:
@@ -270,7 +268,7 @@ def render_pdf(all_res, path):
         w = 0.35
         rl = [b["methods"].get("rl_route", np.nan) for b in bins]
         gbt = [b["methods"].get("gradient_boosting", np.nan) for b in bins]
-        ax.bar(xs - w / 2, rl, w, label="RL-Route", color="#4C72B0")
+        ax.bar(xs - w / 2, rl, w, label="RL router", color="#4C72B0")
         ax.bar(xs + w / 2, gbt, w, label="Gradient Boosting", color="#DD8452")
         ax.set_xticks(xs)
         ax.set_xticklabels(labels, rotation=30, ha="right", fontsize=8)

@@ -633,7 +633,7 @@ def main():
         print(f"\nTotal time for {ds_name}: {total_time:.1f}s")
 
     print(f"\n>>> ALL BASELINES v2 COMPLETE")
-    print(f"  Next step: python experiments/baseline_v2/03_analyze_oracle.py")
+    print(f"  Next step: python -m src.router.prepare_env_data")
 
 
 if __name__ == "__main__":

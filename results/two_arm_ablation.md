@@ -1,4 +1,4 @@
-> **Superseded (2026-11-09):** the minimum-detectable-effect section below uses whole-corpus SD and headroom. The paper quotes the test-split values from `results/crc_v2/r6_testsplit_power/summary.json` (one-sided 68/43/72% three-arm, 85/51/78% two-arm). The lift and majority-baseline numbers in this file are unaffected.
+> **Superseded (2026-11-09):** the minimum-detectable-effect section below uses whole-corpus SD and headroom. The paper quotes the test-split values from `results/analyses/split_power/summary.json` (one-sided 68/43/72% three-arm, 85/51/78% two-arm). The lift and majority-baseline numbers in this file are unaffected.
 
 # Two-Arm Ablation and Statistical Power
 

@@ -32,23 +32,6 @@
   year={2017}
 }
 
-% RE-VERIFIED 2026-08-18 against arxiv.org/abs/2604.22849 (submitted 22 Apr 2026) and the v1
-% full text. Title, all four authors and the abstract confirmed.
-% CHANGED from @inproceedings{...ACL 2026} to @article: the arXiv record carries NO venue
-% comment, so the ACL acceptance an earlier draft asserted is unverified. Do not reinstate a
-% venue we cannot show. If it is accepted before camera-ready, restore the booktitle then.
-% Experimental setup confirmed from the full text and load-bearing for Section 2's "positive in
-% precisely our setting": 8 retrievers (BM25 plus E5-base-v2, E5-large, BGE-large, BGE-m3,
-% DIVER-Retriever-0.6B, Qwen3-embedding-0.6B, Qwen3-embedding-4B), 2018 English Wikipedia dump,
-% and the SAME three datasets as this paper -- NQ, TriviaQA, HotpotQA. Reported gain over the
-% best individual retriever is +1.75 EM (43.06 vs. E5-large's 41.31). Note their supervision is
-% document assessments PLUS downstream answer correctness, i.e. post-retrieval; ours is
-% query-side and pre-retrieval. That difference is the reconciliation, not a contradiction.
-% CRC 2026-10-31: venue NOW CONFIRMED against the ACL Anthology record 2026.acl-long.939
-% (Proceedings of ACL 2026, Volume 1: Long Papers, pp. 20506-20522), so the booktitle is
-% restored as the note above anticipated. The "reconciliation" sentence in Section 2 was also
-% rewritten for the CRC: our features include label-free post-retrieval score statistics, and
-% RetrievalRouter (kuru2026retrievalrouter) is a positive from query text alone.
 @inproceedings{zhao2026r3ag,
   title={R\textsuperscript{3}AG: Retriever Routing for Retrieval-Augmented Generation},
   author={Zhao, Tong and Zhu, Yutao and Tian, Yucheng and Dou, Zhicheng},
@@ -59,9 +42,6 @@
   doi={10.18653/v1/2026.acl-long.939}
 }
 
-% VERIFIED 2026-08-18 against arxiv.org/abs/2403.14403. NAACL 2024 confirmed; all five authors
-% confirmed. The title was TRUNCATED in an earlier draft -- "through Question Complexity" is
-% part of it and is restored below.
 @inproceedings{jeong2024adaptiverag,
   title={Adaptive-RAG: Learning to Adapt Retrieval-Augmented Large Language Models through
          Question Complexity},
@@ -72,12 +52,6 @@
   note={arXiv:2403.14403}
 }
 
-% KEY IS MISLEADING, CONTENT IS CORRECT. VERIFIED 2026-08-18 against arxiv.org/abs/2409.02685:
-% authors are Lee, Soldaini, Cohan, Seo and Lo, and the arXiv record states "Published at
-% AAAI 2025". There is no author named Campos and the year is 2025, so the key `campos2024...`
-% reads as an attribution and the attribution is wrong -- exactly the failure the note further
-% down this file warns about. Keys are not printed by plain.bst so nothing in the PDF is
-% affected; rename to `routerretriever2025` at camera-ready, updating the \cite in Section 2.
 @inproceedings{campos2024routerretriever,
   title={RouterRetriever: Routing over a Mixture of Expert Embedding Models},
   author={Lee, Hyunji and Soldaini, Luca and Cohan, Arman and Seo, Minjoon and Lo, Kyle},
@@ -86,13 +60,6 @@
   note={arXiv:2409.02685}
 }
 
-% KEY IS MISLEADING, CONTENT IS CORRECT. VERIFIED 2026-08-18 against arxiv.org/abs/2506.13743.
-% Authors are Kim and Diaz -- there is no author named Qin, and the arXiv v1 is 2025, so
-% `qin2024ltrr` misattributes on both counts. The venue IS confirmed: the arXiv comment reads
-% "SIGIR 2026; SIGIR 2025 LiveRAG Spotlight". Rename to `ltrr2026` at camera-ready.
-% SUBSTANCE WORTH KNOWING: this is a POSITIVE result in our setting -- "we demonstrate that
-% routing-based RAG consistently surpasses the strongest single-retriever baselines". Section 2
-% must not present it as neutral prior art; it is the second adjacent positive after R^3AG.
 @inproceedings{qin2024ltrr,
   title={LTRR: Learning To Rank Retrievers for LLMs},
   author={Kim, To Eun and Diaz, Fernando},
@@ -149,12 +116,6 @@
   publisher={Elsevier},
   note={arXiv:2207.07048}
 }
-% VERIFIED 2026-08-10. Cite the PUBLISHED Patterns figures -- 17 fields, 294 papers, 8 types.
-% Do not "correct" 294 to 329: the arXiv preprint says 329, revised down for publication. We
-% cite the journal version, so 294 is right and 329 is the trap. cell.com blocks automated
-% fetches; confirm via the DOI landing page or hbiostat.org/papers/kap23lea.pdf.
-% Introduces the eight-type taxonomy; [L2] covers features that proxy the outcome variable and
-% deliberately provides no subcategories for it. (Kept out of note= so plain.bst cannot print it.)
 
 @article{roth2026leakagetypes,
   title={Which Leakage Types Matter? A Quantitative Landscape Across 2,047 Benchmark Datasets},
@@ -197,9 +158,6 @@
   journal={arXiv preprint arXiv:2604.03455},
   year={2026}
 }
-% Cited only for what its release does and does not contain. An earlier draft attributed a
-% 0.231 majority baseline to this paper; that figure could NOT be confirmed against the source
-% on 2026-08-10, the section resting on it was cut, and it must not be reinstated.
 
 @article{hsu2025dat,
   title={DAT: Dynamic Alpha Tuning for Hybrid Retrieval in Retrieval-Augmented Generation},
@@ -207,8 +165,6 @@
   journal={arXiv preprint arXiv:2503.23013},
   year={2025}
 }
-% Sets the per-query sparse/dense weight using an LLM's assessment of each retriever's top-1
-% result -- a post-retrieval signal.
 
 @article{hu2024routerbench,
   title={RouterBench: A Benchmark for Multi-LLM Routing System},
@@ -227,13 +183,6 @@
   year={2025},
   note={arXiv:2503.10657}
 }
-% Venue and pagination RE-VERIFIED 2026-08-18 against aclanthology.org/2025.findings-emnlp.208/
-% (Findings of the ACL: EMNLP 2025, pp. 3860--3887, Suzhou, China).
-% VERIFIED 2026-08-10 against the arXiv record and the MilkThink-Lab release. The only routing
-% benchmark found that ships router-side features: its leaderboard_embed artifact provides
-% precomputed query embeddings in four varieties (longformer, RoBERTa, RoBERTa_last,
-% sentence_bert). They are prompt-derived and so label-free by construction, which is why they
-% bound rather than refute the auditability claim in the detector section.
 
 @article{qpplimits2025,
   title={Uncovering the Limitations of Query Performance Prediction: Failures, Insights, and
@@ -244,16 +193,6 @@
   year={2025}
 }
 
-% VERIFIED 2026-08-10 against primary sources, per the NeurIPS policy holding authors
-% responsible for the existence and correctness of every reference.
-%   arabzadeh2021bertselect -- arxiv.org/abs/2109.10739 and dl.acm.org/doi/10.1145/3459637.3482159.
-%     Authors, title and CIKM'21 venue all confirmed. The attributed claim is confirmed and is in
-%     fact closer than we had stated: they train "a classifier to select a suitable retrieval
-%     strategy (i.e., sparse vs. dense vs. hybrid) for individual queries" -- the same three arms
-%     as this paper, four years earlier.
-%   tang2025mbarag -- arxiv.org/abs/2412.01572. Title and COLING 2025 venue confirmed. The author
-%     field previously read "Tang, Xiaqiang and Others", a placeholder that BibTeX would have
-%     typeset as a real-looking but fabricated author list; replaced with the full six authors.
 @inproceedings{arabzadeh2021bertselect,
   title={Predicting Efficiency/Effectiveness Trade-offs for Dense vs. Sparse Retrieval Strategy Selection},
   author={Arabzadeh, Negar and Yan, Xinyi and Clarke, Charles L. A.},
@@ -271,20 +210,6 @@
   note={arXiv:2412.01572}
 }
 
-% ---------------------------------------------------------------------------
-
-% ---------------------------------------------------------------------------
-% Added by the second novelty sweep.
-%
-% Author lists verified against each paper's arXiv abstract page or bioRxiv landing
-% page, not against a search summary. Citation keys stay topic-based rather than
-% surname-based: an earlier draft guessed two surnames from memory, one of which
-% (LeakageDetector, actually AlOmar et al.) was wrong, and a key that reads as an
-% attribution is worse than one that reads as a topic. The `key` fields are kept so
-% sorting does not depend on the author field.
-% ---------------------------------------------------------------------------
-
-% Routing benchmarks: cited for what their releases do and do not contain.
 @inproceedings{routerarena2026,
   author={Lu, Yifan and Liu, Rixin and Yuan, Jiayi and Cui, Xingqi and Zhang, Shenrun
           and Liu, Hongyi and Xing, Jiarong},
@@ -304,7 +229,6 @@
   year={2026}
 }
 
-% Field-level leakage audits, cited as precedent for the genre.
 @article{cancerleakage2026,
   author={Asiaee, Amir and Strauch, Jared and Azinfar, Leila and Pal, Samhita
           and Pua, Heather H. and Long, James P. and Coombes, Kevin R.},
@@ -315,19 +239,6 @@
   year={2026},
   doi={10.64898/2026.02.05.704016}
 }
-% VERIFIED 2026-08-10: code-level audit of 32 published methods (2017--2024) confirming leakage
-% in 23 (72%). biorxiv.org serves 403/429 to automated fetches; confirm via the DOI landing page
-% rather than the .full URL if this needs rechecking.
-% VERIFIED 2026-08-18 against PMC10901797 and the Nature Communications record: vol. 15,
-% article 1829, 28 Feb 2024, doi:10.1038/s41467-024-46150-w. Article number and DOI added.
-% LOAD-BEARING: this is the citation for Section 1's "against the sign reported by the only
-% adjacent literature measuring leakage versus scale", which previously carried no citation at
-% all. The abstract states verbatim: "Furthermore, small datasets exacerbate the effects of
-% leakage." The body adds: "the overall trends suggest that leakage may be more unpredictable
-% and thus dangerous in small samples compared to large samples."
-% CAVEAT THAT MUST TRAVEL WITH THE CITE: their scale axis is SAMPLE SIZE (N subjects, 100 to
-% 400); ours is CORPUS SIZE (20K to 100K passages, query count roughly fixed). The signs are
-% opposite but the axes are not the same axis, and Section 1 now says so.
 @article{connectomeleakage2024,
   key={Rosenblatt},
   title={Data leakage inflates prediction performance in connectome-based machine learning
@@ -341,7 +252,6 @@
   doi={10.1038/s41467-024-46150-w}
 }
 
-% Leakage tooling, cited to position leakcheck.
 @article{leakagedetector2025,
   author={AlOmar, Eman Abdullah and DeMario, Catherine and Shagawat, Roger
           and Kreiser, Brandon},
@@ -358,15 +268,6 @@
   journal={arXiv preprint arXiv:2604.10965},
   year={2026}
 }
-% VERIFIED 2026-08-18 against arxiv.org/abs/2401.14283; the arXiv comment confirms "Accepted at
-% Information Sciences". Authors and title confirmed.
-% SEMANTIC CAUTION, and the reason Section 2 now qualifies this cite: this paper is about
-% INFORMATION leakage in the security sense -- mutual information between observable system
-% output and secret information, evaluated on OpenSSL TLS side-channel data -- not target
-% leakage in the ML-methodology sense. Section 1 of this paper explicitly disambiguates those
-% two senses, so listing it unqualified beside LeakageDetector and bioLeak would contradict our
-% own taxonomy. It is retained because the structural point still holds (it too takes a single
-% target rather than a per-arm reward table), but the sense difference is now stated in text.
 @article{bayesleakage2025,
   author={Gupta, Pritha and Wever, Marcel and H{\"u}llermeier, Eyke},
   key={Bayes-optimal leakage detection},
@@ -376,7 +277,6 @@
   note={arXiv:2401.14283}
 }
 
-% Cited for the disambiguation in Section 1.
 @article{ragleakagefree2026,
   author={Liu, Jiayi and Zhang, Jiaxing and Jin, Bowen and Neville, Jennifer},
   key={Leakage-free RAG benchmarks},
@@ -385,8 +285,6 @@
   year={2026}
 }
 
-% Cited in Setup for the RRF result our Hybrid arm contradicts, and for the documented
-% risk that makes the contradiction explicable rather than a bug.
 @inproceedings{cormack2009rrf,
   title={Reciprocal rank fusion outperforms Condorcet and individual rank learning methods},
   author={Cormack, Gordon V. and Clarke, Charles L. A. and Buettcher, Stefan},
@@ -403,25 +301,7 @@
   year={2017},
   doi={10.1145/3166072.3166084}
 }
-% VERIFIED 2026-08-18: ADCS 2017, pp. 1:1--1:8, doi as given. Supports the Setup claim that
-% equal-weight fusion of unequal systems is a documented risk -- the paper's own framing is
-% that "improving the retrieval effectiveness for most queries often comes at the expense of
-% others".
 
-% VERIFIED 2026-08-18 via dblp, the IR Anthology and Google Research's own listing; the ACM DL
-% page (10.1145/1571941.1572114) returns 403 to automated fetches and Semantic Scholar's
-% abstract field is null, so this one is corroborated across secondary indexes rather than
-% fetched from the publisher. The sentence Section 3 quotes is reproduced identically by all of
-% them: RRF "consistently yields better results than any individual system, and better results
-% than the standard method Condorcet Fuse".
-
-% VERIFIED 2026-08-12 against the arXiv abstract pages. Added after an adversarial literature
-% pass found that "a perturbed leak survives detection" is not unclaimed, as Section 2 had
-% implied. Talagala's abstract confirms the mechanism list verbatim -- "scale-shifts; repeating
-% patterns in time series; white noise is added to the original time series to form a new time
-% series" -- which is prior art for the qualitative claim that leaks arrive inexact and that
-% exact matching misses them. What remains ours is the calibrated dose-response, not the
-% observation itself.
 @article{talagala2024tsdataleaks,
   title={tsdataleaks: An R Package to Detect Potential Data Leaks in Forecasting Competitions},
   author={Talagala, Thiyanga S.},
@@ -437,18 +317,6 @@
   year={2022}
 }
 
-% ---------------------------------------------------------------------------
-% Added by the submission-readiness pass, 2026-08-18. Every entry below was
-% verified against a fetched primary record on that date; the identifier used
-% for the check is named in each comment.
-% ---------------------------------------------------------------------------
-
-% VERIFIED 2026-08-18 against arxiv.org/abs/2605.27220 (submitted 26 May 2026).
-% The closest published work to this paper's Section 5 thesis, and it was absent from earlier
-% drafts. Abstract states verbatim: "Pre-retrieval routing cannot resolve this gap, as the need
-% for LLM augmentation is only revealed after searching the index, a result confirmed by our
-% evaluation of four machine learning paradigms." Production traffic, Danish National
-% Encyclopedia, 20,000 query-workflow pairs. Cite for the mechanism, not for our numbers.
 @article{hussain2026coverage,
   title={The Coverage Illusion: From Pre-retrieval Routing Failure to Post-retrieval Cascades
          in a Production RAG System},
@@ -457,11 +325,6 @@
   year={2026}
 }
 
-% VERIFIED 2026-08-18 against arxiv.org/abs/2104.08663. Venue confirmed on the arXiv record:
-% "Accepted at NeurIPS 2021 Dataset and Benchmark Track".
-% CAUTION: the abstract's actual wording is "Our results show BM25 is a robust baseline". The
-% familiar phrase "BM25 is hard to beat" is a community paraphrase and is NOT in the paper --
-% do not put it in quotation marks.
 @inproceedings{thakur2021beir,
   title={{BEIR}: A Heterogenous Benchmark for Zero-shot Evaluation of Information Retrieval
          Models},
@@ -473,15 +336,6 @@
   note={arXiv:2104.08663}
 }
 
-% VERIFIED 2026-08-18. arxiv.org/abs/2109.00062 for authors and abstract; venue and pagination
-% from the Springer/ACM records: Information Retrieval Journal 25(4):365--385, 2022.
-% Same first and last authors as arabzadeh2021bertselect, which is why it can hold the tension
-% between that paper's positive and ours without either being wrong.
-% CAUTION: the often-quoted "94% of MS MARCO passage dev queries have a single known relevant
-% passage" is in the BODY, not the abstract. What the abstract states is "substantially more
-% queries with substantially fewer known relevant items per query", that a relevant item "is
-% treated as the 'right answer'", and that a modern ranker's top result is preferred to the
-% judged relevant item often enough to make it "better than perfect". Cite the abstract's claim.
 @article{arabzadeh2022shallow,
   title={Shallow pooling for sparse labels},
   author={Arabzadeh, Negar and Vtyurina, Alexandra and Yan, Xinyi and Clarke, Charles L. A.},
@@ -494,16 +348,6 @@
   note={arXiv:2109.00062}
 }
 
-% VERIFIED 2026-08-20 against the arXiv abstract page. Sole author. Decomposes the
-% router-to-oracle gap into reproducible specialist advantage and single-draw label noise,
-% proves a recoverability asymmetry, and releases a multi-sample oracle protocol. LLM routing
-% only: its noise source is stochastic decoding, so its k>=20 resampling fix does not transfer
-% to deterministic retrieval, where the noise lives in candidate-set construction instead.
-% CRC 2026-10-31: REVISED AND RETITLED upstream. v3 (27 Sep 2026) is "What Does a Routing Oracle
-% Measure Under Stochastic Decoding? ..." and its arXiv comment says it "supersedes empirical
-% summaries and interpretations in earlier versions". The "12--36%" figure the submitted draft
-% quoted came from v1/v2 and is no longer quoted; the paper now cites only v3's framing (a
-% commit-before-response policy and a hindsight oracle are different decision classes).
 @article{chen2026routinggap,
   title={What Does a Routing Oracle Measure Under Stochastic Decoding? {C}oupling, Scorer Choice,
          and Single-Commit Ceilings},
@@ -513,15 +357,6 @@
   year={2026}
 }
 
-% ---------------------------------------------------------------------------------------------
-% Added for the camera-ready, 2026-10-31. Each entry checked against its arXiv API record on that
-% date (title, full author list, date, venue comment). Quotes used in the paper are verbatim from
-% the abstracts.
-% ---------------------------------------------------------------------------------------------
-
-% arXiv:2606.07587 v1 27 May 2026 (v2 28 Sep 2026). Predates submission. Verbatim: "current
-% routers primarily learn global-average model performance trends rather than fine-grained,
-% query-specific routing signals." The LLM-routing counterpart of Section 5's collapse.
 @article{lu2026routingplateau,
   title={The Routing Plateau: Understanding the Accuracy Limits of {LLM} Routers},
   author={Lu, Yifan and Zhang, Qiyue and Zhang, Shenrun and Yu, Zhibo and Wang, Zhuang and
@@ -530,9 +365,6 @@
   year={2026}
 }
 
-% arXiv:2608.23023, 24 Aug 2026. Sole author. Task type alone, one model per type fixed in
-% advance, improves 21 of the 29 routable questions on its matrix. Independent support for
-% Section 6's mechanism (benchmark identity predicts the winner on RouterBench).
 @article{lee2026tasktype,
   title={Most of the {LLM} Routing Gap Is Task Type},
   author={Lee, Janghoon},
@@ -540,9 +372,6 @@
   year={2026}
 }
 
-% arXiv:2608.25625, 26 Aug 2026, comment "Accepted at EMNLP 2026". Verbatim: routes "from the
-% query text alone"; "no static pipeline dominates"; "2.5% more accurate" than the best static
-% baseline. A positive from query-side input, so it is the case Section 2 must reconcile with.
 @article{kuru2026retrievalrouter,
   title={{RetrievalRouter}: Joint Modality and Architecture Selection for Document Retrieval},
   author={Kuru, Emre and Keskin, Mehmet Onur and Farahbakhsh, Reza and Crespi, Noel},
@@ -551,9 +380,6 @@
   year={2026}
 }
 
-% arXiv:2605.31176, 29 May 2026, comment "Accepted at ICML 2026". Verbatim: "RAG systems
-% typically rely on a single retriever" (supports the Introduction's opening claim) and learned
-% portfolios "consistently outperform single-retriever and naive multi-retriever baselines".
 @article{stouras2026portfolios,
   title={Retriever Portfolios: A Principled Approach to Adaptive {RAG}},
   author={Stouras, Miltiadis and Cohen-Addad, Vincent and Lattanzi, Silvio and Svensson, Ola},
@@ -562,11 +388,6 @@
   year={2026}
 }
 
-% arXiv:2609.14885, 14 Sep 2026 (QueryRoute). Venue and DOI read from the PDF's ACM reference
-% block: CIKM '26, Rome, doi:10.1145/3799682.3840215. Postdates our submission. Releases ranked
-% lists, retrieval scores, oracle labels and -- per its docs/ARTIFACT_SCHEMA.md -- per-dataset
-% QPP feature caches (as raw pipeline logs). The first routing-style benchmark we found that
-% ships a selector's input features.
 @inproceedings{le2026queryroute,
   title={Route Me If You Can: A Benchmark for Query Reformulation Selection},
   author={Le, Hai Son and Arabzadeh, Negar and Bigdeli, Amin and Hamidi Rad, Radin and
@@ -577,9 +398,6 @@
   doi={10.1145/3799682.3840215}
 }
 
-% ---------------------------------------------------------------------------------------------
-% Added 2026-11-09 for the camera-ready (review_2). Each entry checked on that date against a
-% publisher, DOI or arXiv record (sources listed in paper/review_2/CHANGES_APPLIED.md).
 @article{kaufman2012leakage,
   title={Leakage in Data Mining: Formulation, Detection, and Avoidance},
   author={Kaufman, Shachar and Rosset, Saharon and Perlich, Claudia and Stitelman, Ori},

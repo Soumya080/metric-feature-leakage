@@ -18,7 +18,7 @@ catch, the bottom rungs are nearly as damaging and evade exact-match detection e
                           so a tree-based model exploits it as effectively as the direct
                           case, but equality checks see nothing.
 
-    3. JITTERED           feature == reward + noise. The important rung: on the RL-Route
+    3. JITTERED           feature == reward + noise. The important rung: on the RL router
                           data, 15% multiplicative jitter retained almost all of the
                           advantage of an exact leak (72.7% vs 73.2% accuracy, against a
                           61.4% majority baseline). A leak does not need to be clean to

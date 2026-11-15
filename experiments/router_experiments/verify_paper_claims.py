@@ -1,8 +1,7 @@
 """Recompute two claims in the paper that no committed artifact backs.
 
-Both were flagged during a number-verification pass over main_v2.tex: the text asserts
-them, but nothing in results/ contains them, so a reader (or a reviewer) could not check
-them and neither could we.
+Both were flagged during a number-verification pass over main.tex: the text asserts
+them, but nothing in results/ contains them, so they could not be checked.
 
   1. "features 22--23 alone reach 73.9%, higher than all 61 features with the leak present"
      -- learnability_analysis.py scores the group [22,23,24,25], never the pair [22,23].

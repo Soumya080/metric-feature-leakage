@@ -26,9 +26,9 @@ import pytest
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
 # Env data is a generated artifact and is not always present in a working tree -- it may
-# live on a results branch, or on the machine that ran the pipeline. RLROUTE_ENV_DIR lets
+# live on a results branch, or on the machine that ran the pipeline. ENV_DATA_DIR lets
 # the guard run against wherever it actually is, without copying artifacts into the repo.
-ENV_DIR = os.environ.get("RLROUTE_ENV_DIR") or os.path.join(REPO_ROOT, "src", "router")
+ENV_DIR = os.environ.get("ENV_DATA_DIR") or os.path.join(REPO_ROOT, "src", "router")
 
 # Every per-retriever field that is, or is derived from, the gold answer. Any of these
 # appearing as a feature is leakage regardless of which one the reward happens to use.
