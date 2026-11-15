@@ -30,7 +30,7 @@ pip install -r requirements.txt     # full pipeline
 pip install -e ".[test]"            # leakcheck + tests only (numpy, scikit-learn, pytest)
 ```
 
-Python 3.8+. No GPU is needed for anything below.
+Python 3.10+. No GPU is needed for anything below.
 
 ## Quick start
 

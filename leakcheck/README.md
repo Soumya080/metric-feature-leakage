@@ -18,7 +18,7 @@ assert not report.leaked
 
 The core audit needs only numpy: no model fitting and no train/test split.
 
-Install from this repository with `pip install -e .` (Python 3.8+).
+Install from this repository with `pip install -e .` (Python 3.10+).
 
 ## Demo
 
